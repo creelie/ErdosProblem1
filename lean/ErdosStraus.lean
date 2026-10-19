@@ -1,1 +1,2 @@
 import ErdosStraus.Arithmetic
+import ErdosStraus.Exceptional

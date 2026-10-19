@@ -1,31 +1,33 @@
 #!/usr/bin/env bash
-# build_paper.sh -- build the paper and the release files.
+# build_paper.sh -- build the two papers and the release files.
 #
-#   dist/ErdosStrausSieveConstant_final2.pdf             the paper
-#   dist/ErdosStrausSieveConstant_final2-tex.zip         LaTeX source (main.tex) with the figures as PNG
-#   dist/ErdosStrausSieveConstant_final2-arxiv.tar.gz    the same source as an arXiv tarball
-#   preprintErdosStrausSieveConstant/ErdosStrausSieveConstant.pdf
-#                                                     the paper (the only file there)
-#   MasterErdosStrausSieveConstant_masterzipfinal2.zip   every tracked file with dist/ and the
-#                                                     preprint folder
+# For each paper NAME, with its source in DIR:
+#   ErdosStrausSieveConstant   paper/              "A power-saving asymptotic for the two-parameter
+#                                                   Type II sieve sum of the Erdős–Straus equation"
+#   ErdosStrausExceptionalSet  exceptional/paper/  "An explicit exponent for the exceptional set of
+#                                                   the Erdős–Straus equation"
+# it writes
+#   dist/NAME_final2.pdf             the paper
+#   dist/NAME_final2-tex.zip         LaTeX source (main.tex) with the figures as PNG
+#   dist/NAME_final2-arxiv.tar.gz    the same source as an arXiv tarball
+#   preprintNAME/NAME.pdf            the paper (the only file there)
+#   MasterNAME_masterzipfinal2.zip   every tracked file with dist/ and both preprint folders
 #
-# Needs pdflatex (amsart), git, zip and tar. The figures in paper/figures/ are drawn by
-# figures/make_figures.py.
+# Needs pdflatex (amsart for the first paper, revtex4-2 for the second), git, zip and tar. The figures
+# are drawn by figures/make_figures.py and figures/make_exceptional.py.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
-for t in pdflatex git zip tar; do
+for t in pdflatex git zip tar zipinfo; do
   command -v "$t" >/dev/null || { echo "missing tool: $t" >&2; exit 2; }
 done
 
-NAME=ErdosStrausSieveConstant
-PRE=preprint$NAME
-MASTER=Master${NAME}_masterzipfinal2.zip
+PAPERS="ErdosStrausSieveConstant:paper ErdosStrausExceptionalSet:exceptional/paper"
 
 latex() { pdflatex -interaction=nonstopmode -halt-on-error "$@" > /dev/null; }
-build() { # build <jobname> <input>, run inside paper/
-  rm -f "$1.aux" "$1.out" "$1.log"
+build() { # build <jobname> <input>, run inside the paper directory
+  rm -f "$1.aux" "$1.out" "$1.log" "$1.toc"
   for run in 1 2 3 4; do
     latex -jobname="$1" "$2"
     grep -q "Rerun to get" "$1.log" || break
@@ -34,44 +36,60 @@ build() { # build <jobname> <input>, run inside paper/
     echo "build_paper.sh: fix the warnings above" >&2
     exit 1
   fi
-  rm -f "$1.aux" "$1.log" "$1.out"
+  rm -f "$1.aux" "$1.log" "$1.out" "$1.toc"
 }
-
-echo "== paper"
-( cd paper && build main main.tex )
-
-rm -rf dist
-mkdir -p dist "$PRE"
-cp paper/main.pdf "dist/${NAME}_final2.pdf"
-cp paper/main.pdf "$PRE/$NAME.pdf"
 
 STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
+rm -rf dist
+mkdir -p dist
 
-echo "== tex zip and arXiv tarball"
-SRC="$STAGE/${NAME}_final2-tex"
-mkdir -p "$SRC/figures"
-cp paper/main.tex "$SRC/"
-cp paper/figures/*.png "$SRC/figures/"
-( cd "$SRC" && latex main.tex && latex main.tex && rm -f main.aux main.log main.out main.pdf )
-( cd "$STAGE" && zip -qrX "${NAME}_final2-tex.zip" "${NAME}_final2-tex" )
-mv "$STAGE/${NAME}_final2-tex.zip" dist/
-entries="$(zipinfo -1 "dist/${NAME}_final2-tex.zip" | wc -l)"
-[ "$entries" -le 512 ] || { echo "build_paper.sh: the tex zip has $entries entries (at most 512)" >&2; exit 1; }
-tar -czf "dist/${NAME}_final2-arxiv.tar.gz" -C "$SRC" main.tex figures
+for entry in $PAPERS; do
+  NAME="${entry%%:*}"
+  DIR="${entry#*:}"
+  PRE=preprint$NAME
 
-echo "== $MASTER"
-mkdir -p "$STAGE/master/Master$NAME"
-git ls-files -z | grep -zvE "^(dist/|$PRE/|$MASTER\$)" \
-  | while IFS= read -r -d '' f; do
-      [ -e "$f" ] || continue
-      mkdir -p "$STAGE/master/Master$NAME/$(dirname "$f")"
-      cp -p "$f" "$STAGE/master/Master$NAME/$f"
-    done
-mkdir -p "$STAGE/master/Master$NAME/dist" "$STAGE/master/Master$NAME/$PRE"
-cp dist/* "$STAGE/master/Master$NAME/dist/"
-cp "$PRE/$NAME.pdf" "$STAGE/master/Master$NAME/$PRE/"
-rm -f "$MASTER"
-( cd "$STAGE/master" && zip -qrX "$ROOT/$MASTER" "Master$NAME" )
+  echo "== $NAME: paper"
+  ( cd "$DIR" && build main main.tex )
+  rm -rf "$PRE"
+  mkdir -p "$PRE"
+  cp "$DIR/main.pdf" "dist/${NAME}_final2.pdf"
+  cp "$DIR/main.pdf" "$PRE/$NAME.pdf"
 
-echo "built: $(ls dist | tr '\n' ' ')$PRE/$NAME.pdf $MASTER"
+  echo "== $NAME: tex zip and arXiv tarball"
+  SRC="$STAGE/${NAME}_final2-tex"
+  mkdir -p "$SRC/figures"
+  cp "$DIR/main.tex" "$SRC/"
+  cp "$DIR"/figures/*.png "$SRC/figures/"
+  ( cd "$SRC" && latex main.tex && latex main.tex && rm -f main.aux main.log main.out main.toc main.pdf )
+  ( cd "$STAGE" && zip -qrX "${NAME}_final2-tex.zip" "${NAME}_final2-tex" )
+  mv "$STAGE/${NAME}_final2-tex.zip" dist/
+  entries="$(zipinfo -1 "dist/${NAME}_final2-tex.zip" | wc -l)"
+  [ "$entries" -le 512 ] || { echo "build_paper.sh: the tex zip has $entries entries (at most 512)" >&2; exit 1; }
+  tar -czf "dist/${NAME}_final2-arxiv.tar.gz" -C "$SRC" main.tex figures
+done
+
+for entry in $PAPERS; do
+  NAME="${entry%%:*}"
+  MASTER=Master${NAME}_masterzipfinal2.zip
+  echo "== $MASTER"
+  M="$STAGE/master-$NAME/Master$NAME"
+  mkdir -p "$M"
+  git ls-files -z | grep -zvE '^(dist/|preprint[^/]*/|Master[^/]*_masterzipfinal2\.zip$)' \
+    | while IFS= read -r -d '' f; do
+        [ -e "$f" ] || continue
+        mkdir -p "$M/$(dirname "$f")"
+        cp -p "$f" "$M/$f"
+      done
+  mkdir -p "$M/dist"
+  cp dist/* "$M/dist/"
+  for e in $PAPERS; do
+    n="${e%%:*}"
+    mkdir -p "$M/preprint$n"
+    cp "preprint$n/$n.pdf" "$M/preprint$n/"
+  done
+  rm -f "$MASTER"
+  ( cd "$STAGE/master-$NAME" && zip -qrX "$ROOT/$MASTER" "Master$NAME" )
+done
+
+echo "built: $(ls dist | tr '\n' ' ')"

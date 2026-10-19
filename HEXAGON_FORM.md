@@ -1,8 +1,8 @@
 # Hexagon submission fields
 
-Title: The exact constant of the two-parameter Type II sieve for the Erdős–Straus equation
+Title: A power-saving asymptotic for the two-parameter Type II sieve sum of the Erdős–Straus equation
 
-Abstract: We find the exact asymptotic size of the weighted count of search pairs that controls a recent sieve bound for the Erdős–Straus equation, settling the first open question left by that work. The leading constant is three times the one previously proved, and the exponents of the resulting bounds for the exceptional primes improve accordingly.
+Abstract: We find the full asymptotic expansion, with a power-saving error term, of the weighted count of search pairs that controls a recent sieve bound for the Erdős–Straus equation. Its leading constant, three times the one previously proved, and its linear term agree with those found earlier by Liu; the constant term and the power-saving error are new.
 
 Primary subject: math.NT (Number Theory)
 Cross-list subjects: none
@@ -15,7 +15,7 @@ Contributor 2: Ushashi Bhattacharya; ORCID 0009-0002-2254-3914; affiliation: For
 Text of the contribution: A mix of human-written and AI-generated.
 Human understanding: "All parts" only after both authors have read every proof; otherwise "Some parts, but not all".
 
-Provenance statement: The proof, the text, the figures, the Lean 4 formalisation and the C, C++, Python, Julia and shell programs were carried out by Deep Bhattacharjee with AI assistance (Claude, Anthropic) in the Claude Code environment. The sum W(J) and the question it answers are due to B. Dahan (arXiv:2608.24035), credited in the paper. The algebraic steps are checked in Lean 4 with Mathlib (axioms propext, Classical.choice and Quot.sound only); the analytic estimates are not formalised; every numerical value is recomputed in at least two languages. The paper does not prove the Erdős–Straus conjecture. Both authors approved the final version.
+Provenance statement: The proof, the text, the figures, the Lean 4 formalisation and the C, C++, Python, Julia and shell programs were carried out by Deep Bhattacharjee with AI assistance (Claude, Anthropic) in the Claude Code environment. The sum W(J) and the question it answers are due to B. Dahan (arXiv:2608.24035), and its leading constant and linear term to Z. Liu (doi:10.5281/zenodo.22650516); both are credited in the paper. The algebraic steps are checked in Lean 4 with Mathlib (axioms propext, Classical.choice and Quot.sound only); the analytic estimates are not formalised; every numerical value is recomputed in at least two languages. The paper does not prove the Erdős–Straus conjecture. Both authors approved the final version.
 
 Tools used: Anthropic - Claude (Claude Code); Lean community - Lean 4 (v4.34.1) with Mathlib; C; C++; Python; Julia; shell.
 arXiv identifier: none (not posted on arXiv).

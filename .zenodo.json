@@ -1,6 +1,6 @@
 {
-  "title": "The exact constant of the two-parameter Type II sieve for the Erdős–Straus equation: paper, Lean 4 formalization and verification code",
-  "description": "<p>We prove that the sum W(J) of 1/phi(4ua) over coprime pairs u, a &lt;= J equals (9/(2 pi^2))((log J + gamma + T)^2 + M) + O(J^{-1/2} log J) with explicit constants T and M. This sum governs the sieve of B. Dahan (arXiv:2608.24035) for the primes at which a depth-J search finds no Type II solution of the Erdős–Straus equation 4/n = 1/x + 1/y + 1/z; the leading constant is three times the one proved there, and it answers the first open question of that paper. The Erdős–Straus conjecture itself remains open.</p><p><code>preprintErdosStrausSieveConstant/</code> holds the paper; <code>paper/</code> the LaTeX source with three figures; <code>dist/</code> the PDF, the LaTeX zip and the arXiv tarball; <code>lean/</code> a Lean 4 and Mathlib project checking the algebraic steps (axioms propext, Classical.choice and Quot.sound only); <code>checks/</code> programs in C, C++, Python and Julia; <code>scripts/run_all.sh</code> runs everything.</p>",
+  "title": "Erdős–Straus equation: an explicit exponent for the exceptional set and the Type II sieve sum; papers, Lean 4 formalization, verification code and engine run",
+  "description": "<p>Two papers on the Erdős–Straus equation 4/n = 1/x + 1/y + 1/z, with their sources and checks. Neither proves the Erdős–Straus conjecture, which remains open.</p><p><b>An explicit exponent for the exceptional set of the Erdős–Straus equation.</b> The number of n &lt;= N for which the equation has no solution is at most N exp(-(c0 - eps)(log N)^{2/3}) for every eps &gt; 0 and all large N, with c0 = 9/(2^{8/3} pi^{2/3}) = 0.6607886973. Vaughan (1970) proved such a bound with no value of the constant. For the primes in the exceptional set, which satisfy n = 1 mod 24, the sieve of B. Dahan (arXiv:2608.24035) gives the constant 0.065, and 0.0943 with the constant of its sieve sum. The paper also proves that c0 is the best exponent the large sieve gives with the residue classes used. The construction of these classes was selected with the engine Anaxia of the BLLM project, version 3.0.5 (doi:10.5281/zenodo.23469389).</p><p><b>A power-saving asymptotic for the two-parameter Type II sieve sum of the Erdős–Straus equation.</b> The sum W(J) of 1/phi(4ua) over coprime pairs u, a &lt;= J, which governs Dahan's sieve, equals (9/(2 pi^2))((log J + gamma + T)^2 + M) + O(J^{-1/2} log J) with explicit constants T and M. Its first two terms were found earlier by Z. Liu (doi:10.5281/zenodo.22650516); the constant term and the power-saving error are new.</p><p><code>preprintErdosStrausExceptionalSet/</code> and <code>preprintErdosStrausSieveConstant/</code> hold the papers; <code>exceptional/paper/</code> and <code>paper/</code> their LaTeX sources with figures; <code>dist/</code> the PDFs, LaTeX zips and arXiv tarballs; <code>lean/</code> a Lean 4 and Mathlib project checking the algebraic steps (axioms propext, Classical.choice and Quot.sound only); <code>checks/</code> programs in C, C++, Python and Julia; <code>engine/</code> the record of the engine run and a script that reproduces it; <code>scripts/run_all.sh</code> runs everything.</p>",
   "upload_type": "software",
   "license": "mit",
   "access_right": "open",
@@ -19,11 +19,15 @@
   "keywords": [
     "Erdős–Straus conjecture",
     "Egyptian fractions",
+    "large sieve",
+    "exceptional set",
     "sieve methods",
     "Euler totient function",
     "Lean 4",
     "11D68",
     "11N36",
+    "11N35",
+    "11N13",
     "11N37",
     "11A25"
   ],
@@ -37,9 +41,25 @@
       "identifier": "10.1017/S1446788712000468",
       "relation": "references",
       "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23469389",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1112/S0025579300002886",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.22650516",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
     }
   ],
   "language": "eng",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "notes": "Corresponding author: Deep Bhattacharjee, itsdeep@live.com (primary), d.bhattacharjee@erl-forschung.de. Ushashi Bhattacharya: rai.bhattacharya.in@gmail.com."
 }
