@@ -61,6 +61,16 @@ Every Lean theorem depends at most on the axioms propext, Classical.choice and Q
 
 To rerun everything: `bash scripts/run_all.sh` (Lean through elan; the engine step installs Anaxia from [creelie/eBLLM](https://github.com/creelie/eBLLM) at tag v3.0.5 in a virtual environment).
 
+## Releases
+
+Every release is archived on Zenodo. The concept DOI [10.5281/zenodo.23480292](https://doi.org/10.5281/zenodo.23480292) always resolves to the latest version.
+
+| Version | Content | DOI |
+|---|---|---|
+| 3.0.0 | Theorem A with the centre and Maynard's strips: c₁ = 0.6792, at least 0.66571 in closed form | [10.5281/zenodo.23483694](https://doi.org/10.5281/zenodo.23483694) |
+| 2.0.0 | the exceptional-set paper with c₀ = 0.6607886973 from the three corners | [10.5281/zenodo.23480673](https://doi.org/10.5281/zenodo.23480673) |
+| 1.0.0 | the sieve-sum paper | [10.5281/zenodo.23480293](https://doi.org/10.5281/zenodo.23480293) |
+
 ## License
 
 MIT, see `LICENSE`.
