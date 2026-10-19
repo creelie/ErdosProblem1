@@ -1,0 +1,59 @@
+name: verify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    name: Lean 4 with Mathlib, checked by the kernel
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build the Lean project and check the axioms of the theorems
+        run: CHECKS="" bash scripts/run_all.sh
+
+  checks:
+    name: Independent check (${{ matrix.check }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        check: [python, julia, c, cpp]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        if: matrix.check == 'python'
+        with:
+          python-version: "3.12"
+      - uses: julia-actions/setup-julia@v2
+        if: matrix.check == 'julia'
+        with:
+          version: "1.10"
+      - run: SKIP_LEAN=1 CHECKS=${{ matrix.check }} bash scripts/run_all.sh
+
+  paper:
+    name: Build the paper
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install TeX Live
+        run: |
+          sudo apt-get -o Acquire::Retries=3 update
+          sudo apt-get -o Acquire::Retries=3 install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended lmodern zip unzip
+      - run: bash scripts/build_paper.sh

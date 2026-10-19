@@ -1,0 +1,45 @@
+{
+  "title": "The exact constant of the two-parameter Type II sieve for the Erdős–Straus equation: paper, Lean 4 formalization and verification code",
+  "description": "<p>We prove that the sum W(J) of 1/phi(4ua) over coprime pairs u, a &lt;= J equals (9/(2 pi^2))((log J + gamma + T)^2 + M) + O(J^{-1/2} log J) with explicit constants T and M. This sum governs the sieve of B. Dahan (arXiv:2608.24035) for the primes at which a depth-J search finds no Type II solution of the Erdős–Straus equation 4/n = 1/x + 1/y + 1/z; the leading constant is three times the one proved there, and it answers the first open question of that paper. The Erdős–Straus conjecture itself remains open.</p><p><code>preprintErdosStrausSieveConstant/</code> holds the paper; <code>paper/</code> the LaTeX source with three figures; <code>dist/</code> the PDF, the LaTeX zip and the arXiv tarball; <code>lean/</code> a Lean 4 and Mathlib project checking the algebraic steps (axioms propext, Classical.choice and Quot.sound only); <code>checks/</code> programs in C, C++, Python and Julia; <code>scripts/run_all.sh</code> runs everything.</p>",
+  "upload_type": "software",
+  "license": "mit",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Bhattacharjee, Deep",
+      "orcid": "0000-0003-0466-750X",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India"
+    },
+    {
+      "name": "Bhattacharya, Ushashi",
+      "orcid": "0009-0002-2254-3914",
+      "affiliation": "Formerly, National Taiwan University, Taipei 106319, Taiwan"
+    }
+  ],
+  "keywords": [
+    "Erdős–Straus conjecture",
+    "Egyptian fractions",
+    "sieve methods",
+    "Euler totient function",
+    "Lean 4",
+    "11D68",
+    "11N36",
+    "11N37",
+    "11A25"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "arXiv:2608.24035",
+      "relation": "references",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "10.1017/S1446788712000468",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ],
+  "language": "eng",
+  "version": "1.0.0",
+  "notes": "Corresponding author: Deep Bhattacharjee, itsdeep@live.com (primary), d.bhattacharjee@erl-forschung.de. Ushashi Bhattacharya: rai.bhattacharya.in@gmail.com."
+}

@@ -1,0 +1,8 @@
+lean/.lake/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/output.pdf
+__pycache__/
+paper/main.pdf
