@@ -17,11 +17,11 @@ Let E(N) be the set of n ≤ N for which the equation has no solution. Vaughan p
 
 |E(N)| ≤ N exp(−(c₁ − ε)(log N)^{2/3}),  c₁ = (3/2) ((9/(8π²)) (40/49 − 6𝒥))^{1/3},
 
-where 𝒥 is an explicit double integral (equation (27) of the paper). Moreover 0 ≤ 𝒥 ≤ 533/64680, so that
+where 𝒥 is an explicit double integral (equation (27) of the paper). Moreover 0 ≤ 𝒥 < 0.000335, so that c₁ > 0.67916, and in closed form 𝒥 ≤ 533/64680, so that
 
 c₁ ≥ (286983/(98560 π²))^{1/3} = 0.6657102497…
 
-Numerically 𝒥 = 0.0003 and c₁ = 0.6792; two independent programs agree to four decimals.
+Numerically 𝒥 = 0.0003 and c₁ = 0.6792; two independent programs agree to four decimals. The bound 𝒥 < 0.000335 is proved by `checks/c/certify_J.c`, which bounds the integral cell by cell with every rounding directed upward.
 
 **Theorem B.** With the residue classes from the factorisations (p + 1)/4 = uaα in which one product of two of the three factors is at most √p, the large sieve gives no better exponent than c₀ = 9/(2^{8/3} π^{2/3}) = 0.6607886973…
 
@@ -45,12 +45,12 @@ The first two terms, κ(log J)² and 2κ(γ + T) log J with an error O(1), were 
 
 | Path | Content |
 |---|---|
-| `exceptional/paper/` | LaTeX source of the exceptional-set paper (REVTeX) and its five figures as PNG |
+| `exceptional/paper/` | LaTeX source of the exceptional-set paper (REVTeX) and its six figures as PNG |
 | `paper/` | LaTeX source of the sieve-sum paper (amsart) and its three figures as PNG |
 | `preprintErdosStrausExceptionalSet/`, `preprintErdosStrausSieveConstant/` | the two papers as PDF |
 | `dist/` | for each paper the PDF, the LaTeX source zip and the arXiv tarball |
-| `lean/` | Lean 4 and Mathlib, 48 theorems in `Axioms.lean`: the factorisation of φ(4ua), the local factors, the value 9/π², the Type II identity, the normal forms of the three corners, the identities and inequalities of the six-parameter family, the optimisation of the large sieve, c₀³ = 729/(256π²); the Farey bound and the parametrisation of the coincidences of the centre, the family of coincidences with the primes 531359 and 1442783; the range of Maynard's theorem, the divisor chain, the area of the strips and the share 40/49 |
-| `checks/` | C, C++, Python and Julia programs: W(J) to J = 20000; the corners and the centre over the 332,398 primes p ≡ 3 (mod 4) below 10⁷; the six-parameter family against all coincidences with (p + 1)/4 ≤ 4000; the mean values to X = 2·10⁶; the two bounds of the large sieve to T = 10¹⁵; the level of the distinctness argument to 10⁶; the divisor chain in 128,000,000 cases; the integral 𝒥 by quadrature (Python) and by the midpoint rule (Julia) |
+| `lean/` | Lean 4 and Mathlib, 52 theorems in `Axioms.lean`: the factorisation of φ(4ua), the local factors, the value 9/π², the Type II identity, the normal forms of the three corners, the identities and inequalities of the six-parameter family, the optimisation of the large sieve, c₀³ = 729/(256π²); the Farey bound and the parametrisation of the coincidences of the centre, the family of coincidences with the primes 531359 and 1442783; the range of Maynard's theorem, the divisor chain, the area of the strips and the share 40/49; the closed-form steps of the certified bound for 𝒥 and the inequality c₁ > 0.67916 |
+| `checks/` | C, C++, Python and Julia programs: W(J) to J = 20000; the corners and the centre over the 332,398 primes p ≡ 3 (mod 4) below 10⁷; the six-parameter family against all coincidences with (p + 1)/4 ≤ 4000; the mean values to X = 2·10⁶; the two bounds of the large sieve to T = 10¹⁵; the level of the distinctness argument to 10⁶; the divisor chain in 128,000,000 cases; the integral 𝒥 by quadrature (Python) and by the midpoint rule (Julia); a certified upper bound for 𝒥 in directed rounding (C, `certify_J.c`, with its cell-by-cell output `certify_J.out`) |
 | `engine/` | the two Anaxia runs (`anaxia_regions.json` for the corners, `anaxia_centre.json` for the strips), the scripts that reproduce them and the comparison of a fresh run with each record |
 | `figures/` | the scripts that draw the figures |
 | `scripts/run_all.sh` | builds the Lean project, checks the axioms, runs the programs and the engine reproduction |

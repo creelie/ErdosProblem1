@@ -59,7 +59,7 @@
 
 \begin{abstract}
 \itshape
-The Erd\H{o}s--Straus conjecture says that four divided by any integer greater than one is a sum of three unit fractions. In 1970 Vaughan showed that the integers up to $N$ for which this fails are few: their number is at most $N$ times the exponential of minus a positive constant times the two-thirds power of $\log N$, and his argument gives no value of the constant. We prove this bound with an explicit constant, given by an integral whose value is $0.6792$ and which is at least $0.6657$ in closed form. The residue classes we sieve with include classes to moduli beyond the square root of each prime, which a recent theorem of Maynard lets us count.
+The Erd\H{o}s--Straus conjecture says that four divided by any integer greater than one is a sum of three unit fractions. In 1970 Vaughan showed that the integers up to $N$ for which this fails are few: their number is at most $N$ times the exponential of minus a positive constant times the two-thirds power of $\log N$, and his argument gives no value of the constant. We prove this bound with an explicit constant, given by an integral whose value is $0.6792$ and which a computation with directed rounding proves to exceed $0.67916$. The residue classes we sieve with include classes to moduli beyond the square root of each prime, which a recent theorem of Maynard lets us count.
 \par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 11D68; 11N36; 11N35; 11N13.
 \end{abstract}
 
@@ -92,13 +92,13 @@ where
 \begin{equation}\label{eq:c1}
 c_1=\frac32\Bigl(\frac{9}{8\pi^2}\Bigl(\frac{40}{49}-6\Jc\Bigr)\Bigr)^{1/3}
 \end{equation}
-and $\Jc$ is the integral \eqref{eq:J} of Section~\ref{sec:strips}. Moreover $0\le\Jc\le533/64680$, so that
+and $\Jc$ is the integral \eqref{eq:J} of Section~\ref{sec:strips}. Moreover $0\le\Jc<0.000335$, so that $c_1>0.67916$; in closed form $\Jc\le533/64680$, so that
 \begin{equation}\label{eq:cvar}
 c_1\ge c_{\mathrm{var}}=\Bigl(\frac{286983}{98560\,\pi^2}\Bigr)^{1/3}=0.6657102497\ldots
 \end{equation}
 \end{mainthm}
 
-The number $40/49$ is the share of the triangle of factorisations (Figure~\ref{fig:simplex}) covered by the regions whose residue classes we count, and $6\Jc$ is the part of that share which our count misses. Numerical integration gives $\Jc=0.0003$ and $c_1=0.6792$ (Section~\ref{sec:constant}); two independent programs agree on $c_1$ to four decimals, and a Monte Carlo simulation agrees with the integrand. The lower bound \eqref{eq:cvar} is proved in closed form.
+The number $40/49$ is the share of the triangle of factorisations (Figure~\ref{fig:simplex}) covered by the regions whose residue classes we count, and $6\Jc$ is the part of that share which our count misses. Numerical integration gives $\Jc=0.0003$ and $c_1=0.6792$ (Section~\ref{sec:constant}); two independent programs agree on $c_1$ to four decimals, and a Monte Carlo simulation agrees with the integrand. The bound $c_1>0.67916$ is proved by a computation in which every rounding error is directed upward (Proposition~\ref{prop:cert}), and the weaker bound \eqref{eq:cvar} in closed form.
 
 The second theorem concerns the classes that the Bombieri--Vinogradov theorem can count. For a prime $p\equiv3\pmod4$ with $P=(p+1)/4$, let $\Omega^\sharp_p$ be the set of classes $-u/a\pmod p$ attached to factorisations $P=ua\alpha$ with $\gcd(u,a)=1$ in which one of the three products $ua$, $u\alpha$, $a\alpha$ is at most $\sqrt p$ (Section~\ref{sec:typeII}). Let $L^\sharp(Q)$ be the sum that the large sieve attaches to these classes, as in \eqref{eq:L} below.
 
@@ -119,7 +119,7 @@ The classes $\Omega^\sharp_p$ come from the three corners of the triangle, and w
 
 The rest of the triangle is the centre, where $u$, $a$ and $\alpha$ are all below $\sqrt P$. There the class $u/a$ is a Farey fraction of order $\sqrt P$, so the classes of the centre are distinct. They differ from the classes of the corners, apart from a family described by five integers, which contains one explicit polynomial family of primes and again contributes a convergent series (Propositions~\ref{prop:centre} and~\ref{prop:centreC}). To count the centre we use a theorem of Maynard \cite{May}: the primes $p\equiv-1\pmod q$ have the expected number for almost all moduli $q$ up to $p^{1/2+\vartheta}$ with $\vartheta<1/42$, provided that $q$ has a divisor in a range that depends on $\vartheta$. A divisor chain (Lemma~\ref{lem:chain}) finds such a divisor for most moduli in three strips of the centre along the corners, and we compute the proportion it misses (Lemma~\ref{lem:density}). If nothing were missed, the strips would add $6(\frac1{84}-\frac3{3528})=\frac{13}{196}$ to the share $\frac34$ of the corners; the loss $6\Jc$ is $0.0018$.
 
-The corners, their normal forms, the treatment of the centre and the rule that finds the divisors were selected by the engine Anaxia of the BLLM project \cite{Ana,BLLM}.\footnote{Anaxia, version~3.0.5, builds constructions by typed crossing of proof components and tests them on data. We ran it twice. On the corners it tested 128 constructions on the $39{,}322$ primes $p\equiv3\pmod4$ below $10^6$ and kept the seven built from one, two or three corners with matching normal forms; the best of them gives $c_0$. On the centre it tested 37 constructions and accepted five, the best of which is the construction of this paper. It rejected the forms $4u^2\alpha$ and $(4a^2\alpha)^{-1}$ in the centre, and a rule that omits the bound on the steps of the divisor chain, by finding counterexamples on data. Section~\ref{sec:verification} describes both runs in full. The engine selected the constructions; the proofs are ours.}
+The corners, their normal forms, the treatment of the centre and the rule that finds the divisors were selected by the engine Anaxia of the BLLM project \cite{Ana,BLLM}.\footnote{Anaxia, version~3.0.5, builds constructions by typed crossing of proof components and tests them on data. We ran it twice. On the corners it tested 128 constructions on the $39{,}322$ primes $p\equiv3\pmod4$ below $10^6$ and kept the seven built from one, two or three corners with matching normal forms; the best of them gives $c_0$. On the centre it tested 37 constructions and accepted five, the best of which is the construction of this paper. It rejected the forms $4u^2\alpha$ and $(4a^2\alpha)^{-1}$ in the centre, and a rule that omits the bound on the steps of the divisor chain, by finding counterexamples on data. Section~\ref{sec:verification} describes both runs in full. Version~3.1.0 \cite{Ana31} records the comparison of the divisor rules in its log of failed constructions. The engine selected the constructions; the proofs are ours.}
 
 The rest of the argument is analytic. A Rankin-type upper bound and a tilted lower bound determine the sum of the large sieve to leading order once the density of the classes is known (Proposition~\ref{prop:tilt}); the same upper bound proves Theorem~\ref{thm:B}. Section~\ref{sec:constant} computes the constant, Section~\ref{sec:remarks} compares regions of the triangle (Table~\ref{tab:ladder}) and explains where the method stops, and Appendix~\ref{app:derivations} contains every computation in full.
 
@@ -735,7 +735,7 @@ By Corollary~\ref{cor:combined} and Proposition~\ref{prop:tilt}(ii) with $T=\fra
 \[
 \log L_\delta(\sqrt N)\ge\frac32(4a_\delta)^{1/3}\Bigl(\frac{\log N}2\Bigr)^{2/3}(1-o(1)).
 \]
-Since $(4a_\delta)^{1/3}2^{-2/3}=a_\delta^{1/3}$, this is $\frac32a_\delta^{1/3}(\log N)^{2/3}(1-o(1))$. By Lemma~\ref{lem:limit}, $\frac32a_\delta^{1/3}\to\frac32a_1^{1/3}=c_1$ as $\delta\to0$, since $\kappa/4=9/(8\pi^2)$. Given $\eps>0$, choose $\delta$ with $\frac32a_\delta^{1/3}>c_1-\eps/2$; then \eqref{eq:main} holds for all large $N$. The bound \eqref{eq:cvar} is Proposition~\ref{prop:var}, and $\Jc\ge0$ because $U\ge0$.
+Since $(4a_\delta)^{1/3}2^{-2/3}=a_\delta^{1/3}$, this is $\frac32a_\delta^{1/3}(\log N)^{2/3}(1-o(1))$. By Lemma~\ref{lem:limit}, $\frac32a_\delta^{1/3}\to\frac32a_1^{1/3}=c_1$ as $\delta\to0$, since $\kappa/4=9/(8\pi^2)$. Given $\eps>0$, choose $\delta$ with $\frac32a_\delta^{1/3}>c_1-\eps/2$; then \eqref{eq:main} holds for all large $N$. The bounds $\Jc<0.000335$ and $c_1>0.67916$ are Proposition~\ref{prop:cert}, the bound \eqref{eq:cvar} is Proposition~\ref{prop:var}, and $\Jc\ge0$ because $U\ge0$.
 \end{proof}
 
 Theorem~\ref{thm:B} needs only an upper bound for the density of the classes $\Omega^\sharp_p$, which come from triples with one product at most $\sqrt p$. Let $\omega^\sharp(p)=|\Omega^\sharp_p|$ and $N^\sharp(\lambda)=N[\omega^\sharp](\lambda)$.
@@ -783,7 +783,28 @@ The bound of Proposition~\ref{prop:var} uses only (R1). To include (R2) and (R3)
 \[
 \Jc=0.000306,\qquad c_1=0.67921.
 \]
-A second program, written independently, solves \eqref{eq:varpi} on the same grid and evaluates the integrals by the midpoint rule; it gives $\Jc=0.000300$ and $c_1=0.67922$, and its loss $\ell$ agrees with the first to within $0.75\%$ at five depths. A Monte Carlo simulation, which draws the prime factors of $u$ and $v$ by stick breaking and applies the rule of Definition~\ref{def:rule} directly, agrees with the computed values of $U$ at four points to within $0.002$. The value $c_1=0.6792$ is therefore stable to four decimals, while the proved bound is $c_1\ge c_{\mathrm{var}}=0.66571$.
+A second program, written independently, solves \eqref{eq:varpi} on the same grid and evaluates the integrals by the midpoint rule; it gives $\Jc=0.000300$ and $c_1=0.67922$, and its loss $\ell$ agrees with the first to within $0.75\%$ at five depths. A Monte Carlo simulation, which draws the prime factors of $u$ and $v$ by stick breaking and applies the rule of Definition~\ref{def:rule} directly, agrees with the computed values of $U$ at four points to within $0.002$. The value $c_1=0.6792$ is therefore stable to four decimals. The next proposition turns it into a proved bound that falls short of it only in the fourth decimal.
+
+\begin{proposition}\label{prop:cert}
+$\Jc<0.000335$. Hence $c_1>0.67916$.
+\end{proposition}
+
+\begin{proof}
+Appendix~\ref{app:cert} proves $\Jc<0.000335$. Since $\pi<3.141593$,
+\begin{align*}
+c_1^3&=\frac{27}8\cdot\frac9{8\pi^2}\Bigl(\frac{40}{49}-6\Jc\Bigr)\\
+&>\frac{27}8\cdot\frac9{8\cdot3.141593^2}\Bigl(\frac{40}{49}-6\cdot0.000335\Bigr)>0.67916^3.\qedhere
+\end{align*}
+\end{proof}
+
+The computed bound $0.0003342$ lies $9\%$ above the value $0.000306$ of the quadrature. The excess has three sources: Lemma~\ref{lem:relax} widens the range of $r$; on each cell the bound takes the least favourable values of $\xi$, $\theta$ and $S$ on the cell; and the grids replace $\rho$ and $\varpi_{\mathcal A}$ by step functions that lie above them. Table~\ref{tab:cert} and Figure~\ref{fig:cert} show that the excess is spread over the depths: on each of the three ranges that carry the integral the bound exceeds the quadrature by $7$ to $11\%$. A finer grid lowers the bound slowly: with the step $\xi_-/32$ for $\varpi_{\mathcal A}$ the program gives $0.000345$, and with the step $\xi_-/16$, $\tau_k=64kg$ and about half as many cells it gives $0.000381$.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_cert.png}
+\caption{The certified bound for $\Jc$. (a) On a logarithmic scale, for $0.005\le\vartheta<\frac1{42}$: the loss $\ell(\vartheta)$ computed by quadrature, the bound on each cell of the computation of Appendix~\ref{app:cert}, and the bound $\frac12+\vartheta-2\theta(\vartheta)$ of Proposition~\ref{prop:var}, which the loss meets at $\vartheta=\frac1{42}$, where Maynard's window closes. (b) The integral of the cell bounds and of the quadrature value over the four ranges of Table~\ref{tab:cert}, in units of $10^{-4}$.}
+\label{fig:cert}
+\end{figure*}
 
 The rules (R1) alone, (R1) with (R2), and (R1) with (R2) and the condition that the part of $uv$ made of primes up to $A$ lies in $(A,B)$, give the losses shown in Figure~\ref{fig:strips}(b) and the constants $0.66571$, $0.67760$ and $0.67831$. Almost all the remaining loss of the full rule comes from depths $\vartheta$ near $\frac1{42}$, where the window of Maynard's theorem closes.
 
@@ -841,9 +862,9 @@ In the form given in \cite[Section~4]{PW}, Vaughan's argument uses at each prime
 
 \section{Formal and numerical verification}\label{sec:verification}
 
-The algebraic steps are checked in Lean~4 \cite{Lean} with Mathlib \cite{Mathlib}, in 48 theorems. For the corners: the normal forms \eqref{eq:forms}; the identities \eqref{eq:hj} and \eqref{eq:dj}; the identities \eqref{eq:BC-s}, \eqref{eq:BC-P}, \eqref{eq:BC-M} and \eqref{eq:BC-quad} as consequences of their hypotheses; the three inequalities \eqref{eq:BC-bounds}; the relation $\varphi(qn)=q\,\varphi(n)$ for $q\mid n$; the local factors of $S_B$; the optimisation in Proposition~\ref{prop:tilt}; and the value $c_0^3=729/(256\pi^2)$. For the centre: the Farey bound and the bound $4u^2\alpha<p+1$ of Proposition~\ref{prop:centre}; the identities \eqref{eq:C1}--\eqref{eq:C3}, the inequality $4ks\le a$ and the case $j=0$ of Proposition~\ref{prop:centreC}; and the family of Remark~\ref{rem:family}, with the primality of $531359$ and $1442783$. For the strips: the range of Theorem~\ref{thm:maynard} and the values $\frac1{44}$ and $\frac1{54}$; the divisor chain of Lemma~\ref{lem:chain}; the area $\frac{13}{1176}$ and the share $\frac{40}{49}$. All these theorems depend at most on the axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The analytic estimates of Sections~\ref{sec:counting}, \ref{sec:strips} and~\ref{sec:sieve} are not formalised.
+The algebraic steps are checked in Lean~4 \cite{Lean} with Mathlib \cite{Mathlib}, in 52 theorems. For the corners: the normal forms \eqref{eq:forms}; the identities \eqref{eq:hj} and \eqref{eq:dj}; the identities \eqref{eq:BC-s}, \eqref{eq:BC-P}, \eqref{eq:BC-M} and \eqref{eq:BC-quad} as consequences of their hypotheses; the three inequalities \eqref{eq:BC-bounds}; the relation $\varphi(qn)=q\,\varphi(n)$ for $q\mid n$; the local factors of $S_B$; the optimisation in Proposition~\ref{prop:tilt}; and the value $c_0^3=729/(256\pi^2)$. For the centre: the Farey bound and the bound $4u^2\alpha<p+1$ of Proposition~\ref{prop:centre}; the identities \eqref{eq:C1}--\eqref{eq:C3}, the inequality $4ks\le a$ and the case $j=0$ of Proposition~\ref{prop:centreC}; and the family of Remark~\ref{rem:family}, with the primality of $531359$ and $1442783$. For the strips: the range of Theorem~\ref{thm:maynard} and the values $\frac1{44}$ and $\frac1{54}$; the divisor chain of Lemma~\ref{lem:chain}; the area $\frac{13}{1176}$ and the share $\frac{40}{49}$. For Proposition~\ref{prop:cert}: the monotonicity of the bound of Proposition~\ref{prop:var}, the lower bound for $\xi$ on a cell, the geometric sum behind \eqref{eq:celltail}, and the final inequality of the proof, with $\pi<3.141593$ from Mathlib. All these theorems depend at most on the axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The analytic estimates of Sections~\ref{sec:counting}, \ref{sec:strips} and~\ref{sec:sieve} are not formalised.
 
-Independent programs in C, C\texttt{++}, Python and Julia check the remaining steps numerically. Over the $332{,}398$ primes $p\equiv3\pmod4$ below $10^7$, with $37{,}093{,}810$ Type~II triples, the corners at level $\sqrt p/16$ are disjoint, the three normal forms agree, the classes in each corner are distinct, and there is no coincidence at all between different corners. The same primes have $6{,}943{,}856$ triples in the centre, of which $1{,}760{,}868$ have their largest coordinate at least $P^{1/2-1/42}$. The classes of the centre are distinct; they agree with no class of $A$ at level $\sqrt p/4$, with no class of $B$ for $u<a$ and no class of $C$ for $u>a$; and the remaining coincidences are the four pairs of Remark~\ref{rem:family}. The divisor chain of Lemma~\ref{lem:chain} holds in all $128{,}000{,}000$ cases of the integers up to $2\cdot10^6$ with 64 windows. The sums $\sum_p|A_p|/p$ and $\sum_p|B_p|/p$ agree with the predictions $\sum_pS_A/p$ and $\sum_pS_B/p$ to within $0.25\%$. The parametrisation of Proposition~\ref{prop:BC} is checked by brute force against all coincidences with $P\le4000$, without the restriction to the corners. The mean values of Lemma~\ref{lem:mean} are computed to $X=2\cdot10^6$, where $(S-\frac\kappa2\log^2X)/\log X$ settles near $-0.47$ for $S_A$ and $0.55$ for $S_B$. The two bounds of Proposition~\ref{prop:tilt} are evaluated for the density $a_0$ up to $T=10^{15}$, where their ratio to the exact optimum is $1.0000$. The integral $\Jc$ is computed as in Section~\ref{sec:constant}.
+Independent programs in C, C\texttt{++}, Python and Julia check the remaining steps numerically. Over the $332{,}398$ primes $p\equiv3\pmod4$ below $10^7$, with $37{,}093{,}810$ Type~II triples, the corners at level $\sqrt p/16$ are disjoint, the three normal forms agree, the classes in each corner are distinct, and there is no coincidence at all between different corners. The same primes have $6{,}943{,}856$ triples in the centre, of which $1{,}760{,}868$ have their largest coordinate at least $P^{1/2-1/42}$. The classes of the centre are distinct; they agree with no class of $A$ at level $\sqrt p/4$, with no class of $B$ for $u<a$ and no class of $C$ for $u>a$; and the remaining coincidences are the four pairs of Remark~\ref{rem:family}. The divisor chain of Lemma~\ref{lem:chain} holds in all $128{,}000{,}000$ cases of the integers up to $2\cdot10^6$ with 64 windows. The sums $\sum_p|A_p|/p$ and $\sum_p|B_p|/p$ agree with the predictions $\sum_pS_A/p$ and $\sum_pS_B/p$ to within $0.25\%$. The parametrisation of Proposition~\ref{prop:BC} is checked by brute force against all coincidences with $P\le4000$, without the restriction to the corners. The mean values of Lemma~\ref{lem:mean} are computed to $X=2\cdot10^6$, where $(S-\frac\kappa2\log^2X)/\log X$ settles near $-0.47$ for $S_A$ and $0.55$ for $S_B$. The two bounds of Proposition~\ref{prop:tilt} are evaluated for the density $a_0$ up to $T=10^{15}$, where their ratio to the exact optimum is $1.0000$. The integral $\Jc$ is computed as in Section~\ref{sec:constant}, and the bound of Proposition~\ref{prop:cert} by the C program of Appendix~\ref{app:cert}, which runs in about 25 minutes on one processor core.
 
 \emph{The engine runs.} In the first run the library of Anaxia held 22 typed construction nodes: the large sieve with the tilted lower bound; each corner paired with each of the three normal forms, or left out; the centre, left out or counted under the Elliott--Halberstam conjecture; and the inputs that each of these needs. Typed crossing produced 128 closed constructions, which the engine tested on the $39{,}322$ primes $p\equiv3\pmod4$ below $10^6$. It kept 7, those with one, two or three corners and the matching normal forms; it rejected 112 because a normal form failed to separate the classes, 8 that contain the centre because a class of the centre equals a class of a corner at $p=531359$ (Remark~\ref{rem:family}), and the empty construction. The best of the seven gives $c_0$. In the second run the library held 19 nodes for the centre: the three normal forms; five rules for finding a divisor of the modulus in Maynard's range, from (R1) alone to the rule of Definition~\ref{def:rule}, and a rule that omits the bound on the steps of the chain; the family of coincidences of Proposition~\ref{prop:centreC}, allowed or not; and the Elliott--Halberstam conjecture. Of its 37 closed constructions it accepted 5, with the constants $0.660789$ (centre left out), $0.665710$, $0.677596$, $0.678311$ and $0.679210$, marked one as conditional (the whole centre under the Elliott--Halberstam conjecture, $0.727292$), and rejected 31: 24 because the forms $4u^2\alpha$ and $(4a^2\alpha)^{-1}$ do not separate the classes of the centre (they fail on all $12{,}399$ primes tested), 6 because they do not allow the two coincidences of the family below $10^6$, and the rule without the bound on the steps, which claims a divisor that does not exist $1{,}449{,}392$ times among the integers up to $2\cdot10^5$ and 64 windows, first at $n=4$. The best construction is the one of this paper. The records of both runs and the scripts that reproduce them are in the archive \cite{Zen}.
 
@@ -1015,7 +1036,24 @@ Since the weight $1/(uv)$ is a product, the same holds for pairs: $(\log x)^{-2}
 
 \emph{The failure set.} Let $\xi=\min(\theta^+-\theta^-,\theta^-)$, so that $G=x^\xi$ for the window $(x^{\theta^-},x^{\theta^+})$. The pair $(u,v)$ fails the rule exactly when its profiles $(t_1,Z_1)$, $(t_2,Z_2)$ satisfy: $s_1,s_2\notin(\theta^-,\theta^+)$; no element of $Z_1\cup Z_2$ lies in $(\theta^-,\theta^+)$; and the largest element of $(Z_1\cup Z_2)\cap[\xi,\theta^-]$, or $0$ if there is none, plus $t_1+t_2$ is at most $\theta^-$. When $s_1,s_2>\theta^-$, the last two conditions say that $t_1+t_2\le\theta^-$ and that every element of $Z_1\cup Z_2$ lies in $\mathcal A_w$ with $w=\max(\theta^--t_1-t_2,\xi)$, up to the $\lambda_1$-null event that an element equals $\xi$. The boundary of the failure set lies in the union of the sets where $s_i$, an element of $Z_1\cup Z_2$, or the sum in the last condition takes one of the values $\xi$, $\theta^-$, $\theta^+$, which are $\lambda_1\otimes\lambda_1$-null on $\{s_1,s_2>\theta^-\}$. For fixed $t_i$, the density of $\sum Z_i$ over the multisets in $\mathcal A_w$ is $\varpi_w$: writing $f$ for this density, $r f(r)$ is the $\nu$-integral of $\sum_iz_i$ over the multisets with sum $r$, and by the symmetry of $\nu$ this equals $\one_{\mathcal A_w}(r)+\int_{\mathcal A_w\cap(0,r)}f(r-z)\,dz$, which is \eqref{eq:varpi}. The empty multiset would give $s_i=t_i\le\theta^-$, which is excluded. Hence the $\lambda_1\otimes\lambda_1$-measure of the failing profiles with $(s_1,s_2)\in R$ is $\iint_RU$.
 
-\emph{The bound $0\le U\le1$.} Let $\varpi$ be the solution of \eqref{eq:varpi} with $\mathcal A_w$ replaced by $(\xi,\infty)$, the density of $\sum Z$ over all multisets. Then $0\le\varpi_w\le\varpi$, and dropping the condition $t_1+t_2\le\theta^-$ in \eqref{eq:U},
+\begin{lemma}\label{lem:mono}
+Let $c>0$, and let $\mathcal A\subset\mathcal B\subset(c,\infty)$ be finite unions of intervals. For $\mathcal S\in\{\mathcal A,\mathcal B\}$ let $\varpi_{\mathcal S}$ be the function that vanishes on $(-\infty,c]$ and satisfies \eqref{eq:varpi} with $\mathcal S$ in place of $\mathcal A_w$. Then, for $r>c$,
+\[
+0\le\varpi_{\mathcal A}(r)\le\varpi_{\mathcal B}(r)\le\frac1c\,\omega\Bigl(\frac rc\Bigr)\le\frac1c,
+\]
+where $\omega$ is Buchstab's function: $\omega(u)=1/u$ for $1\le u\le2$ and $(u\,\omega(u))'=\omega(u-1)$ for $u>2$.
+\end{lemma}
+
+\begin{proof}
+Put $g_{\mathcal S}(z)=\one_{\mathcal S}(z)/z$, let $g^{*k}_{\mathcal S}$ be its $k$-fold convolution, with $g^{*0}_{\mathcal S}$ the unit mass at $0$, and put $f_{\mathcal S}=\sum_{k\ge1}g_{\mathcal S}^{*k}/k!$. Since $g_{\mathcal S}$ vanishes on $(-\infty,c]$, $g_{\mathcal S}^{*k}$ vanishes on $(-\infty,kc]$, and the sum is finite at every point. On the set $z_1+\dots+z_k=r$ we have $r=z_1+\dots+z_k$, and the $k$ terms contribute equally, so
+\begin{align*}
+r\,g_{\mathcal S}^{*k}(r)&=k\int z\,g_{\mathcal S}(z)\,g_{\mathcal S}^{*(k-1)}(r-z)\,dz\\
+&=k\int_{\mathcal S}g_{\mathcal S}^{*(k-1)}(r-z)\,dz.
+\end{align*}
+Dividing by $k!$ and summing over $k\ge1$ gives $rf_{\mathcal S}(r)=\one_{\mathcal S}(r)+\int_{\mathcal S\cap(0,r)}f_{\mathcal S}(r-z)\,dz$. This equation determines its solution on $(c,2c]$, then on $(2c,3c]$, and so on, so $\varpi_{\mathcal S}=f_{\mathcal S}$. Every term of the series is nonnegative and does not decrease when $\mathcal S$ grows, which gives the first two inequalities. For $\mathcal S=(c,\infty)$ put $F(u)=c\,f_{\mathcal S}(cu)$; the equation becomes $uF(u)=1+\int_1^{u-1}F(v)\,dv$ for $u>1$, which is the integral form of Buchstab's equation, so $F=\omega$. Finally $\omega\le1$: this holds on $[1,2]$, and if it holds on $[1,u-1]$ then $u\,\omega(u)=1+\int_1^{u-1}\omega\le u-1$.
+\end{proof}
+
+\emph{The bound $0\le U\le1$.} Let $\varpi$ be the solution of \eqref{eq:varpi} with $\mathcal A_w$ replaced by $(\xi,\infty)$, the density of $\sum Z$ over all multisets. Then $0\le\varpi_w\le\varpi$ by Lemma~\ref{lem:mono}, and dropping the condition $t_1+t_2\le\theta^-$ in \eqref{eq:U},
 \[
 U(s_1,s_2)\le\prod_{i=1}^2\int_0^{s_i}\rho\Bigl(\frac{t}{\xi}\Bigr)\varpi(s_i-t)\,dt\le1,
 \]
@@ -1028,6 +1066,90 @@ because each factor is the $\lambda_1$-density at $s_i$ of the profiles with a n
 where $(u',v')$ runs over the pairs for which $(du',ev')$ passes and has its sizes in $R$. For fixed $d,e$ and $x^\xi$ larger than every prime factor of $de$, the profiles of $du'$ and $ev'$ are those of $u'$ and $v'$ with $t$ increased by $\log d/\log x$ and $\log e/\log x$, which tend to $0$; since the limit set has null boundary, the inner sum is $(\log x)^2\iint_R(1-U)+o((\log x)^2)$. It is also at most $\sum_{u',v'\le x^K}1/(u'v')\ll(\log x)^2$, so dominated convergence over $(d,e)$ with $\sum|h(d,e)|/(de)<\infty$ gives the lemma.
 
 \emph{Proof of the limit in Lemma~\ref{lem:limit}.} Fix $\eta_0>0$. For $\vartheta\in[\eta_0,\frac1{42}-\eta_0]$ the number $\xi(\vartheta)=\min(\theta(\vartheta)-2\vartheta,2\vartheta)$ is at least $\xi_0=\min(\frac2{105},2\eta_0)$, and the same holds for the windows $(\theta_i^-,\theta_i^+)$ with $\vartheta_i\in[\eta_0,\frac1{42}-\eta_0]$ once $\delta$ is small. The $\xi$-profile of a number is a function of its $\xi_0$-profile, so all these failure sets live in the space of $\xi_0$-profiles with the measure $\lambda_1\otimes\lambda_1$ at level $\xi_0$, and $\sum_i\iint_{R_i}U_i$, restricted to these depths, is the measure of the set of profile pairs with $\vartheta=s_1+s_2-\frac12$ in the range and $(s_1,s_2)$ in $\bigcup_iR_i$ that fail the rule for the window of their piece. As $\delta\to0$ these windows converge to $(2\vartheta,\theta(\vartheta))$, and outside a null set of profiles the indicator of failure converges to that for the limiting window. The sets lie in a fixed bounded region of finite measure, so by dominated convergence the measure tends to $\int_{\eta_0}^{1/42-\eta_0}\ell(\vartheta)\,d\vartheta$. The depths outside $[\eta_0,\frac1{42}-\eta_0]$ contribute $O(\eta_0)$ to both sides, because $0\le U\le1$, and $\eta_0$ is arbitrary.
+
+\subsection{A certified bound for \texorpdfstring{$\Jc$}{J}}\label{app:cert}
+
+This appendix proves Proposition~\ref{prop:cert}. For $0<\vartheta<\frac1{42}$ write $\alpha=2\vartheta$, $\theta=\theta(\vartheta)$, $\xi=\min(\theta-\alpha,\alpha)$ and $S=\frac12+\vartheta$, and for $t\ge0$ let $\varpi_t$ be the function $\varpi_w$ of \eqref{eq:varpi} for the window $(\alpha,\theta)$ with $w=\max(\alpha-t,\xi)$.
+
+\begin{lemma}\label{lem:relax}
+For $0<\vartheta<\frac1{42}$,
+\[
+\ell(\vartheta)\le\int_0^\alpha P(t)\,Q(t)\,dt,
+\]
+where
+\begin{align*}
+P(t)&=\int_0^t\rho\Bigl(\frac{t_1}\xi\Bigr)\rho\Bigl(\frac{t-t_1}\xi\Bigr)dt_1,\\
+Q(t)&=\int_{\theta-t}^{S-\theta}\varpi_t(r)\,\varpi_t(S-t-r)\,dr.
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+Since $\theta<\frac14$, the two intervals $(\alpha,\theta)$ and $(S-\theta,S-\alpha)$ are disjoint, and $U_\vartheta(s,S-s)=0$ when $s$ lies in either of them. For the other $s$ in $(\alpha,S-\alpha)$, that is for $\theta\le s\le S-\theta$, $U_\vartheta(s,S-s)$ is the integral \eqref{eq:U}, whose integrand is nonnegative. For fixed $(t_1,t_2)\in\Delta$ put $t=t_1+t_2$, so that $w=\max(\alpha-t,\xi)$, and substitute $r=s-t_1$. Then $S-s-t_2=S-t-r$, and $r$ runs over $[\theta-t_1,S-\theta-t_1]\subset[\theta-t,S-\theta]$. Hence the integral over $s$ is at most $Q(t)$, and integrating over $\Delta$ along the segments $t_1+t_2=t$ gives the lemma.\footnote{The only loss in Lemma~\ref{lem:relax} is the widening of the range of $r$ from $[\theta-t_1,S-\theta-t_1]$ to $[\theta-t,S-\theta]$. The condition that $s$ avoids the window is kept, and it matters: dropping it, that is integrating $r$ over $[\alpha-t,S-\alpha]$, raises the computed bound by about 6\%.}
+\end{proof}
+
+\emph{Bounds on a cell.} Fix $0<a<b<\frac1{42}$. The function $\theta$ is decreasing and concave, $\theta-2\vartheta$ is decreasing, and $\xi$ is concave as a minimum of linear functions. Hence, for every $\vartheta\in[a,b]$,
+\begin{gather*}
+\xi_-\le\xi\le\xi_+,\qquad\theta\ge\theta(b),\qquad2a\le\alpha\le2b,\\
+\tfrac12+a\le S\le\tfrac12+b,
+\end{gather*}
+with $\xi_-=\min(\xi(a),\xi(b))$ and $\xi_+=\min(2b,\theta(a)-2a)$. Let $0=\tau_0<\tau_1<\dots<\tau_K$. For $\tau_k\le t\le\tau_{k+1}$ the set $\mathcal A_w$ of \eqref{eq:varpi}, with $w=\max(\alpha-t,\xi)$, lies in
+\[
+\mathcal A_k=\bigl(\xi_-,\max(2b-\tau_k,\xi_+)\bigr]\cup[\theta(b),\infty),
+\]
+so $\varpi_t\le\varpi_{\mathcal A_k}$ by Lemma~\ref{lem:mono}. Since $\rho$ is nonincreasing, $\rho(t_1/\xi)\le\rho(t_1/\xi_+)$. Let $P_+$ be the function $P$ of Lemma~\ref{lem:relax} with $\xi_+$ in place of $\xi$. If $\tau_K\ge2b$, then $\tau_K\ge\alpha$, and Lemma~\ref{lem:relax} gives, for every $\vartheta\in[a,b]$,
+\begin{equation}\label{eq:cellbound}
+\ell(\vartheta)\le\sum_{k<K}Q_k\int_{\tau_k}^{\tau_{k+1}}P_+(t)\,dt,
+\end{equation}
+where
+\[
+Q_k=\int_{\theta(b)-\tau_{k+1}}^{1/2+b-\theta(b)}\varpi_{\mathcal A_k}(r)\,\sup_{y\in Y_k(r)}\varpi_{\mathcal A_k}(y)\,dr
+\]
+and $Y_k(r)=[\frac12+a-\tau_{k+1}-r,\frac12+b-\tau_k-r]$. If instead $24\xi_+<2b$ and $\tau_K\ge24\xi_+$, the right side of \eqref{eq:cellbound} gets the extra term
+\begin{equation}\label{eq:celltail}
+E=\frac{13}6\,e^\gamma\rho(12)\,\xi_+^2\cdot\frac{\frac12+b}{\xi_-^2}
+\end{equation}
+for the part $t>24\xi_+$. Indeed, $\varpi_t\le1/\xi_-$ by Lemma~\ref{lem:mono}, so $Q(t)\le(\frac12+b)/\xi_-^2$; and
+\begin{align*}
+\int_{24\xi_+}^\infty P_+(t)\,dt&\le2\int_{12\xi_+}^\infty\rho\Bigl(\frac{t_1}{\xi_+}\Bigr)dt_1\int_0^\infty\rho\Bigl(\frac{t_2}{\xi_+}\Bigr)dt_2\\
+&=2\xi_+^2e^\gamma\int_{12}^\infty\rho,
+\end{align*}
+because $t_1+t_2>24\xi_+$ forces $t_1>12\xi_+$ or $t_2>12\xi_+$, and $\int_0^\infty\rho=e^\gamma$ \cite[Chapter~III.5]{Ten}. From $v\rho(v)=\int_{v-1}^v\rho\le\rho(v-1)$ we get $\rho(v)\le\rho(v-1)/13$ for $v\ge13$, so $\int_{12}^\infty\rho\le\rho(12)\sum_{k\ge0}13^{-k}=\frac{13}{12}\rho(12)$. Integrating \eqref{eq:cellbound} over the cell gives $\int_a^b\ell\le(b-a)\,\bar\ell$, where $\bar\ell$ is its right side. Proposition~\ref{prop:var} also gives $\ell(\vartheta)\le\frac12+b-2\theta(b)$ on the cell, and we use the smaller of the two bounds.
+
+\emph{Dickman's function on a grid.} Let $h=2^{-10}$, and define $r_i=1$ for $0\le i\le2^{10}$ and
+\[
+r_i=\frac1i\sum_{j=i-2^{10}}^{i-1}r_j\qquad(i>2^{10}).
+\]
+Since $u\rho(u)=\int_{u-1}^u\rho$ and $\rho$ is nonincreasing, $ih\,\rho(ih)\le h\sum_{j=i-2^{10}}^{i-1}\rho(jh)$, and induction on $i$ gives $\rho(ih)\le r_i$. Let $g\ge\xi_+h$. The band $mg\le t_1+t_2\le(m+1)g$ of the quadrant is covered by the lower halves of the squares $[ig,(i+1)g]\times[jg,(j+1)g]$ with $i+j=m$ and the upper halves of those with $i+j=m-1$, each of area $g^2/2$, and on such a square $\rho(t_1/\xi_+)\rho(t_2/\xi_+)\le r_ir_j$. Hence
+\[
+\int_{mg}^{(m+1)g}P_+(t)\,dt\le\frac{g^2}2\,(c_m+c_{m-1}),\qquad c_m=\sum_{i+j=m}r_ir_j,
+\]
+with $c_{-1}=0$. We take $g$ to be $\xi_+h$ rounded up and $\tau_k=32kg$, and stop at the first $K$ with $\tau_K\ge\min(2b,24\xi_+)$.
+
+\emph{The functions $\varpi_{\mathcal A_k}$ on a grid.} Let $\mathcal A=(x_0,w]\cup[t_0,\infty)$ with $0<x_0\le w<t_0$, and let $\eta$ be a power of $2$ with $\eta\le x_0/16$. Put $p_j=0$ if $(j+1)\eta\le x_0$, and otherwise
+\[
+p_j=\frac{e_j+\eta\sum_{m\in M_j}p_m}{\max(j\eta,x_0)},
+\]
+where $e_j=0$ if $w<j\eta$ and $(j+1)\eta<t_0$, and $e_j=1$ otherwise, and $M_j$ is the list, with repetitions, of the indices $m$ whose interval $[m\eta,(m+1)\eta]$ meets $[j\eta-w,(j+1)\eta-x_0]$, followed by those whose interval meets $(0,(j+1)\eta-t_0]$. Every $m\in M_j$ satisfies $m<j$, because $\eta<x_0$, so the $p_j$ are defined in turn. For $r$ in $[j\eta,(j+1)\eta]$ with $r>x_0$, the right side of \eqref{eq:varpi} is at most $e_j$ plus the integral of $\varpi_{\mathcal A}$ over $[j\eta-w,(j+1)\eta-x_0]$ and over $(0,(j+1)\eta-t_0]$, since $r-z$ lies in the first interval for $z\in(x_0,w]$ and in the second for $z\in[t_0,r)$. Induction on $j$ therefore gives $\varpi_{\mathcal A}\le p_j$ on $[j\eta,(j+1)\eta]$. We take for $\eta$ the largest power of $2$ not above $\xi_-/64$, and bound $Q_k$ by the sum, over the intervals $[m\eta,(m+1)\eta]$ that meet the range of $r$, of $\eta p_m$ times the largest $p_q$ over the intervals $[q\eta,(q+1)\eta]$ that meet $Y_k(r)$ for some $r$ in $[m\eta,(m+1)\eta]$.
+
+\emph{The computation.} On $[0,2^{-18}]$ and on $[\frac1{42}-10^{-6},\frac1{42}]$ we use the bound $\ell(\vartheta)\le\frac12+\vartheta-2\theta(\vartheta)$ of Proposition~\ref{prop:var}, which is nondecreasing in $\vartheta$, at the right end. The rest of $[0,\frac1{42}]$ is cut into cells: from $2^{-18}$ to $0.005$ the cells grow by the factor 1.05; $[0.005,\frac1{54}]$ and $[\frac1{54},\frac1{44}]$ are cut into 120 equal cells each; and from $\frac1{44}$ to $\frac1{42}-10^{-6}$ the distance to $\frac1{42}$ shrinks by the factor 1.03 from cell to cell. On each cell the bound $(b-a)\bar\ell$ is evaluated as above. The program sets the rounding mode of the processor to rounding upward, so that every sum, product and quotient it computes is at least the exact value; it obtains lower bounds, such as $\xi_-$ and $\theta(b)$, as the negatives of upper bounds of the negatives. Every grid point is an exact multiple of a power of $2$, consecutive cells share their end points exactly, and the bounds of the cells are added in the same rounding mode. Table~\ref{tab:cert} shows the result.
+
+\begin{table}[h]
+\caption{The certified bound for $\Jc=\int_0^{1/42}\ell$ by ranges of the depth $\vartheta$, in units of $10^{-6}$ and rounded up, and the value of the same integral by the quadrature of Section~\ref{sec:constant}. The first and last ranges include $[0,2^{-18}]$ and $[\frac1{42}-10^{-6},\frac1{42}]$, where the bound of Proposition~\ref{prop:var} replaces the cells.}
+\label{tab:cert}
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Range of $\vartheta$ & Cells & Bound & Quadrature\\
+\midrule
+$[0,0.005]$ & $148$ & $2.37$ & $1.03$\\
+$[0.005,\frac1{54}]$ & $120$ & $81.22$ & $75.76$\\
+$[\frac1{54},\frac1{44}]$ & $120$ & $94.19$ & $87.50$\\
+$[\frac1{44},\frac1{42}]$ & $237$ & $156.36$ & $141.44$\\
+\midrule
+Total & $625$ & $334.13$ & $305.73$\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Partial summation in a block}\label{app:block}
 
@@ -1081,7 +1203,7 @@ The sum over $n$ is $O(\log^2(2^{j/2})-\log^2(2^{j(1/2-\delta)}))+O(j)=O(\delta 
 
 \section*{Data availability}
 \begingroup\raggedright
-The \LaTeX{} source of this paper, the Lean~4 formalisation and the C, C\texttt{++}, Python, Julia and shell programs described in Section~\ref{sec:verification}, the records of the two engine runs and the scripts that reproduce them are available at \url{\repoURL} and in the archive \cite{Zen}. The corners, the treatment of the centre and the rule of Definition~\ref{def:rule} were selected with the engine Anaxia of the BLLM project \cite{Ana,BLLM}, version 3.0.5, in the two runs described in Section~\ref{sec:verification}. Deep Bhattacharjee carried out the computations and the Lean, C, C\texttt{++}, Python, Julia and shell verifications, and the proofs and the text were drafted, with AI assistance (Claude, Anthropic); both authors approved the final version.\par
+The \LaTeX{} source of this paper, the Lean~4 formalisation and the C, C\texttt{++}, Python, Julia and shell programs described in Section~\ref{sec:verification}, the records of the two engine runs and the scripts that reproduce them are available at \url{\repoURL} and in the archive \cite{Zen}. The corners, the treatment of the centre and the rule of Definition~\ref{def:rule} were selected with the engine Anaxia of the BLLM project \cite{Ana,BLLM}, version 3.0.5, in the two runs described in Section~\ref{sec:verification}; version 3.1.0 \cite{Ana31} records their outcome. Deep Bhattacharjee carried out the computations and the Lean, C, C\texttt{++}, Python, Julia and shell verifications, and the proofs and the text were drafted, with AI assistance (Claude, Anthropic); both authors approved the final version.\par
 \endgroup
 
 \section*{Funding}
@@ -1098,6 +1220,9 @@ None.
 
 \bibitem{Ana}
 D.~Bhattacharjee, \emph{BLLM: Beyond the LLM with Deep Human-Mind-AI}, software archive with the engine Anaxia, version 3.0.5, Zenodo, 2026, doi:\href{https://doi.org/10.5281/zenodo.23469389}{10.5281/zenodo.23469389}; all versions: doi:\href{https://doi.org/10.5281/zenodo.23286641}{10.5281/zenodo.23286641}.
+
+\bibitem{Ana31}
+D.~Bhattacharjee, \emph{BLLM: Beyond the LLM with Deep Human-Mind-AI}, software archive with the engine Anaxia, version 3.1.0, Zenodo, 2026, doi:\href{https://doi.org/10.5281/zenodo.23484160}{10.5281/zenodo.23484160}.
 
 \bibitem{BLLM}
 D.~Bhattacharjee and U.~Bhattacharya, \emph{BLLM: Beyond the LLM with Deep Human-Mind-AI}, 2026, paper in the archive \cite{Ana}.

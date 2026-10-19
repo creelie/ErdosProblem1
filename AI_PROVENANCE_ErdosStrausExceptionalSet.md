@@ -16,8 +16,9 @@ the sieve of Dahan (arXiv:2608.24035) gives c = 0.065, and c = 0.0943 with the
 constant 9/(2π²) of its sieve sum (Liu, doi:10.5281/zenodo.22650516). The paper
 proves the bound for the whole set E(N) with every exponent below
 c₁ = (3/2)((9/(8π²))(40/49 − 6𝒥))^{1/3}, where 𝒥 is an explicit double integral
-with 0 ≤ 𝒥 ≤ 533/64680, so that c₁ ≥ (286983/(98560π²))^{1/3} = 0.6657102497…;
-numerically c₁ = 0.6792 (Theorem A). It also proves that the residue classes of
+with 0 ≤ 𝒥 < 0.000335, so that c₁ > 0.67916, and 𝒥 ≤ 533/64680 in closed form,
+so that c₁ ≥ (286983/(98560π²))^{1/3} = 0.6657102497…; numerically c₁ = 0.6792
+(Theorem A). It also proves that the residue classes of
 the three corners of the triangle of factorisations give no better exponent
 than c₀ = 9/(2^{8/3} π^{2/3}) = 0.6607886973… (Theorem B); the gain from c₀ to
 c₁ comes from classes of the centre of the triangle, counted with Maynard's
@@ -45,7 +46,7 @@ text. No other AI system took part.
 
 ## How the result is checked
 
-- Lean 4.34.1 with Mathlib (48 theorems): the three normal forms, the
+- Lean 4.34.1 with Mathlib (52 theorems): the three normal forms, the
   identities and the three inequalities of the six-parameter family, the
   relation φ(qn) = qφ(n) for q | n, the local factors, the optimisation of the
   large sieve, c₀³ = 729/(256π²); the Farey bound of the centre, the
@@ -65,7 +66,12 @@ text. No other AI system took part.
   T = 10¹⁵; the integral 𝒥 is computed by Gauss–Legendre quadrature (Python)
   and independently by the midpoint rule (Julia), which agree on c₁ to four
   decimals, and checked by Monte Carlo at four points. The value 0.6792 is a
-  numerical evaluation; the bound 0.66571 is proved in closed form.
+  numerical evaluation. The bound 𝒥 < 0.000335, hence c₁ > 0.67916, is proved
+  by the C program `checks/c/certify_J.c`, which bounds the integral cell by
+  cell with every rounding directed upward (the proposition on the certified bound
+  and its appendix in the paper; the closed-form steps and the final
+  inequality are in Lean); the
+  bound 0.66571 is proved in closed form.
 - A fresh run of each engine run is compared with its record by
   `engine/compare.py`.
 

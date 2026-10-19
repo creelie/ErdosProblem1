@@ -31,7 +31,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        check: [python, julia, c, cpp, engine]
+        check: [python, julia, c, cpp, cert, engine]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

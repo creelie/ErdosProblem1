@@ -13,7 +13,7 @@ authors:
     orcid: "https://orcid.org/0009-0002-2254-3914"
     affiliation: "Formerly, National Taiwan University, Taipei 106319, Taiwan"
     email: rai.bhattacharya.in@gmail.com
-version: 3.0.0
+version: 3.1.0
 date-released: 2026-10-19
 license: MIT
 identifiers:
@@ -76,6 +76,14 @@ references:
     version: 3.0.5
     year: 2026
     doi: "10.5281/zenodo.23469389"
+  - type: software
+    title: "BLLM: Beyond the LLM with Deep Human-Mind-AI"
+    authors:
+      - family-names: Bhattacharjee
+        given-names: Deep
+    version: 3.1.0
+    year: 2026
+    doi: "10.5281/zenodo.23484160"
   - type: book
     title: "Primes in arithmetic progressions to large moduli I: Fixed residue classes"
     authors:

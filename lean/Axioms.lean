@@ -48,3 +48,7 @@ import ErdosStraus
 #print axioms ErdosStraus.chain_step
 #print axioms ErdosStraus.strip_area
 #print axioms ErdosStraus.strip_share
+#print axioms ErdosStraus.cert_r1_mono
+#print axioms ErdosStraus.cert_xi_lower
+#print axioms ErdosStraus.cert_dickman_tail
+#print axioms ErdosStraus.cert_constant

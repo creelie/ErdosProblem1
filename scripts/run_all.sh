@@ -4,7 +4,8 @@
 # Usage: scripts/run_all.sh             (all steps)
 #        scripts/run_all.sh --no-lean   (skip the Lean build)
 # Environment:
-#   CHECKS="python julia c cpp engine"   the checks to run (default: all five; "" runs none)
+#   CHECKS="python julia c cpp cert engine"   the checks to run (default: all six; "" runs none);
+#                                 cert is the certified bound for the loss J of the paper
 #   SKIP_LEAN=1                   same as --no-lean
 # Requirements: elan (Lean 4) for the Lean build; python3 with numpy, julia, a C compiler and a
 # C++20 compiler for the checks that are run; the engine check also needs network access to install
@@ -16,7 +17,7 @@ BUILD="$(mktemp -d)"
 trap 'rm -rf "$BUILD"' EXIT
 CC_BIN="${CC:-cc}"
 CXX_BIN="${CXX:-c++}"
-CHECKS="${CHECKS-python julia c cpp engine}"
+CHECKS="${CHECKS-python julia c cpp cert engine}"
 SKIP_LEAN="${SKIP_LEAN:-0}"
 [ "${1:-}" = "--no-lean" ] && SKIP_LEAN=1
 
@@ -30,6 +31,7 @@ for c in $CHECKS; do
     julia) need julia ;;
     c) need "$CC_BIN" ;;
     cpp) need "$CXX_BIN" ;;
+    cert) need "$CC_BIN" ;;
     engine) need python3 ;;
     *) echo "unknown check: $c" >&2; exit 2 ;;
   esac
@@ -101,6 +103,11 @@ for c in $CHECKS; do
       "$BUILD/mean_values"
       "$CXX_BIN" -O2 -std=c++20 -o "$BUILD/chain" "$ROOT/checks/cpp/chain.cpp"
       "$BUILD/chain" ;;
+    cert)
+      step "C: the certified bound for the loss J (Proposition prop:cert of the paper)"
+      "$CC_BIN" -O2 -std=c99 -frounding-math -ffp-contract=off -o "$BUILD/certify_J" "$ROOT/checks/c/certify_J.c" -lm
+      # exits with status 1 unless the computed upper bound lies below the bound stated in the paper
+      "$BUILD/certify_J" ;;
     engine)
       step "Engine Anaxia: the runs behind the three corners and the centre strips"
       python3 -m venv "$BUILD/venv"
