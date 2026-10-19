@@ -1,0 +1,16 @@
+name = "ErdosStraus"
+defaultTargets = ["ErdosStraus", "Axioms"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.34.1"
+
+[[lean_lib]]
+name = "ErdosStraus"
+roots = ["ErdosStraus"]
+globs = ["ErdosStraus", "ErdosStraus.+"]
+leanOptions = { autoImplicit = false }
+
+[[lean_lib]]
+name = "Axioms"
