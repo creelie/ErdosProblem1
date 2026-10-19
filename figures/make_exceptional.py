@@ -13,6 +13,9 @@ fig_strips.png:   the uncovered density U on the strips and the loss of each rul
                   checks/python/centre.py.
 fig_engine.png:   the closed composites of the two engine runs, engine/anaxia_regions.json (128) and
                   engine/anaxia_centre.json (37), by construction and verdict.
+fig_cert.png:     the certified bound for the loss: the bound of every cell of checks/c/certify_J.out
+                  (written by certify_J with VERBOSE=1), the quadrature value of the loss and the bound
+                  1/2 + v - 2 theta(v), and the bound and the quadrature value by ranges of the depth.
 Requires numpy, matplotlib and Pillow.
 """
 import json
@@ -314,6 +317,86 @@ def engine_figure():
     return grid, {k: len(v) for k, v in cells.items()}
 
 
+def read_cert():
+    """The cells and the parts of checks/c/certify_J.out."""
+    cells, parts = [], []
+    with open(os.path.join(ROOT, "checks", "c", "certify_J.out")) as f:
+        for line in f:
+            if line.startswith("cell ["):
+                a, b = (float(x) for x in line[6:line.index("]")].split(","))
+                lbar = float(line.split("lbar=")[1].split()[0])
+                cells.append((a, b, lbar))
+            elif " cells " in line:
+                parts.append(float(line.split()[-1]))
+    return cells, parts
+
+
+def cert_figure():
+    cells, parts = read_cert()
+    theta = lambda v: min(0.1 - 1.4 * v, 0.5 - 19 * v)
+    lo, hi = 0.005, 1 / 42 - 2e-4
+    quad.configure(6, 16)
+    vs = np.concatenate([np.linspace(lo, 1 / 44, 26), 1 / 42 - (1 / 42 - 1 / 44) * 0.82 ** np.arange(1, 17)])
+    vs = vs[vs <= hi]
+    ls = np.array([quad.loss(v, "chain") for v in vs])
+    r1 = np.array([0.5 + v - 2 * theta(v) for v in vs])
+    fig = plt.figure(figsize=(10.4, 4.6))
+    ax = fig.add_subplot(1, 2, 1, projection="3d")
+
+    def ribbon(xs, zs, y, col, alpha):
+        for x0, x1, z0, z1 in zip(xs[:-1], xs[1:], zs[:-1], zs[1:]):
+            ax.add_collection3d(Poly3DCollection([[(x0, y, -4), (x1, y, -4), (x1, y, z1), (x0, y, z0)]],
+                                                 facecolors=col, edgecolors="none", alpha=alpha))
+        ax.plot(xs, [y] * len(xs), zs, color="k", lw=0.6)
+
+    sx, sz = [], []
+    for a, b, lbar in cells:
+        if a >= lo and b <= hi:
+            sx += [a, b]
+            sz += [math.log10(lbar)] * 2
+    sx, sz = 1000 * np.array(sx), np.array(sz)
+    ribbon(1000 * vs, np.log10(ls), 0, COL["B"], 0.8)
+    ribbon(sx, sz, 1, COL["A"], 0.75)
+    ribbon(1000 * vs, np.log10(r1), 2, COL["O"], 0.6)
+    ax.set_xlabel("depth $10^3\\vartheta$", labelpad=9)
+    ax.set_yticks([0, 1, 2])
+    ax.set_yticklabels(["quadrature", "cell bound", "$1/2+\\vartheta-2\\theta$"], fontsize=7)
+    ax.set_zticks([-3, -2, -1, 0])
+    ax.set_zticklabels(["$10^{-3}$", "$10^{-2}$", "$10^{-1}$", "1"])
+    ax.set_zlim(-4, 0)
+    ax.set_xlim(1000 * lo, 1000 / 42)
+    ax.set_ylim(-0.3, 2.3)
+    ax.set_zlabel("loss $\\ell(\\vartheta)$")
+    ax.view_init(elev=13, azim=-72)
+    ax.set_box_aspect((2.0, 1.0, 1))
+    ax.set_title("(a) bounds for the loss", fontsize=10)
+
+    bx = fig.add_subplot(1, 2, 2, projection="3d")
+    names = ["$[0,0.005]$", "$[0.005,1/54]$", "$[1/54,1/44]$", "$[1/44,1/42]$"]
+    bound = [parts[0] + parts[1], parts[2], parts[3], parts[4] + parts[5]]
+    cuts = [(0, 0.005), (0.005, 1 / 54), (1 / 54, 1 / 44), (1 / 44, 1 / 42)]
+    qv = []
+    for a, b in cuts:
+        dd, dw = quad.nodes(a, b, [])
+        qv.append(sum(wi * quad.loss(di, "chain") for di, wi in zip(dd, dw)))
+    for i in range(4):
+        for j, (val, col) in enumerate(((qv[i], COL["B"]), (bound[i], COL["A"]))):
+            bx.bar3d(i, 0.6 * j, 0, 0.5, 0.4, 1e4 * val, color=col, alpha=0.9, shade=True, edgecolor="k")
+        bx.text(i - 0.1, 1.2, 1e4 * bound[i] + 0.15, f"{1e4 * bound[i]:.2f}", fontsize=7, zorder=30,
+                bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="0.6"))
+    bx.set_xticks([i + 0.25 for i in range(4)])
+    bx.set_xticklabels(names, fontsize=7)
+    bx.set_yticks([0.2, 0.8])
+    bx.set_yticklabels(["quadrature", "bound"], fontsize=7)
+    bx.set_zlabel("$10^4\\times\\int\\ell$")
+    bx.view_init(elev=20, azim=-58)
+    bx.set_box_aspect((1.8, 0.9, 1))
+    bx.set_title("(b) the integral by ranges", fontsize=10)
+    fig.tight_layout()
+    save(fig, "fig_cert.png")
+    return {"bound": [round(x, 9) for x in bound], "quadrature": [round(x, 9) for x in qv]}
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     simplex_figure()
@@ -322,3 +405,4 @@ if __name__ == "__main__":
     print("constants:", ladder_figure(J))
     print("largest U on the grid:", strips_figure())
     print("engine grid:", engine_figure())
+    print("certified bound by ranges:", cert_figure())

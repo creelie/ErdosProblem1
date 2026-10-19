@@ -17,6 +17,8 @@ the centre when `u`, `a` and `α` are all below `√P`.
 * `maynard_window`, `maynard_switch_tau`, `maynard_switch_gamma`: the ranges of Maynard's theorem.
 * `chain_step`: the divisor chain.
 * `strip_area`, `strip_share`: the area of the strips and the largest share they can add.
+* `cert_r1_mono`, `cert_xi_lower`, `cert_dickman_tail`, `cert_constant`: the closed-form steps of the
+  certified bound for the loss `𝒥`.
 -/
 
 namespace ErdosStraus
@@ -147,5 +149,78 @@ theorem strip_area : ∫ δ in (0 : ℝ)..(1 / 42), (1 / 2 - 3 * δ) = 1 / 84 - 
 /-- With the three strips at full density the share of the triangle would be
 `3/4 + 6 (1/84 - 3/3528) = 40/49`. -/
 theorem strip_share : (3 / 4 : ℝ) + 6 * (1 / 84 - 3 / 3528) = 40 / 49 := by norm_num
+
+/-- The bound of `(R1)` used at the two ends of the certified computation:
+`1/2 + δ - 2 θ(δ)` is nondecreasing in `δ`. -/
+theorem cert_r1_mono (x y : ℝ) (hxy : x ≤ y) :
+    1 / 2 + x - 2 * min (1 / 10 - 7 / 5 * x) (1 / 2 - 19 * x)
+      ≤ 1 / 2 + y - 2 * min (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y) := by
+  have h : min (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y) ≤ min (1 / 10 - 7 / 5 * x) (1 / 2 - 19 * x) :=
+    min_le_min (by linarith) (by linarith)
+  linarith
+
+/-- On a cell `a ≤ δ ≤ b` the number `ξ(δ) = min(θ(δ) - 2δ, 2δ)` is at least the smaller of its
+values at the ends, because it is a minimum of linear functions. -/
+theorem cert_xi_lower (a b x : ℝ) (hax : a ≤ x) (hxb : x ≤ b) :
+    min (min (min (1 / 10 - 7 / 5 * a) (1 / 2 - 19 * a) - 2 * a) (2 * a))
+        (min (min (1 / 10 - 7 / 5 * b) (1 / 2 - 19 * b) - 2 * b) (2 * b))
+      ≤ min (min (1 / 10 - 7 / 5 * x) (1 / 2 - 19 * x) - 2 * x) (2 * x) := by
+  have key : ∀ c m : ℝ, min (c + m * a) (c + m * b) ≤ c + m * x := by
+    intro c m
+    rcases le_total 0 m with h | h
+    · exact min_le_of_left_le (by nlinarith)
+    · exact min_le_of_right_le (by nlinarith)
+  have hA : ∀ y : ℝ, min (min (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y) - 2 * y) (2 * y)
+      ≤ 1 / 10 + (-17 / 5) * y := by
+    intro y
+    have h1 := min_le_left (min (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y) - 2 * y) (2 * y)
+    have h2 := min_le_left (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y)
+    linarith
+  have hB : ∀ y : ℝ, min (min (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y) - 2 * y) (2 * y)
+      ≤ 1 / 2 + (-21) * y := by
+    intro y
+    have h1 := min_le_left (min (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y) - 2 * y) (2 * y)
+    have h2 := min_le_right (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y)
+    linarith
+  have hC : ∀ y : ℝ, min (min (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y) - 2 * y) (2 * y)
+      ≤ 0 + 2 * y := by
+    intro y
+    have h1 := min_le_right (min (1 / 10 - 7 / 5 * y) (1 / 2 - 19 * y) - 2 * y) (2 * y)
+    linarith
+  rw [← min_sub_sub_right (1 / 10 - 7 / 5 * x) (1 / 2 - 19 * x) (2 * x)]
+  refine le_min (le_min ?_ ?_) ?_
+  · calc _ ≤ min (1 / 10 + (-17 / 5) * a) (1 / 10 + (-17 / 5) * b) := min_le_min (hA a) (hA b)
+      _ ≤ 1 / 10 + (-17 / 5) * x := key _ _
+      _ = 1 / 10 - 7 / 5 * x - 2 * x := by ring
+  · calc _ ≤ min (1 / 2 + (-21) * a) (1 / 2 + (-21) * b) := min_le_min (hB a) (hB b)
+      _ ≤ 1 / 2 + (-21) * x := key _ _
+      _ = 1 / 2 - 19 * x - 2 * x := by ring
+  · calc _ ≤ min (0 + 2 * a) (0 + 2 * b) := min_le_min (hC a) (hC b)
+      _ ≤ 0 + 2 * x := key _ _
+      _ = 2 * x := by ring
+
+/-- The tail of Dickman's function: from `ρ(v) ≤ ρ(v - 1)/13` for `v ≥ 13`, the integral of `ρ` over
+`[12, ∞)` is at most `ρ(12)` times `∑ 13⁻ᵏ ≤ 13/12`. -/
+theorem cert_dickman_tail (n : ℕ) : ∑ k ∈ Finset.range n, (1 / 13 : ℝ) ^ k ≤ 13 / 12 := by
+  rw [geom_sum_eq (by norm_num)]
+  have h : (0 : ℝ) ≤ (1 / 13) ^ n := by positivity
+  rw [div_le_iff_of_neg (by norm_num)]
+  nlinarith
+
+/-- The certified constant: if `𝒥 ≤ 0.000335` then `c₁ > 0.67916`, where
+`c₁³ = (27/8) (9/(8π²)) (40/49 - 6𝒥)`; it uses `π < 3.141593`. -/
+theorem cert_constant (J : ℝ) (hJ : J ≤ 0.000335) :
+    (0.67916 : ℝ) ^ 3 < 27 / 8 * (9 / (8 * Real.pi ^ 2)) * (40 / 49 - 6 * J) := by
+  have hpi0 : 0 < Real.pi := Real.pi_pos
+  have hpi : Real.pi < 3.141593 := Real.pi_lt_d6
+  have hsq : Real.pi ^ 2 < 3.141593 ^ 2 := by nlinarith
+  have hfrac : 9 / (8 * (3.141593 : ℝ) ^ 2) < 9 / (8 * Real.pi ^ 2) := by
+    apply div_lt_div_of_pos_left (by norm_num) (by positivity) (by nlinarith)
+  have hJ' : (40 / 49 - 6 * 0.000335 : ℝ) ≤ 40 / 49 - 6 * J := by linarith
+  have hpos : (0 : ℝ) < 40 / 49 - 6 * 0.000335 := by norm_num
+  calc (0.67916 : ℝ) ^ 3 < 27 / 8 * (9 / (8 * (3.141593 : ℝ) ^ 2)) * (40 / 49 - 6 * 0.000335) := by
+        norm_num
+    _ ≤ 27 / 8 * (9 / (8 * Real.pi ^ 2)) * (40 / 49 - 6 * J) := by
+        apply mul_le_mul (by linarith) hJ' hpos.le (by positivity)
 
 end ErdosStraus
