@@ -61,7 +61,7 @@ for entry in $PAPERS; do
   mkdir -p "$SRC/figures"
   cp "$DIR/main.tex" "$SRC/"
   cp "$DIR"/figures/*.png "$SRC/figures/"
-  ( cd "$SRC" && latex main.tex && latex main.tex && rm -f main.aux main.log main.out main.toc main.pdf )
+  ( cd "$SRC" && latex main.tex && latex main.tex && rm -f main.aux main.log main.out main.toc main.pdf mainNotes.bib )
   ( cd "$STAGE" && zip -qrX "${NAME}_final2-tex.zip" "${NAME}_final2-tex" )
   mv "$STAGE/${NAME}_final2-tex.zip" dist/
   entries="$(zipinfo -1 "dist/${NAME}_final2-tex.zip" | wc -l)"

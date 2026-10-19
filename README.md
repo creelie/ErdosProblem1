@@ -15,11 +15,19 @@ Let E(N) be the set of n ≤ N for which the equation has no solution. Vaughan p
 
 **Theorem A.** For every ε > 0 and all large N,
 
-|E(N)| ≤ N exp(−(c₀ − ε)(log N)^{2/3}),  c₀ = 9/(2^{8/3} π^{2/3}) = 0.6607886973…
+|E(N)| ≤ N exp(−(c₁ − ε)(log N)^{2/3}),  c₁ = (3/2) ((9/(8π²)) (40/49 − 6𝒥))^{1/3},
 
-**Theorem B.** With the residue classes of the Type II identities in which one product of two of the three factors of (p + 1)/4 is at most √p, the large sieve gives no better exponent than c₀.
+where 𝒥 is an explicit double integral (equation (27) of the paper). Moreover 0 ≤ 𝒥 ≤ 533/64680, so that
 
-The classes come from three corners of the triangle of factorisations (p + 1)/4 = uaα. Each corner has a normal form of the class, u/a, 4u²α or (4a²α)⁻¹, which separates its classes; corner A shares no class with B or C, and B and C share classes only along a six-parameter family whose contribution converges. The density of the classes is 27/(32π²), and the optimisation of the large sieve turns it into c₀ = (3/2)(27/(32π²))^{1/3}. The three corners and their normal forms were selected among 128 candidate constructions by the engine Anaxia of the BLLM project (version 3.0.5, [doi:10.5281/zenodo.23469389](https://doi.org/10.5281/zenodo.23469389)); the record of that run is in `engine/`.
+c₁ ≥ (286983/(98560 π²))^{1/3} = 0.6657102497…
+
+Numerically 𝒥 = 0.0003 and c₁ = 0.6792; two independent programs agree to four decimals.
+
+**Theorem B.** With the residue classes from the factorisations (p + 1)/4 = uaα in which one product of two of the three factors is at most √p, the large sieve gives no better exponent than c₀ = 9/(2^{8/3} π^{2/3}) = 0.6607886973…
+
+The factorisations (p + 1)/4 = uaα fill a triangle. Its three corners, where one product of two variables is at most √p, give the classes that the Bombieri–Vinogradov theorem can count; each corner has a normal form of the class (u/a, 4u²α or (4a²α)⁻¹) that separates its classes, and the corners alone give exactly c₀ (Theorem B). The gain to c₁ comes from the centre of the triangle, where u, a and α are all below √P. Its classes are distinct and agree with no class of the corner A, and with B or C only along one explicit family whose contribution converges. Three strips of the centre along the corners, of depth 1/42, are counted with Maynard's theorem on primes in progressions to large moduli (Mem. AMS 306 (2025), no. 1542), using a rule that finds a divisor of the modulus in Maynard's range; 𝒥 measures the pairs where the rule fails. With every triple of the strips the constant would be 0.6797, and with the whole centre (which needs the Elliott–Halberstam conjecture) 0.7273.
+
+The construction was selected by the engine Anaxia of the BLLM project (version 3.0.5, [doi:10.5281/zenodo.23469389](https://doi.org/10.5281/zenodo.23469389)) in two runs: the corners among 128 constructions and the strips among 37; the records are in `engine/`.
 
 ## The Type II sieve sum
 
@@ -37,13 +45,13 @@ The first two terms, κ(log J)² and 2κ(γ + T) log J with an error O(1), were 
 
 | Path | Content |
 |---|---|
-| `exceptional/paper/` | LaTeX source of the exceptional-set paper (REVTeX) and its four figures as PNG |
+| `exceptional/paper/` | LaTeX source of the exceptional-set paper (REVTeX) and its five figures as PNG |
 | `paper/` | LaTeX source of the sieve-sum paper (amsart) and its three figures as PNG |
 | `preprintErdosStrausExceptionalSet/`, `preprintErdosStrausSieveConstant/` | the two papers as PDF |
 | `dist/` | for each paper the PDF, the LaTeX source zip and the arXiv tarball |
-| `lean/` | Lean 4 and Mathlib: the factorisation of φ(4ua), the local factors, the value 9/π², the Type II identity, the normal forms of the three corners, the identities and inequalities of the six-parameter family, the optimisation of the large sieve, c₀³ = 729/(256π²), and the coincidence at the prime 531359 |
-| `checks/` | C, C++, Python and Julia programs: W(J) to J = 20000; the corners over the 332,398 primes p ≡ 3 (mod 4) below 10⁷; the six-parameter family against all coincidences with (p + 1)/4 ≤ 4000; the mean values to X = 2·10⁶; the two bounds of the large sieve to T = 10¹⁵; the level of the distinctness argument to 10⁶ |
-| `engine/` | the Anaxia run that selected the construction (`anaxia_regions.json`), the script that reproduces it and the comparison of a fresh run with the record |
+| `lean/` | Lean 4 and Mathlib, 48 theorems in `Axioms.lean`: the factorisation of φ(4ua), the local factors, the value 9/π², the Type II identity, the normal forms of the three corners, the identities and inequalities of the six-parameter family, the optimisation of the large sieve, c₀³ = 729/(256π²); the Farey bound and the parametrisation of the coincidences of the centre, the family of coincidences with the primes 531359 and 1442783; the range of Maynard's theorem, the divisor chain, the area of the strips and the share 40/49 |
+| `checks/` | C, C++, Python and Julia programs: W(J) to J = 20000; the corners and the centre over the 332,398 primes p ≡ 3 (mod 4) below 10⁷; the six-parameter family against all coincidences with (p + 1)/4 ≤ 4000; the mean values to X = 2·10⁶; the two bounds of the large sieve to T = 10¹⁵; the level of the distinctness argument to 10⁶; the divisor chain in 128,000,000 cases; the integral 𝒥 by quadrature (Python) and by the midpoint rule (Julia) |
+| `engine/` | the two Anaxia runs (`anaxia_regions.json` for the corners, `anaxia_centre.json` for the strips), the scripts that reproduce them and the comparison of a fresh run with each record |
 | `figures/` | the scripts that draw the figures |
 | `scripts/run_all.sh` | builds the Lean project, checks the axioms, runs the programs and the engine reproduction |
 | `scripts/build_paper.sh` | builds both papers and the release files |

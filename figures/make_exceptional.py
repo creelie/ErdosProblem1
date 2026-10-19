@@ -254,7 +254,7 @@ def engine_figure():
     for v, c in vcol.items():
         ax.bar3d(0, 0, 0, 0, 0, 0, color=c, label={"accepted": "accepted",
                  "distinctness": "form does not separate the classes",
-                 "other": "centre classes coincide, or nothing sieved"}[v])
+                 "other": "a centre class equals a corner class, or nothing sieved"}[v])
     ax.set_xticks([0.2, 1.2, 2.2, 3.2])
     ax.set_xticklabels(["0", "1", "2", "3"], fontsize=7)
     ax.set_xlabel("corners used", fontsize=8)
