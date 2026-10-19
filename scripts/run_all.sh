@@ -6,9 +6,9 @@
 # Environment:
 #   CHECKS="python julia c cpp engine"   the checks to run (default: all five; "" runs none)
 #   SKIP_LEAN=1                   same as --no-lean
-# Requirements: elan (Lean 4) for the Lean build; python3, julia, a C compiler and a C++20
-# compiler for the checks that are run; the engine check also needs network access to install the
-# engine Anaxia (creelie/eBLLM, version 3.0.5) into a virtual environment.
+# Requirements: elan (Lean 4) for the Lean build; python3 with numpy, julia, a C compiler and a
+# C++20 compiler for the checks that are run; the engine check also needs network access to install
+# the engine Anaxia (creelie/eBLLM, version 3.0.5) and numpy into a virtual environment.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -25,7 +25,8 @@ need() { command -v "$1" >/dev/null 2>&1 || { echo "missing tool: $1" >&2; exit 
 
 for c in $CHECKS; do
   case "$c" in
-    python) need python3 ;;
+    python) need python3
+      python3 -c "import numpy" 2>/dev/null || { echo "missing python module: numpy" >&2; exit 2; } ;;
     julia) need julia ;;
     c) need "$CC_BIN" ;;
     cpp) need "$CXX_BIN" ;;
@@ -75,11 +76,13 @@ for c in $CHECKS; do
     python)
       step "Python"
       python3 -I "$ROOT/checks/python/check.py"
-      python3 -I "$ROOT/checks/python/exceptional.py" ;;
+      python3 -I "$ROOT/checks/python/exceptional.py"
+      python3 -I "$ROOT/checks/python/centre.py" ;;
     julia)
       step "Julia"
       julia "$ROOT/checks/julia/check.jl"
-      julia "$ROOT/checks/julia/tilt.jl" ;;
+      julia "$ROOT/checks/julia/tilt.jl"
+      julia "$ROOT/checks/julia/centre.jl" ;;
     c)
       step "C"
       "$CC_BIN" -O2 -std=c99 -o "$BUILD/check_c" "$ROOT/checks/c/check.c" -lm
@@ -87,19 +90,25 @@ for c in $CHECKS; do
       "$CC_BIN" -O2 -std=c99 -o "$BUILD/constant_M" "$ROOT/checks/c/constant_M.c" -lm
       "$BUILD/constant_M" 100000000
       "$CC_BIN" -O2 -std=c99 -o "$BUILD/exceptional" "$ROOT/checks/c/exceptional.c" -lm
-      "$BUILD/exceptional" ;;
+      "$BUILD/exceptional"
+      "$CC_BIN" -O2 -std=c99 -o "$BUILD/centre" "$ROOT/checks/c/centre.c" -lm
+      "$BUILD/centre" 10000000 ;;
     cpp)
       step "C++"
       "$CXX_BIN" -O2 -std=c++20 -o "$BUILD/check_cpp" "$ROOT/checks/cpp/check.cpp"
       "$BUILD/check_cpp"
       "$CXX_BIN" -O2 -std=c++20 -o "$BUILD/mean_values" "$ROOT/checks/cpp/mean_values.cpp"
-      "$BUILD/mean_values" ;;
+      "$BUILD/mean_values"
+      "$CXX_BIN" -O2 -std=c++20 -o "$BUILD/chain" "$ROOT/checks/cpp/chain.cpp"
+      "$BUILD/chain" ;;
     engine)
-      step "Engine Anaxia: the run behind the three corners"
+      step "Engine Anaxia: the runs behind the three corners and the centre strips"
       python3 -m venv "$BUILD/venv"
-      "$BUILD/venv/bin/pip" install --quiet "git+https://github.com/creelie/eBLLM@v3.0.5"
+      "$BUILD/venv/bin/pip" install --quiet numpy "git+https://github.com/creelie/eBLLM@v3.0.5"
       ( cd "$BUILD" && "$BUILD/venv/bin/python" "$ROOT/engine/anaxia_regions.py" 1000000 >/dev/null )
-      python3 -I "$ROOT/engine/compare.py" "$BUILD/anaxia_regions.json" "$ROOT/engine/anaxia_regions.json" ;;
+      python3 -I "$ROOT/engine/compare.py" "$BUILD/anaxia_regions.json" "$ROOT/engine/anaxia_regions.json"
+      ( cd "$BUILD" && "$BUILD/venv/bin/python" "$ROOT/engine/anaxia_centre.py" 1000000 200000 >/dev/null )
+      python3 -I "$ROOT/engine/compare.py" "$BUILD/anaxia_centre.json" "$ROOT/engine/anaxia_centre.json" ;;
   esac
 done
 

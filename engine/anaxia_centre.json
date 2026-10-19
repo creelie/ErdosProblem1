@@ -1,0 +1,1129 @@
+{
+ "summary": {
+  "engine": "Anaxia (ebllm) 3.0.5",
+  "library": 19,
+  "closed": 37,
+  "accepted": 5,
+  "rejected": 31,
+  "conditional": 1,
+  "best": {
+   "centre": "strips",
+   "form": "farey",
+   "rule": "chain",
+   "sparse": "family",
+   "form_failures": 0,
+   "coincidences": 2,
+   "coincidences_not_allowed": 0,
+   "coincidence_weight": 3.764e-06,
+   "rule_failures": 0,
+   "rule_first_failure": null,
+   "c": 0.679210244,
+   "pmax": 1000000,
+   "nrule": 200000
+  },
+  "memory": {
+   "events": 37,
+   "distinct_composites": 37,
+   "survivors": 5,
+   "refuted": 32,
+   "blocks": 0,
+   "literature": 0,
+   "retrievals": 0,
+   "weights": 0
+  },
+  "pmax": 1000000,
+  "nrule": 200000,
+  "accepted_constants": [
+   0.660789,
+   0.66571,
+   0.677596,
+   0.678311,
+   0.67921
+  ]
+ },
+ "composites": [
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.chain)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.chain",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "chain",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.679210244,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.chain)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.chain",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "chain",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.679210244,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.eh)<-es.eh)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.eh",
+    "es.eh",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "eh",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.727292069,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.eh)<-es.eh)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.eh",
+    "es.eh",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "eh",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.727292069,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.prime)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.prime",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "prime",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.677595548,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.prime)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.prime",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "prime",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.677595548,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.smooth)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.smooth",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "smooth",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.678311068,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.smooth)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.smooth",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "smooth",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.678311068,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.steps)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.steps",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "steps",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 1449392,
+    "rule_first_failure": [
+     4,
+     3.0,
+     3.3000000000000003
+    ],
+    "c": null,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.steps)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.steps",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "steps",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 1449392,
+    "rule_first_failure": [
+     4,
+     3.0,
+     3.3000000000000003
+    ],
+    "c": null,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.var)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.var",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "var",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.66571025,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.I)<-es.cform.I)<-es.rule.var)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.I",
+    "es.cform.I",
+    "es.rule.var",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the I form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "I",
+    "rule": "var",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.66571025,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.chain)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.chain",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "chain",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.679210244,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.chain)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.chain",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "chain",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.679210244,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.eh)<-es.eh)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.eh",
+    "es.eh",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "eh",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.727292069,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.eh)<-es.eh)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.eh",
+    "es.eh",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "eh",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.727292069,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.prime)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.prime",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "prime",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.677595548,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.prime)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.prime",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "prime",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.677595548,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.smooth)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.smooth",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "smooth",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.678311068,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.smooth)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.smooth",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "smooth",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.678311068,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.steps)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.steps",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "steps",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 1449392,
+    "rule_first_failure": [
+     4,
+     3.0,
+     3.3000000000000003
+    ],
+    "c": null,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.steps)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.steps",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "steps",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 1449392,
+    "rule_first_failure": [
+     4,
+     3.0,
+     3.3000000000000003
+    ],
+    "c": null,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.var)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.var",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "var",
+    "sparse": "family",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.66571025,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.M)<-es.cform.M)<-es.rule.var)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.M",
+    "es.cform.M",
+    "es.rule.var",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "the M form does not separate the classes of the centre on 12399 primes",
+   "measurement": {
+    "centre": "strips",
+    "form": "M",
+    "rule": "var",
+    "sparse": "none",
+    "form_failures": 12399,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.66571025,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.chain)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.chain",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.679210",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "chain",
+    "sparse": "family",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.679210244,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.chain)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.chain",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "2 coincidences of the centre not allowed by the none node",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "chain",
+    "sparse": "none",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.679210244,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.eh)<-es.eh)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.eh",
+    "es.eh",
+    "es.sparse.family"
+   ],
+   "outcome": "conditional",
+   "reason": "c = 0.727292 if the Elliott-Halberstam conjecture holds",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "eh",
+    "sparse": "family",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.727292069,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.eh)<-es.eh)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.eh",
+    "es.eh",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "2 coincidences of the centre not allowed by the none node",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "eh",
+    "sparse": "none",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.727292069,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.prime)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.prime",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.677596",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "prime",
+    "sparse": "family",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.677595548,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.prime)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.prime",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "2 coincidences of the centre not allowed by the none node",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "prime",
+    "sparse": "none",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.677595548,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.smooth)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.smooth",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.678311",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "smooth",
+    "sparse": "family",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.678311068,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.smooth)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.smooth",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "2 coincidences of the centre not allowed by the none node",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "smooth",
+    "sparse": "none",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.678311068,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.steps)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.steps",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "rejected",
+   "reason": "the steps rule claims a divisor in a window that has none (1449392 cases, first n=4)",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "steps",
+    "sparse": "family",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 1449392,
+    "rule_first_failure": [
+     4,
+     3.0,
+     3.3000000000000003
+    ],
+    "c": null,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.steps)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.steps",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "2 coincidences of the centre not allowed by the none node",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "steps",
+    "sparse": "none",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 1449392,
+    "rule_first_failure": [
+     4,
+     3.0,
+     3.3000000000000003
+    ],
+    "c": null,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.var)<-es.maynard)<-es.sparse.family)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.var",
+    "es.maynard",
+    "es.sparse.family"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.665710",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "var",
+    "sparse": "family",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 0,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.66571025,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.centre.farey)<-es.cform.farey)<-es.rule.var)<-es.maynard)<-es.sparse.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.farey",
+    "es.cform.farey",
+    "es.rule.var",
+    "es.maynard",
+    "es.sparse.none"
+   ],
+   "outcome": "rejected",
+   "reason": "2 coincidences of the centre not allowed by the none node",
+   "measurement": {
+    "centre": "strips",
+    "form": "farey",
+    "rule": "var",
+    "sparse": "none",
+    "form_failures": 0,
+    "coincidences": 2,
+    "coincidences_not_allowed": 2,
+    "coincidence_weight": 3.764e-06,
+    "rule_failures": 0,
+    "rule_first_failure": null,
+    "c": 0.66571025,
+    "pmax": 1000000,
+    "nrule": 200000
+   }
+  },
+  {
+   "composite": "((es.sieve<-es.corners)<-es.centre.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.centre.none"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.660789",
+   "measurement": {
+    "centre": "none",
+    "c": 0.6607886973673806,
+    "pmax": 1000000
+   }
+  }
+ ]
+}

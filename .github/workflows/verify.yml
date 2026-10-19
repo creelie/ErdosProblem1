@@ -38,6 +38,8 @@ jobs:
         if: matrix.check == 'python' || matrix.check == 'engine'
         with:
           python-version: "3.12"
+      - run: python -m pip install --quiet numpy
+        if: matrix.check == 'python'
       - uses: julia-actions/setup-julia@v2
         if: matrix.check == 'julia'
         with:
