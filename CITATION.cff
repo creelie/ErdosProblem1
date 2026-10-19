@@ -18,8 +18,8 @@ date-released: 2026-10-19
 license: MIT
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23483694"
-    description: "Version 3.0.0"
+    value: "10.5281/zenodo.23486200"
+    description: "Version 3.1.0"
   - type: doi
     value: "10.5281/zenodo.23480292"
     description: "All versions"

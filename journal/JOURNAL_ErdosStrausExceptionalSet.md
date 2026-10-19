@@ -16,5 +16,5 @@ Cover letter points:
 - The main new steps are the distinctness of the classes from different regions of the factorisations, with explicit descriptions of the coincidences, and a divisor rule that places the moduli of the centre in Maynard's range, with the density of its failures computed as an integral.
 - The paper does not claim the Erdős–Straus conjecture.
 
-Declarations (already in the paper): funding none; competing interests none; data and code at https://github.com/creelie/ErdosProblem1 and in the Zenodo archive of release v3.0.0 (doi:10.5281/zenodo.23483694); the use of the engine Anaxia and AI assistance stated in the data availability paragraph.
+Declarations (already in the paper): funding none; competing interests none; data and code at https://github.com/creelie/ErdosProblem1 and in the Zenodo archive of release v3.1.0 (doi:10.5281/zenodo.23486200); the use of the engine Anaxia and AI assistance stated in the data availability paragraph.
 Suggested referees: none proposed.

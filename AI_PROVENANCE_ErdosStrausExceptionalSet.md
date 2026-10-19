@@ -5,7 +5,7 @@ and Ushashi Bhattacharya (ORCID 0009-0002-2254-3914).
 
 - Paper: https://github.com/creelie/ErdosProblem1/blob/main/preprintErdosStrausExceptionalSet/ErdosStrausExceptionalSet.pdf
 - Repository: https://github.com/creelie/ErdosProblem1
-- Archive of release v3.0.0: https://doi.org/10.5281/zenodo.23483694
+- Archive of release v3.1.0: https://doi.org/10.5281/zenodo.23486200
 
 ## Result
 
