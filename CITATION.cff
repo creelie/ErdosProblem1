@@ -13,7 +13,7 @@ authors:
     orcid: "https://orcid.org/0009-0002-2254-3914"
     affiliation: "Formerly, National Taiwan University, Taipei 106319, Taiwan"
     email: rai.bhattacharya.in@gmail.com
-version: 2.0.0
+version: 3.0.0
 date-released: 2026-10-19
 license: MIT
 repository-code: "https://github.com/creelie/ErdosProblem1"
@@ -27,12 +27,16 @@ keywords:
   - Lean 4
 abstract: >-
   We prove that the integers up to N for which the Erdős–Straus equation has
-  no solution number at most N exp(-(c0 - eps)(log N)^(2/3)) with the explicit
-  constant c0 = 9/(2^(8/3) pi^(2/3)) = 0.6607..., and that this is the best
-  constant the large sieve gives with the residue classes used. We also find
-  the full asymptotic expansion, with a power-saving error term, of the
-  weighted count of search pairs that controls a recent sieve bound for the
-  equation; its first two terms were found earlier by Liu.
+  no solution number at most N exp(-(c1 - eps)(log N)^(2/3)) with an explicit
+  constant c1, given by an integral; c1 = 0.6792 numerically and
+  c1 >= 0.66571 in closed form. The residue classes from the three corners of
+  the triangle of factorisations give exactly c0 = 9/(2^(8/3) pi^(2/3)) =
+  0.6607..., the best constant the large sieve gives with them; the gain comes
+  from classes of the centre, counted with Maynard's theorem on primes in
+  progressions to large moduli. We also find the full asymptotic expansion,
+  with a power-saving error term, of the weighted count of search pairs that
+  controls a recent sieve bound for the equation; its first two terms were
+  found earlier by Liu.
 references:
   - type: article
     title: "Sieve dimension and search depth for the Erdős–Straus conjecture, n ≡ 1 (mod 24)"
@@ -65,3 +69,13 @@ references:
     version: 3.0.5
     year: 2026
     doi: "10.5281/zenodo.23469389"
+  - type: book
+    title: "Primes in arithmetic progressions to large moduli I: Fixed residue classes"
+    authors:
+      - family-names: Maynard
+        given-names: James
+    journal: "Memoirs of the American Mathematical Society"
+    volume: 306
+    issue: 1542
+    year: 2025
+    doi: "10.1090/memo/1542"
