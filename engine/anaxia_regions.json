@@ -1,0 +1,5069 @@
+{
+ "summary": {
+  "engine": "Anaxia (ebllm) 3.0.5",
+  "library": 22,
+  "closed": 128,
+  "accepted": 7,
+  "rejected": 121,
+  "conditional": 0,
+  "best": {
+   "corners": [
+    "ua",
+    "ualpha",
+    "aalpha"
+   ],
+   "forms": {
+    "ua": "farey",
+    "ualpha": "M",
+    "aalpha": "I"
+   },
+   "centre": "none",
+   "uncertified_primes": {
+    "ua": 0,
+    "ualpha": 0,
+    "aalpha": 0
+   },
+   "collisions_inner": 0,
+   "collisions_edge": 0,
+   "area": 0.75,
+   "a": 0.0854897486982225,
+   "c": 0.6607886973673806,
+   "S_triples": 4.382601,
+   "pmax": 1000000
+  },
+  "memory": {
+   "events": 128,
+   "distinct_composites": 128,
+   "survivors": 7,
+   "refuted": 121,
+   "blocks": 0,
+   "literature": 0,
+   "retrievals": 0,
+   "weights": 0
+  },
+  "pmax": 1000000,
+  "accepted_constants": [
+   0.458165,
+   0.577252,
+   0.660789
+  ]
+ },
+ "composites": [
+  {
+   "composite": "(((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "M",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/farey on 28946 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "farey",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/I on 39293 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "I",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "farey",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "I",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 39293,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "2 collisions between corners",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "M",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/I on 39293 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "I",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/I on 39293 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "I",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "M",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "M",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "M",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "farey",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/farey on 28946 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "farey",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/farey on 28946 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "I",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/I on 39293 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "I",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/I on 39293 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "I",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "M",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "M",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "farey",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/farey on 28946 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "farey",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/farey on 28946 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "I",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 39293,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "I",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 39293,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "I",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 39293,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.660789",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "M",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "M",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "M",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "farey",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 28946,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "farey",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 28946,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "I",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/I on 39293 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "I",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/I on 39293 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "I",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "M",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "M",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "farey",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/farey on 28946 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "I",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/I on 39293 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "I",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "M",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "M",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "M",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/farey on 28946 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "farey",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/farey on 28946 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "I",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 39293,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "I",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 39293,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "M",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "M",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "2 collisions between corners",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "farey",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 28946,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "farey",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 28946,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 28946,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 1.0,
+    "a": 0.11398633159763,
+    "c": 0.7272920685329797,
+    "S_triples": 24.351175,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "2 collisions between corners",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.none)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "I",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 39293,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 23.99337,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.none)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "I",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 39293,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 23.99337,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.none)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "2 collisions between corners",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "M",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 23.99337,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.none)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "M",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 23.99337,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.none)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "farey",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 28946,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 23.99337,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((((es.sieve<-es.ua.none)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "farey",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 28946,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 23.99337,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "I",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "M",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.577252",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 28946,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 4.382601,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.577252",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 22.338777,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.none)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "I",
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 39293,
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 23.99337,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.none)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "I",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 39293,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 4.024796,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.none)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "I",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 39293,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 4.024796,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.none)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M",
+    "es.form.I"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.577252",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "M",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 0,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 4.024796,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.none)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "M",
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 23.99337,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.none)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "M",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 4.024796,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.none)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "farey",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 28946,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 4.024796,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.none)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "farey",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 28946,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 4.024796,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((((es.sieve<-es.ua.none)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 28946,
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 131852,
+    "area": 0.75,
+    "a": 0.0854897486982225,
+    "c": 0.6607886973673806,
+    "S_triples": 23.99337,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes, ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "ualpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "I",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua"
+    ],
+    "forms": {
+     "ua": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 35134,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 20.326379,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "ualpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "ualpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes, aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "M",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua"
+    ],
+    "forms": {
+     "ua": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 8788
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 35134,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 20.326379,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "ualpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "ualpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "ualpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ua",
+     "aalpha"
+    ],
+    "forms": {
+     "ua": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 2.370203,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "2 collisions between corners",
+   "measurement": {
+    "corners": [
+     "ua"
+    ],
+    "forms": {
+     "ua": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ua": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 35134,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 20.326379,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.none)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "I",
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 39293,
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 4.024796,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.none)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha"
+    ],
+    "forms": {
+     "ualpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 21.980972,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.none)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "M",
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 0,
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 4.024796,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.none)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "2 collisions between corners",
+   "measurement": {
+    "corners": [
+     "ualpha"
+    ],
+    "forms": {
+     "ualpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 21.980972,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.none)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes, aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha",
+     "aalpha"
+    ],
+    "forms": {
+     "ualpha": "farey",
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 28946,
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 4.024796,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.none)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.eh)<-es.eh)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha"
+    ],
+    "forms": {
+     "ualpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "ualpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 21.980972,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.none)<-es.ualpha.none)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.none",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "2 collisions between corners",
+   "measurement": {
+    "corners": [
+     "aalpha"
+    ],
+    "forms": {
+     "aalpha": "I"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "aalpha": 0
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 21.980972,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.none)<-es.ualpha.none)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.none",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "aalpha"
+    ],
+    "forms": {
+     "aalpha": "M"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "aalpha": 39293
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 21.980972,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((((es.sieve<-es.ua.none)<-es.ualpha.none)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.eh)<-es.eh)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.none",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.eh",
+    "es.eh",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "aalpha"
+    ],
+    "forms": {
+     "aalpha": "farey"
+    },
+    "centre": "eh",
+    "uncertified_primes": {
+     "aalpha": 28946
+    },
+    "collisions_inner": 2,
+    "collisions_edge": 83493,
+    "area": 0.5,
+    "a": 0.056993165798815,
+    "c": 0.5772520973386899,
+    "S_triples": 21.980972,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.ua.I)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.none)<-es.centre.none)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.I",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/I on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua"
+    ],
+    "forms": {
+     "ua": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 0.357805,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.ua.M)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.none)<-es.centre.none)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.M",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ua/M on 8788 primes",
+   "measurement": {
+    "corners": [
+     "ua"
+    ],
+    "forms": {
+     "ua": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 8788
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 0.357805,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.ua.farey)<-es.bv.ua)<-es.ualpha.none)<-es.aalpha.none)<-es.centre.none)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.farey",
+    "es.bv.ua",
+    "es.ualpha.none",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.farey"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.458165",
+   "measurement": {
+    "corners": [
+     "ua"
+    ],
+    "forms": {
+     "ua": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ua": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 0.357805,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.ua.none)<-es.ualpha.I)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.I",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.I"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/I on 39293 primes",
+   "measurement": {
+    "corners": [
+     "ualpha"
+    ],
+    "forms": {
+     "ualpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 2.012398,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.ua.none)<-es.ualpha.M)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.M",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.M"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.458165",
+   "measurement": {
+    "corners": [
+     "ualpha"
+    ],
+    "forms": {
+     "ualpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 2.012398,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.ua.none)<-es.ualpha.farey)<-es.bv.ualpha)<-es.aalpha.none)<-es.centre.none)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.farey",
+    "es.bv.ualpha",
+    "es.aalpha.none",
+    "es.centre.none",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: ualpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "ualpha"
+    ],
+    "forms": {
+     "ualpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "ualpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 2.012398,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.ua.none)<-es.ualpha.none)<-es.aalpha.I)<-es.bv.aalpha)<-es.centre.none)<-es.form.I)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.none",
+    "es.aalpha.I",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.I"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.458165",
+   "measurement": {
+    "corners": [
+     "aalpha"
+    ],
+    "forms": {
+     "aalpha": "I"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "aalpha": 0
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 2.012398,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.ua.none)<-es.ualpha.none)<-es.aalpha.M)<-es.bv.aalpha)<-es.centre.none)<-es.form.M)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.none",
+    "es.aalpha.M",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.M"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/M on 39293 primes",
+   "measurement": {
+    "corners": [
+     "aalpha"
+    ],
+    "forms": {
+     "aalpha": "M"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "aalpha": 39293
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 2.012398,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.ua.none)<-es.ualpha.none)<-es.aalpha.farey)<-es.bv.aalpha)<-es.centre.none)<-es.form.farey)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.none",
+    "es.aalpha.farey",
+    "es.bv.aalpha",
+    "es.centre.none",
+    "es.form.farey"
+   ],
+   "outcome": "rejected",
+   "reason": "normal form does not prove distinctness: aalpha/farey on 28946 primes",
+   "measurement": {
+    "corners": [
+     "aalpha"
+    ],
+    "forms": {
+     "aalpha": "farey"
+    },
+    "centre": "none",
+    "uncertified_primes": {
+     "aalpha": 28946
+    },
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 2.012398,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "(((((es.sieve<-es.ua.none)<-es.ualpha.none)<-es.aalpha.none)<-es.centre.eh)<-es.eh)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.none",
+    "es.aalpha.none",
+    "es.centre.eh",
+    "es.eh"
+   ],
+   "outcome": "rejected",
+   "reason": "2 collisions between corners",
+   "measurement": {
+    "corners": [],
+    "forms": {},
+    "centre": "eh",
+    "uncertified_primes": {},
+    "collisions_inner": 2,
+    "collisions_edge": 35134,
+    "area": 0.25,
+    "a": 0.0284965828994075,
+    "c": 0.4581652932831429,
+    "S_triples": 19.968574,
+    "pmax": 1000000
+   }
+  },
+  {
+   "composite": "((((es.sieve<-es.ua.none)<-es.ualpha.none)<-es.aalpha.none)<-es.centre.none)",
+   "parts": [
+    "es.sieve",
+    "es.ua.none",
+    "es.ualpha.none",
+    "es.aalpha.none",
+    "es.centre.none"
+   ],
+   "outcome": "rejected",
+   "reason": "no corner: nothing is sieved",
+   "measurement": {
+    "corners": [],
+    "forms": {},
+    "centre": "none",
+    "uncertified_primes": {},
+    "collisions_inner": 0,
+    "collisions_edge": 0,
+    "area": 0.0,
+    "a": 0.0,
+    "c": 0.0,
+    "S_triples": 0.0,
+    "pmax": 1000000
+   }
+  }
+ ]
+}

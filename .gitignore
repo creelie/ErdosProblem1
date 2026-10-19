@@ -6,3 +6,9 @@ paper/*.toc
 paper/output.pdf
 __pycache__/
 paper/main.pdf
+exceptional/paper/*.aux
+exceptional/paper/*.log
+exceptional/paper/*.out
+exceptional/paper/*.toc
+exceptional/paper/main.pdf
+exceptional/paper/mainNotes.bib

@@ -1,4 +1,4 @@
-# AI provenance: The exact constant of the two-parameter Type II sieve for the Erdős–Straus equation
+# AI provenance: A power-saving asymptotic for the two-parameter Type II sieve sum of the Erdős–Straus equation
 
 Authors: Deep Bhattacharjee (corresponding author, ORCID 0000-0003-0466-750X)
 and Ushashi Bhattacharya (ORCID 0009-0002-2254-3914).
@@ -14,6 +14,14 @@ W(J) of 1/φ(4ua) over coprime u, a ≤ J. He proved
 W(J) ≥ (3/(2π²) + o(1))(log J)² and asked for (0.45 + o(1))(log J)². The paper
 proves W(J) = (9/(2π²))((log J + γ + T)² + M) + O(J^{-1/2} log J) with explicit
 constants T and M, and records the resulting constants in Dahan's bounds.
+
+The first two terms, (9/(2π²))(log J)² and 2κ(γ + T) log J with an error O(1),
+were found earlier by Z. Liu, *The Exact Reciprocal-Totient Constant in the
+Two-Parameter Erdős–Straus Sieve* (Zenodo, 7 September 2026,
+doi:10.5281/zenodo.22650516), who also derived the exponent 0.0943 for Dahan's
+bound. The paper credits Liu; what it adds is the constant term
+κ((γ + T)² + M) = −0.1140687011… and the error O(J^{-1/2} log J), with the
+Lean checks.
 
 ## Who did what
 
@@ -40,5 +48,6 @@ AI system took part.
 The paper does not prove the Erdős–Straus conjecture. The consequences for the
 exceptional set rest on Dahan's arguments, which are unrefereed and are used as
 stated. On 19 October 2026 the authors found version 1 of Dahan's preprint
-(25 August 2026) to be its only version, and found no other treatment of the
-question on arXiv or the web.
+(25 August 2026) to be its only version, and found Liu's preprint, which
+answers Dahan's first question with the leading constant and the linear term.
+The paper claims neither as new.

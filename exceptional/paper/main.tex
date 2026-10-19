@@ -1,0 +1,796 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,longbibliography,floatfix,showkeys,nobalancelastpage,amsmath,amssymb,10pt]{revtex4-2}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{orcidlink}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{xurl}
+\makeatletter\let\write@bibliographystyle\relax\let\bibliography@latex\@gobble\makeatother
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\theoremstyle{plain}
+\newtheorem{mainthm}{Theorem}
+\renewcommand{\themainthm}{\Alph{mainthm}}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Ex}{\mathcal{E}}
+\newcommand{\Tp}{\mathcal{T}}
+\newcommand{\cl}{\mathrm{c}}
+\newcommand{\repoURL}{https://github.com/creelie/ErdosProblem1}
+\tolerance=2000
+\emergencystretch=2em
+\hbadness=2000
+\hfuzz=1pt
+\raggedbottom
+
+\begin{document}
+
+\title{An explicit exponent for the exceptional set of the Erd\H{o}s--Straus equation}
+
+\author{Deep Bhattacharjee\,\orcidlink{0000-0003-0466-750X}}
+\email{itsdeep@live.com}
+\email{d.bhattacharjee@erl-forschung.de}
+\thanks{Corresponding author.}
+\affiliation{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India}
+\affiliation{Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India}
+
+\author{Ushashi Bhattacharya\,\orcidlink{0009-0002-2254-3914}}
+\email{rai.bhattacharya.in@gmail.com}
+\affiliation{Formerly, National Taiwan University, Taipei 106319, Taiwan}
+
+\date{October 19, 2026}
+
+\begin{abstract}
+\itshape
+The Erd\H{o}s--Straus conjecture says that four divided by any integer greater than one is a sum of three unit fractions. In 1970 Vaughan showed that the integers up to $N$ for which this fails are few: their number is at most $N$ times the exponential of minus a positive constant times the two-thirds power of $\log N$. His argument gives no value of the constant, and for the primes among these integers a recent sieve gives the value $0.0943$. We prove the bound for all of them with the constant $0.6607$, which has a closed form in $\pi$, and we show that it is the best constant the large sieve can give with the residue classes we use. These classes come from three regions of the factorisations attached to each prime, and we prove that classes from different regions agree only at a sparse set of primes.
+\par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 11D68; 11N36; 11N35; 11N13.
+\end{abstract}
+
+\keywords{Erd\H{o}s--Straus conjecture; large sieve; exceptional set; Egyptian fractions}
+
+\maketitle
+\makeatletter\renewcommand\l@subsection[2]{}\renewcommand\l@subsubsection[2]{}\makeatother
+\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+
+For an integer $n\ge2$ the Erd\H{o}s--Straus conjecture asserts that
+\begin{equation}\label{eq:es}
+\frac4n=\frac1x+\frac1y+\frac1z
+\end{equation}
+has a solution in positive integers $x,y,z$ \cite[\S D11]{Guy}. A solution for $n$ gives one for every multiple of $n$, so it is enough to treat primes, and polynomial identities settle every prime outside the six residue classes $1,121,169,289,361,529$ modulo $840$ \cite{Mor}. These six classes are the squares among the classes prime to $840$, and Mordell observed that no identity of this kind can settle a square class.\footnote{An identity that solves \eqref{eq:es} for all $n$ in a class $r$ modulo $q$ exists only if $r$ is not a square modulo $q$; see \cite[Section~2]{ET} for the principle and the families of identities behind it. The same computation decides a recent claim of a proof for the primes $p\equiv1\pmod4$ \cite{Dya}. It reduces the problem to a finite family of classes $p\equiv-4\alpha s^2\pmod{M}$ with $M=4\alpha sr-1$ that is supposed to cover every prime. Since $M\equiv3\pmod4$, $M\equiv-1$ modulo every odd prime factor of $\alpha$, and $M\equiv-1\pmod8$ when $\alpha$ is even, quadratic reciprocity gives the Jacobi symbol $\bigl(\frac{-4\alpha s^2}{M}\bigr)=-1$, so no such class contains a square, and the class $p\equiv1$ modulo $4$ times the product of the moduli is never covered. By Dirichlet's theorem it contains infinitely many primes, all $\equiv1\pmod4$. The reduction is therefore conditional, as its author states.} The conjecture has been verified for all $n\le10^{17}$ by Salez \cite{Sal} and for all $n\le10^{18}$ by Mihnea and Dumitru \cite{MD}. It remains open.
+
+Let $\Ex(N)$ be the set of $n\le N$ for which \eqref{eq:es} has no solution. Vaughan \cite{Vau} proved in 1970 that
+\begin{equation}\label{eq:vaughan}
+|\Ex(N)|\ll N\exp\bigl(-c(\log N)^{2/3}\bigr)
+\end{equation}
+for some constant $c>0$, by applying the large sieve to the residue classes produced by one family of identities. Elsholtz and Tao \cite{ET} later determined the average number of solutions of \eqref{eq:es} for prime $n$. Pomerance and Weingartner \cite{PW} extended \eqref{eq:vaughan} to $m/n$ uniformly in $m$, with the exponent $C(\log N)^{2/3}/\varphi(m)^{1/3}$ for an absolute constant $C$. In both papers the number of residue classes at each prime is controlled only up to constant factors, and no numerical value of $c$ follows.\footnote{In \cite[Section~4]{PW} the number of classes, summed over the primes $p\le x$ with weight $1/p$, is shown to be of order $(\log x)^2$: the upper bound comes from the Brun--Titchmarsh inequality and the lower bound from the Bombieri--Vinogradov theorem, with different implied constants, and the exponent is written through these two constants.} Dahan \cite{Dah} has recently run Vaughan's large-sieve scheme on a two-parameter Type~II system for the primes $n\equiv1\pmod{24}$, which contain every prime in $\Ex(N)$, and obtained \eqref{eq:vaughan} for these primes with $c=0.065$. The sum that governs his system has the leading constant $9/(2\pi^2)$, found by Liu \cite{Liu} and, with a power-saving error term, in \cite{BBv1}; with it the same argument gives $c=0.0943$ for the primes. Here we compute the constant $c$ for the whole set $\Ex(N)$.
+
+\begin{mainthm}\label{thm:A}
+For every $\eps>0$ there is $N_0(\eps)$ such that, for all $N\ge N_0(\eps)$,
+\begin{equation}\label{eq:main}
+|\Ex(N)|\le N\exp\bigl(-(c_0-\eps)(\log N)^{2/3}\bigr),
+\end{equation}
+where
+\begin{equation}\label{eq:c0}
+c_0=\frac{9}{2^{8/3}\pi^{2/3}}=\frac32\Bigl(\frac{27}{32\pi^2}\Bigr)^{1/3}=0.6607886973\ldots
+\end{equation}
+\end{mainthm}
+
+Equivalently, $c_0^3=729/(256\pi^2)$. The number $27/(32\pi^2)$ inside \eqref{eq:c0} is the density of the residue classes that we sieve with: summed over the primes up to $x$ with weight $1/p$, their number is $(27/(32\pi^2)+o(1))(\log x)^2$ (Corollary~\ref{cor:density}). The factor $\frac32$ and the cube root come from the optimisation in the large sieve (Section~\ref{sec:sieve}).
+
+The second theorem says that the constant cannot be improved with the same classes. For a prime $p\equiv3\pmod4$ with $P=(p+1)/4$, let $\Omega^\sharp_p$ be the set of classes $-u/a\pmod p$ attached to factorisations $P=ua\alpha$ with $\gcd(u,a)=1$ in which one of the three products $ua$, $u\alpha$, $a\alpha$ is at most $\sqrt p$ (Section~\ref{sec:typeII}). Let $L^\sharp(Q)$ be the sum that the large sieve attaches to these classes, as in \eqref{eq:L} below.
+
+\begin{mainthm}\label{thm:B}
+For every $\eps>0$ there is $N_1(\eps)$ such that, for all $N\ge N_1(\eps)$ and all $Q\ge1$,
+\[
+\frac{N+Q^2}{L^\sharp(Q)}\ge N\exp\bigl(-(c_0+\eps)(\log N)^{2/3}\bigr).
+\]
+\end{mainthm}
+
+The classes used for Theorem~\ref{thm:A} lie in $\Omega^\sharp_p$, and the bound of the large sieve can only decrease when classes are removed. Theorem~\ref{thm:B} therefore shows that, with these classes, the large sieve gives exactly the exponent $c_0$: Theorem~\ref{thm:A} is the most that this set of classes can yield.
+
+
+\textit{The method.} Each prime $p\equiv3\pmod4$ carries the identities of Type~II \cite{ET}: for every factorisation $P=ua\alpha$ with $\gcd(u,a)=1$, every $n\equiv-u/a\pmod p$ has a solution of \eqref{eq:es} (Lemma~\ref{lem:identity}). In logarithmic coordinates these factorisations fill a triangle (Figure~\ref{fig:simplex}). To sieve with their classes one must count them and show that they are distinct. Counting requires primes in progressions to moduli $4ua$, $4u\alpha$ or $4a\alpha$, which the Bombieri--Vinogradov theorem controls up to about $\sqrt p$; this cuts the triangle into three corners, where one product of two variables is at most $\sqrt p$, and a centre. Distinctness is the main difficulty. In each corner the class has a normal form of small height, $u/a$, $4u^2\alpha$ or $(4a^2\alpha)^{-1}$, which separates the classes inside that corner, and two arguments with explicit inequalities show that the corner $A$ shares no class with $B$ or $C$. The corners $B$ and $C$ do share classes, but only along a family described by six integers, and these coincidences contribute a convergent series (Proposition~\ref{prop:BC}). The corners cover three quarters of the triangle, and this fraction enters the constant through the density $\frac34\cdot\frac{9}{8\pi^2}=\frac{27}{32\pi^2}$. The three corners and their normal forms were selected, among 128 candidate constructions, by the engine Anaxia of the BLLM project \cite{Ana,BLLM}.\footnote{Anaxia, version~3.0.5, builds constructions by typed crossing of proof components and tests them on data. For this problem its library held 22 typed construction nodes: the large sieve with the tilted lower bound; each corner paired with each of the three normal forms, or left out; the centre, left out or counted under the Elliott--Halberstam conjecture; and the inputs that each of these needs. Typed crossing produced 128 closed constructions, $4^3$ choices for the corners times $2$ for the centre. The engine tested each on the $39{,}322$ primes $p\equiv3\pmod4$ below $10^6$ and kept 7, those with one, two or three corners and the matching forms. It rejected 112 because a normal form failed to separate the classes, 8 that contain the centre because two pairs of triples in the centre share a class (both at $p=531359$, Remark~\ref{rem:level}), and the empty construction. The best of the seven is the construction of this paper, with the constant $0.660789$. The engine selected the construction; the proofs are ours. Its record and a script that reproduces it are in the archive of this paper \cite{Zen}.}
+
+The rest of the argument is analytic. A Rankin-type upper bound and a tilted lower bound determine the sum of the large sieve to leading order once the density of the classes is known (Proposition~\ref{prop:tilt}); the same upper bound proves Theorem~\ref{thm:B}. Section~\ref{sec:remarks} compares the corners with smaller and larger regions (Table~\ref{tab:ladder}), shows that the level $\sqrt p/4$ cannot simply be raised to $\sqrt p$ in the distinctness argument, and compares the result with the count of classes in Vaughan's argument. Appendix~\ref{app:derivations} contains every computation in full.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_simplex.png}
+\caption{In the coordinates $(\log u,\log a,\log\alpha)/\log P$ the factorisations $P=ua\alpha$ fill a triangle. The three corners $A$, $B$, $C$ are the parts in which one product of two variables is at most $X$; each carries its own normal form of the class $u/a$ (Lemma~\ref{lem:forms}). The grey centre would need primes in progressions to moduli above $\sqrt p$. At $X=\sqrt p$ each corner has a quarter of the area.}
+\label{fig:simplex}
+\end{figure}
+
+\section{Type II triples and their classes}\label{sec:typeII}
+
+Throughout, $p$ denotes a prime with $p\equiv3\pmod4$, and $P=(p+1)/4$, so that $p=4P-1$ and $4P\equiv1\pmod p$.
+
+\begin{definition}\label{def:triple}
+A \emph{Type~II triple} for $p$ is $t=(u,a,\alpha)\in\NN^3$ with $ua\alpha=P$ and $\gcd(u,a)=1$. Their set is $\Tp(p)$. The \emph{class} of $t$ is $\cl(t)=u\,a^{-1}\bmod p$, which is defined because $1\le a\le P<p$.
+\end{definition}
+
+\begin{lemma}\label{lem:identity}
+Let $t=(u,a,\alpha)\in\Tp(p)$ and $n\ge1$ with $n\equiv-\cl(t)\pmod p$. Then $v=(an+u)/p$ is a positive integer and
+\begin{equation}\label{eq:identity}
+\frac4n=\frac1{\alpha uv}+\frac1{a\alpha nu}+\frac1{a\alpha nv}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The congruence $n\equiv-u/a$ means $p\mid an+u$, and $an+u\ge2$, so $v$ is a positive integer. Then $an+u=pv=(4ua\alpha-1)v$, that is $an+u+v=4a\alpha uv$. Dividing by $a\alpha nuv$ gives \eqref{eq:identity}.
+\end{proof}
+
+When $n$ is prime and $n\nmid uv$, two of the three denominators in \eqref{eq:identity} are divisible by $n$ and the third is not; these are the solutions of Type~II in the sense of \cite{ET}.\footnote{The identity \eqref{eq:identity} with $p=4ua\alpha-1$ is the one behind Vaughan's argument \cite{Vau} and the Type~II search of \cite{Dah}; in \cite{BBv1} we used it with $\alpha$ replaced by the witness $s$ of that search.} By Lemma~\ref{lem:identity}, an integer $n\in\Ex(N)$ lies, for every prime $p\equiv3\pmod4$, outside every class $-\cl(t)$ with $t\in\Tp(p)$. This is the input to the large sieve.
+
+\begin{lemma}\label{lem:forms}
+For every $t=(u,a,\alpha)\in\Tp(p)$,
+\begin{equation}\label{eq:forms}
+\cl(t)\equiv4u^2\alpha\equiv(4a^2\alpha)^{-1}\pmod p.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+From $p=4ua\alpha-1$ we get the identities
+\[
+4(u^2\alpha)a-u=up,\qquad 4(a^2\alpha)u-a=ap.
+\]
+The first gives $4u^2\alpha\cdot a\equiv u$, so $u/a\equiv4u^2\alpha$. The second gives $4a^2\alpha\cdot u\equiv a$, so $u/a\equiv(4a^2\alpha)^{-1}$.
+\end{proof}
+
+We call $u/a$, $4u^2\alpha$ and $(4a^2\alpha)^{-1}$ the three normal forms of the class. Each is useful where its height is small.
+
+\begin{definition}\label{def:corners}
+For $X\ge1$ the three \emph{corners} at level $X$ are
+\begin{align*}
+A_p(X)&=\{t\in\Tp(p):u\ge2,\ a\ge2,\ ua\le X\},\\
+B_p(X)&=\{t\in\Tp(p):u\alpha\le X\},\\
+C_p(X)&=\{t\in\Tp(p):a\alpha\le X\}.
+\end{align*}
+\end{definition}
+
+The corner $A$ omits the triples with $u=1$ or $a=1$, which are needed in the proof of Proposition~\ref{prop:distinct} and are too few to matter in the count (they contribute $O(\log X)$ to the sums of Section~\ref{sec:counting}). The map $\iota(u,a,\alpha)=(a,u,\alpha)$ is an involution of $\Tp(p)$ with $\cl(\iota t)=\cl(t)^{-1}$; it maps $A_p(X)$ onto itself and exchanges $B_p(X)$ and $C_p(X)$. In particular $|B_p(X)|=|C_p(X)|$.
+
+\begin{lemma}\label{lem:geometry}
+Suppose $16X^2\le p$. Then:
+\begin{enumerate}
+\item[(i)] the corners $A_p(X)$, $B_p(X)$, $C_p(X)$ are pairwise disjoint;
+\item[(ii)] on $A_p(X)$ one has $u,a\le X$; on $B_p(X)$ one has $u^2\alpha\le X^2$; on $C_p(X)$ one has $a^2\alpha\le X^2$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) Two of the three conditions force the product of the two products to be at most $X^2$. For $A$ and $B$ this is $(ua)(u\alpha)=uP\le X^2$; for $A$ and $C$ it is $aP\le X^2$; for $B$ and $C$ it is $\alpha P\le X^2$. In each case $P\le X^2\le p/16<P$, which is impossible. (ii) On $A$, $u$ and $a$ divide $ua\le X$. On $B$, $u^2\alpha=u\cdot u\alpha\le(u\alpha)^2\le X^2$, and similarly on $C$.
+\end{proof}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_triples.png}
+\caption{The $185{,}895$ Type~II triples of the prime $p=342670648319$, for which $P=2^8\cdot3^2\cdot5\cdot7\cdot11\cdot13\cdot17\cdot19\cdot23$, with the corners at level $X=\sqrt p/16$; the grey triples lie in no corner. The corners $B$ and $C$ have the same size, as the involution $\iota$ shows.}
+\label{fig:triples}
+\end{figure}
+
+\section{Distinct classes}\label{sec:distinct}
+
+This section proves that the classes of the three corners are distinct, apart from a sparse set of coincidences between $B$ and $C$.
+
+\begin{proposition}\label{prop:distinct}
+Suppose $16X^2\le p$. Then $\cl$ is injective on each of $A_p(X)$, $B_p(X)$ and $C_p(X)$, and no class of $A_p(X)$ is a class of $B_p(X)$ or of $C_p(X)$.
+\end{proposition}
+
+\begin{proof}
+\emph{Inside $A$.} Let $t,t'\in A_p(X)$ with $u/a\equiv u'/a'$. Then $p\mid ua'-u'a$, and $|ua'-u'a|<X^2<p$ by Lemma~\ref{lem:geometry}(ii), so $ua'=u'a$. Since $\gcd(u,a)=\gcd(u',a')=1$, this gives $u=u'$, $a=a'$ and then $\alpha=\alpha'$.
+
+\emph{Inside $B$.} Let $t,t'\in B_p(X)$ with equal classes. By \eqref{eq:forms}, $4u^2\alpha\equiv4u'^2\alpha'$, and both sides lie in $[1,4X^2]\subset[1,p)$, so $h=u^2\alpha$ equals $h'=u'^2\alpha'$. Now $ha=u\cdot ua\alpha=uP$, so $u/a=h/P$ as rational numbers; since $\gcd(u,a)=1$, the pair $(u,a)$ is the reduced form of $h/P$. The same holds for $t'$, so $t=t'$.
+
+\emph{Inside $C$.} The involution $\iota$ maps $C$ onto $B$ and inverts classes, so injectivity on $C$ follows from injectivity on $B$.
+
+\emph{$A$ against $B$.} Let $t=(u,a,\alpha)\in A_p(X)$ and $t'=(u',a',\alpha')\in B_p(X)$ have the same class, and put $h=u'^2\alpha'$, so that $u/a\equiv4h$ by \eqref{eq:forms}. Then $4ah-u=wp$ for some integer $w$.
+
+If $w\le-1$ then $4ah\le u-p<0$, which is impossible. If $w=0$ then $4ah=u$, so $a\mid u$, and $\gcd(u,a)=1$ forces $a=1$, which is excluded in $A$. Hence $w\ge1$. Substituting $p=4ua\alpha-1$ in $4ah=u+wp$ gives
+\[
+4ah=u-w+4ua\alpha w,
+\]
+so $4a\mid u-w$. Write $u-w=4aj$ with $j\in\mathbb{Z}$; then
+\begin{equation}\label{eq:hj}
+h=j+wu\alpha,\qquad w=u-4aj.
+\end{equation}
+
+\emph{Case $j\le-1$.} Then $w=u+4a|j|$ and
+\[
+h=-|j|+(u+4a|j|)u\alpha=|j|p+u^2\alpha>p,
+\]
+while $h\le X^2<p$ by Lemma~\ref{lem:geometry}(ii). This is impossible.
+
+\emph{Case $j=0$.} Then $h=u^2\alpha$, and, as in the proof for $B$, $u'/a'=h/P=u^2\alpha/(ua\alpha)=u/a$, so $t'=t$. But $A$ and $B$ are disjoint by Lemma~\ref{lem:geometry}(i).
+
+\emph{Case $j\ge1$.} Since $w\ge1$, \eqref{eq:hj} gives $4aj\le u-1$, so $aj<u/4$. Put $d=u'\alpha'$. Then $P=a'd$ and $h=u'd$, and from \eqref{eq:hj},
+\[
+a\,h=aj+w\,ua\alpha=aj+wP=aj+wa'd,
+\]
+that is
+\begin{equation}\label{eq:dj}
+d\,(au'-a'w)=aj.
+\end{equation}
+The right side is positive, so $au'-a'w\ge1$ and $d\le aj<u/4$. Hence $h=u'^2\alpha'\le(u'\alpha')^2=d^2<u^2/16$, and
+\[
+p<u+wp=4ah<\frac{au^2}{4}\le\frac{(ua)^2}{4}\le\frac{X^2}{4}<p,
+\]
+a contradiction. So no class of $A$ is a class of $B$.
+
+\emph{$A$ against $C$.} If $t\in A_p(X)$ and $t'\in C_p(X)$ had the same class, then $\iota t\in A_p(X)$ and $\iota t'\in B_p(X)$ would have the same class $\cl(t)^{-1}$, which the previous step excludes.
+\end{proof}
+
+The corners $B$ and $C$ can share a class. The next proposition describes every such coincidence.
+
+\begin{proposition}\label{prop:BC}
+Suppose $16X^2\le p$, and let $t=(u,a,\alpha)\in B_p(X)$ and $t'=(u',a',\alpha')\in C_p(X)$ have the same class. Put
+\[
+d=u\alpha,\quad e=a'\alpha',\quad M=ua',\quad k=\alpha\alpha',
+\]
+$G=\gcd(d,e)$, $d=Gd_1$ and $e=Ge_1$. Then there are integers $r,m,\tau\ge1$ such that
+\begin{align}
+P&=Gd_1e_1(4Gr+\tau),\label{eq:BC-P}\\
+M&=d_1e_1\tau(4Gr+\tau)+r,\label{eq:BC-M}\\
+G&=4k\tau r+m,\label{eq:BC-G}\\
+m(4k\tau r+m)&=k\tau^2+\frac{kr}{d_1e_1},\quad d_1e_1\mid kr,\label{eq:BC-quad}
+\end{align}
+and
+\begin{equation}\label{eq:BC-bounds}
+\tau\ge4mr,\qquad G\ge16kmr^2,\qquad P\ge1024\,k^2m^2r^5d_1e_1.
+\end{equation}
+The integers $k,m,r,d_1,e_1,\tau$ and $u$ determine the pair $(t,t')$.
+\end{proposition}
+
+\begin{proof}
+\emph{Step 1: the integer $r$.} By \eqref{eq:forms}, $4u^2\alpha\equiv(4a'^2\alpha')^{-1}$, so $16\,u^2\alpha\,a'^2\alpha'\equiv1\equiv16P^2$ and therefore $u^2\alpha\,a'^2\alpha'\equiv P^2$, that is, $de\,M\equiv P^2\pmod p$. On the other hand $P=ad=u'e$, so $P^2=de\cdot au'$. Since $p\nmid de$, we get $au'\equiv M\pmod p$; write $au'=M+rp$ with $r\in\mathbb{Z}$, so that
+\begin{equation}\label{eq:BC-r}
+P^2=de\,(M+rp).
+\end{equation}
+If $r=0$ then $au'=ua'$, and since both pairs are coprime, $u=u'$ and $a=a'$, so $t=t'$, which contradicts Lemma~\ref{lem:geometry}(i). If $r\le-1$ then $M=au'+|r|p>p$, but $M=ua'\le(u\alpha)(a'\alpha')\le X^2<p$. Hence $r\ge1$.
+
+\emph{Step 2: the integer $s=P-4der$.} Expanding \eqref{eq:BC-r} with $p=4P-1$ gives
+\begin{equation}\label{eq:BC-s}
+P\,s=de\,(M-r),\qquad s=P-4der.
+\end{equation}
+Since $M\ge1$, \eqref{eq:BC-r} gives $P^2>der(4P-1)$, hence $4der<P^2/(P-\frac14)<P+1$, so $s\ge0$. If $s=0$ then $M=r$ and $P=4der$; then $a=P/d=4er=4eua'$, so $u\mid a$ and $u=1$; similarly $u'=P/e=4dr=4dua'$, so $a'\mid u'$ and $a'=1$. Then $r=M=1$ and $P=4de\le4X^2\le p/4<P$, a contradiction. Hence $s\ge1$.
+
+\emph{Step 3: the parametrisation.} Both $d$ and $e$ divide $P$ and $4der$, hence $s$, so the least common multiple $Gd_1e_1$ divides $s$. Write $s=Gd_1e_1\tau$ with $\tau\ge1$. Then $P=s+4der=Gd_1e_1(4Gr+\tau)$, which is \eqref{eq:BC-P}. Inserting this into \eqref{eq:BC-s} and cancelling $G^2d_1e_1$ gives \eqref{eq:BC-M}. Next, $de=ua'\cdot\alpha\alpha'=kM$, so $kM=G^2d_1e_1$. With \eqref{eq:BC-M} this reads $k\,d_1e_1\tau(4Gr+\tau)+kr=G^2d_1e_1$, so $d_1e_1\mid kr$ and
+\begin{equation}\label{eq:BC-G2}
+G^2-k\tau(4Gr+\tau)=\frac{kr}{d_1e_1}\ge1.
+\end{equation}
+Hence $G(G-4k\tau r)>k\tau^2>0$, so $m=G-4k\tau r\ge1$, which is \eqref{eq:BC-G}, and \eqref{eq:BC-G2} becomes \eqref{eq:BC-quad}.
+
+\emph{Step 4: the inequalities.} From \eqref{eq:BC-quad}, $4k\tau rm+m^2\le k\tau^2+kr$. Suppose $\tau<4mr$. The integers $\tau$ and $4mr-\tau$ are positive with sum $4mr$, so their product is at least $4mr-1\ge3r\ge r$. Then $k\tau(4mr-\tau)\ge kr$, while the inequality above gives $k\tau(4mr-\tau)\le kr-m^2<kr$. This contradiction proves $\tau\ge4mr$. Then $G=4k\tau r+m\ge16kmr^2$, and from \eqref{eq:BC-P},
+\[
+P\ge Gd_1e_1\cdot4Gr=4r\,G^2d_1e_1\ge1024\,k^2m^2r^5d_1e_1.
+\]
+
+\emph{Step 5: recovery of the pair.} Given $k,m,r,d_1,e_1,\tau$, the integers $G$, $P$, $d$, $e$ and $M$ are fixed by \eqref{eq:BC-G}, \eqref{eq:BC-P} and \eqref{eq:BC-M}. Given also $u$, we recover $\alpha=d/u$, $a'=M/u$, $\alpha'=e/a'$, $a=P/d$ and $u'=P/e$.
+\end{proof}
+
+For a prime $p\equiv3\pmod4$ let $\nu(p)$ be the number of pairs $(t,t')$ with $t\in B_p(\sqrt p/4)$, $t'\in C_p(\sqrt p/4)$ and $\cl(t)=\cl(t')$. For every $X\le\sqrt p/4$ the corners at level $X$ lie inside those at level $\sqrt p/4$, so the number of coincidences between $B_p(X)$ and $C_p(X)$ is at most $\nu(p)$.
+
+\begin{corollary}\label{cor:nu}
+$\sum_p\nu(p)/p<\infty$.
+\end{corollary}
+
+\begin{proof}
+Fix $\eta\in(0,\frac14)$. By Proposition~\ref{prop:BC}, each coincidence at $p$ gives integers $k,m,r,d_1,e_1,\tau\ge1$ that fix $P$, together with a divisor $u$ of $M<p$; there are at most $C_\eta P^\eta$ such divisors. For fixed $k,m,r,d_1,e_1$, the equation \eqref{eq:BC-quad} is a quadratic equation in $\tau$ with leading coefficient $k\ne0$, so it has at most two solutions. The pairs $(d_1,e_1)$ with $d_1e_1\mid kr$ number at most $\tau_3(kr)\le C_\eta(kr)^\eta$, where $\tau_3$ counts ordered factorisations into three factors. Using $p>P\ge1024k^2m^2r^5$, we obtain
+\[
+\sum_p\frac{\nu(p)}{p}\le C'_\eta\sum_{k,m,r\ge1}\frac{(kr)^\eta}{(k^2m^2r^5)^{1-\eta}},
+\]
+and the series converges because the exponents of $k$, $m$ and $r$ are $2-3\eta$, $2-2\eta$ and $5-6\eta$, all greater than $1$.
+\end{proof}
+
+\section{Counting the classes}\label{sec:counting}
+
+\subsection{Mean values}
+
+Let $\kappa=9/(2\pi^2)=0.4559453\ldots$, the constant of \cite{Liu,BBv1}. For $X\ge1$ define
+\begin{align*}
+S_A(X)&=\sum_{\substack{u,a\ge2,\ ua\le X\\ \gcd(u,a)=1}}\frac1{\varphi(4ua)},\\
+S_B(X)&=\sum_{u\alpha\le X}\frac{\varphi(u)}{u\,\varphi(4u\alpha)}.
+\end{align*}
+The weight $1/\varphi(4ua)$ is the density of the primes $p\equiv-1\pmod{4ua}$, that is, of the primes for which $(u,a,\alpha)$ with $\alpha=P/(ua)$ is a triple of $A_p(X)$. In $S_B$ the extra factor $\varphi(u)/u$ is the density of the condition $\gcd(u,a)=1$ among the primes $p\equiv-1\pmod{4u\alpha}$.\footnote{For a prime $q\mid u$, the primes $p\equiv-1\pmod{4u\alpha}$ fall into $q$ classes modulo $4u\alpha q$, all prime to $4u\alpha q$, and $q\mid a=(p+1)/(4u\alpha)$ holds on exactly one of them. By inclusion and exclusion over the prime factors of $u$, the condition $\gcd(u,a)=1$ has density $\prod_{q\mid u}(1-1/q)=\varphi(u)/u$, because $\varphi(4u\alpha q)=q\,\varphi(4u\alpha)$ when $q\mid u$.}
+
+\begin{lemma}\label{lem:mean}
+As $X\to\infty$,
+\begin{align*}
+S_A(X)&=\frac\kappa2\log^2X+O(\log X),\\
+S_B(X)&=\frac\kappa2\log^2X+O(\log X).
+\end{align*}
+\end{lemma}
+
+\begin{proof}[Sketch]
+Since $\varphi(4n)=2\varphi(n)$ for odd $n$ and $4\varphi(n)$ for even $n$, we have $1/\varphi(4n)=\psi(n)/(2n)$ with $\psi(n)=\prod_{q\mid n,\,q\text{ odd}}q/(q-1)$. Thus $S_B(X)=\frac12\sum_{u\alpha\le X}W(u,\alpha)/(u\alpha)$ with $W(u,\alpha)=\psi(u\alpha)\varphi(u)/u$, a function that is multiplicative in the pair. Writing $W(u,\alpha)=\sum_{d\mid u,\,e\mid\alpha}g(d,e)$, the function $g$ is supported on $g(1,1)=1$, $g(1,q)=1/(q-1)$ and $g(q,q)=-1/(q-1)$ for odd primes $q$, and $g(2,1)=-\frac12$. Then
+\[
+S_B(X)=\frac12\sum_{d,e}\frac{g(d,e)}{de}\,H\Bigl(\frac X{de}\Bigr),\qquad H(Y)=\sum_{mn\le Y}\frac1{mn},
+\]
+and $H(Y)=\frac12\log^2Y+2\gamma\log Y+O(1)$ for $Y\ge1$. The sum $\sum_{d,e}g(d,e)/(de)$ is the Euler product of the local factors $\frac34$ at $2$ and $1+q^{-2}$ at odd $q$, that is $\frac34\cdot\frac{12}{\pi^2}=\frac9{\pi^2}=2\kappa$, and the main term is $\frac12\cdot2\kappa\cdot\frac12\log^2X$. The sum $S_A$ is treated in the same way; its local factors are again $\frac34$ and $1+q^{-2}$, and the triples with $u=1$ or $a=1$ contribute $O(\log X)$. The details are in Appendices~\ref{app:local} and~\ref{app:hyperbola}.
+\end{proof}
+
+The two corners have the same constant because they have the same local factors (Table~\ref{tab:local} in Appendix~\ref{app:local}).
+
+\subsection{Primes}
+
+To count the corners over the primes we use dyadic blocks. Fix $\delta\in(0,\frac1{10}]$. For $j\ge1$ put
+\[
+I_j=(2^j,2^{j+1}],\qquad X_j=2^{j(1/2-\delta)}.
+\]
+For $p\in I_j$ we have $16X_j^2\le16\cdot2^{j(1-2\delta)}\le p$ once $j\ge2/\delta$. We write $|K_p(X)|$ for the size of a corner, with the convention $|K_p(X)|=0$ when $p\not\equiv3\pmod4$.
+
+\begin{proposition}\label{prop:primes}
+For $K\in\{A,B,C\}$, as $j\to\infty$,
+\[
+\sum_{p\in I_j}\frac{|K_p(X_j)|}{p}=\frac\kappa2\Bigl(\frac12-\delta\Bigr)^2(\log2)^2\,j+O_\delta\bigl(j^{1/2}\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+For $C$ the statement is the one for $B$, since $|C_p(X)|=|B_p(X)|$. Let $x=2^{j+1}$ and $z=j^{1/2}$.
+
+\emph{Corner $A$.} A pair $(u,a)$ with $u,a\ge2$, $\gcd(u,a)=1$ and $ua\le X_j$ belongs to $A_p(X_j)$ exactly when $p\equiv-1\pmod{4ua}$. Hence, for $y\in I_j$,
+\[
+\sum_{2^j<p\le y}|A_p(X_j)|=\sum_{(u,a)}\bigl(\pi(y;4ua,-1)-\pi(2^j;4ua,-1)\bigr).
+\]
+The moduli $4ua\le4X_j$ are below $x^{1/2}(\log x)^{-B}$ for $j$ large, and each modulus $4n$ arises from at most $\tau(n)$ pairs. The Bombieri--Vinogradov theorem \cite{Bom}, \cite[Chapter~28]{Dav} with these multiplicities (Appendix~\ref{app:bv}) gives
+\[
+\sum_{2^j<p\le y}|A_p(X_j)|=\bigl(\pi(y)-\pi(2^j)\bigr)S_A(X_j)+O\bigl(x(\log x)^{-3}\bigr)
+\]
+uniformly in $y\in I_j$.
+
+\emph{Corner $B$.} Let $P_z=\prod_{q\le z}q$. A pair $(u,\alpha)$ with $u\alpha\le X_j$ belongs to $B_p(X_j)$ when $p\equiv-1\pmod{4u\alpha}$ and $\gcd(u,a)=1$, where $a=(p+1)/(4u\alpha)$. For a squarefree $d\mid u$ the condition $d\mid a$ is $p\equiv-1\pmod{4u\alpha d}$. Inclusion and exclusion over the primes $q\le z$ that divide $u$ count the pairs with no common prime factor $q\le z$:
+\[
+|B^{(z)}_p|=\sum_{u\alpha\le X_j}\ \sum_{d\mid(u,P_z)}\mu(d)\,\mathbf 1\bigl[p\equiv-1\ (\mathrm{mod}\ 4u\alpha d)\bigr].
+\]
+These moduli are at most $4X_je^{2z}$, still in the range of the Bombieri--Vinogradov theorem, and a modulus $4n$ arises at most $\tau_3(n)$ times. The main term is $(\pi(y)-\pi(2^j))S_B^{(z)}(X_j)$, where $S_B^{(z)}$ is $S_B$ with $\varphi(u)/u$ replaced by $\prod_{q\mid u,\,q\le z}(1-1/q)$, and $S_B\le S_B^{(z)}\le S_B+O(\log^2X_j/z)$ (Appendix~\ref{app:large}). Then $|B_p(X_j)|\le|B^{(z)}_p|$, and the difference counts pairs with $q\mid u$ and $q\mid a$ for some prime $q>z$. The Brun--Titchmarsh inequality \cite{MV} bounds their total over $p\in I_j$ by $O(\delta^{-1}\pi(I_j)\log^2X_j/z)$ (Appendix~\ref{app:large}).
+
+\emph{The weights $1/p$.} Partial summation inside the block (Appendix~\ref{app:block}) turns the counts into
+\[
+\sum_{p\in I_j}\frac{|K_p(X_j)|}{p}=S_K(X_j)\sum_{p\in I_j}\frac1p+O\Bigl(\frac{j}{\delta z}\Bigr)+O(1),
+\]
+with $S_C=S_B$. By the prime number theorem with error term, $\sum_{p\in I_j}1/p=1/j+O(1/j^2)$. With $S_K(X_j)=\frac\kappa2(\frac12-\delta)^2(\log2)^2j^2+O(j)$ from Lemma~\ref{lem:mean} and $z=j^{1/2}$, this is the statement.
+\end{proof}
+
+For $p\in I_j$ with $j\ge2/\delta$ let $\omega_\delta(p)$ be the number of distinct classes $-\cl(t)$ with $t$ in one of the three corners at level $X_j$, and let $\omega_\delta(p)=0$ for all other primes. Define
+\begin{equation}\label{eq:N}
+N_\delta(\lambda)=\sum_{p\le e^\lambda}\frac{\omega_\delta(p)}p.
+\end{equation}
+
+\begin{corollary}\label{cor:density}
+As $\lambda\to\infty$, $N_\delta(\lambda)=(a_\delta+o(1))\lambda^2$ with
+\[
+a_\delta=\frac{3\kappa}4\Bigl(\frac12-\delta\Bigr)^2.
+\]
+In particular $a_\delta\to a_0=3\kappa/16=27/(32\pi^2)$ as $\delta\to0$.
+\end{corollary}
+
+\begin{proof}
+By Propositions~\ref{prop:distinct} and~\ref{prop:BC},
+\[
+\sum_K|K_p(X_j)|-\nu(p)\le\omega_\delta(p)\le\sum_K|K_p(X_j)|.
+\]
+Summing Proposition~\ref{prop:primes} over the three corners and over $2/\delta\le j\le J$ gives
+\begin{align*}
+\frac{3\kappa}2\Bigl(\frac12-\delta\Bigr)^2&(\log2)^2\sum_{j\le J}j+O_\delta(J^{3/2})\\
+&=a_\delta(J\log2)^2+O_\delta(J^{3/2}).
+\end{align*}
+The coincidences contribute $O(1)$ by Corollary~\ref{cor:nu}, and a partial block contributes $O(J)$. With $J\log2=\lambda+O(1)$ the corollary follows.
+\end{proof}
+
+\section{The large sieve and the tilt}\label{sec:sieve}
+
+Let $\omega(p)$ be integers with $0\le\omega(p)<p$, and for each prime $p$ let $\Omega_p$ be a set of $\omega(p)$ residue classes modulo $p$. Put $g(p)=\omega(p)/(p-\omega(p))$ and
+\begin{equation}\label{eq:L}
+L(Q)=\sum_{q\le Q}\mu^2(q)\prod_{p\mid q}g(p).
+\end{equation}
+
+\begin{lemma}[Large sieve \cite{Mon,MV}]\label{lem:ls}
+For all $N,Q\ge1$, the number of $n\le N$ with $n\bmod p\notin\Omega_p$ for every prime $p\le Q$ is at most $(N+Q^2)/L(Q)$.
+\end{lemma}
+
+The size of $L(Q)$ is determined by the density of the classes. We assume $\omega(p)\le C_\eta p^\eta$ for every $\eta>0$; this holds in our applications because $\omega(p)\le|\Tp(p)|\le\tau_3(P)$. Let
+\[
+N(\lambda)=\sum_{p\le e^\lambda}\frac{\omega(p)}p.
+\]
+
+\begin{proposition}\label{prop:tilt}
+Let $a>0$ and $T=\log Q$.
+\begin{enumerate}
+\item[(i)] For every $\sigma>0$,
+\begin{equation}\label{eq:rankin}
+L(Q)\le Q^\sigma\exp F(\sigma),\qquad F(\sigma)=\sum_pg(p)p^{-\sigma}.
+\end{equation}
+If $N(\lambda)\le(a+o(1))\lambda^2$, then $F(\sigma)\le(2a+o(1))\sigma^{-2}$ as $\sigma\to0^+$, and
+\[
+\log L(Q)\le\frac32(4a)^{1/3}T^{2/3}(1+o(1)).
+\]
+\item[(ii)] If $N(\lambda)=(a+o(1))\lambda^2$, then
+\[
+\log L(Q)\ge\frac32(4a)^{1/3}T^{2/3}(1-o(1)).
+\]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) Since $(Q/q)^\sigma\ge1$ for $q\le Q$,
+\[
+L(Q)\le Q^\sigma\sum_q\mu^2(q)\frac{\prod_{p\mid q}g(p)}{q^\sigma}=Q^\sigma\prod_p\bigl(1+g(p)p^{-\sigma}\bigr),
+\]
+and $1+y\le e^y$ gives \eqref{eq:rankin}; this is Rankin's device \cite{Ran}. The difference $g(p)-\omega(p)/p=\omega(p)^2/(p(p-\omega(p)))$ is summable, and partial summation gives $\sum_p(\omega(p)/p)p^{-\sigma}=\sigma\int_0^\infty e^{-\sigma\lambda}N(\lambda)\,d\lambda\le(2a+o(1))\sigma^{-2}$ (Appendix~\ref{app:abel}). The choice $\sigma^3T=4a$ minimises $\sigma T+2a/\sigma^2$, with value $\frac32\sigma T=\frac32(4a)^{1/3}T^{2/3}$.
+
+(ii) Fix $\sigma>0$ and let $X_p$, for $p\le Q$, be independent random variables with $X_p=1$ with probability $\pi_p=y_p/(1+y_p)$, where $y_p=g(p)p^{-\sigma}$, and $X_p=0$ otherwise. The random squarefree number $q=\prod_pp^{X_p}$ takes the value $q\mid\prod_{p\le Q}p$ with probability $\prod_{p\mid q}y_p/\prod_{p\le Q}(1+y_p)$. Let $\mu_\sigma$ and $V_\sigma$ be the mean and variance of $\log q=\sum_pX_p\log p$. Suppose $\mu_\sigma+\sqrt{2V_\sigma}=T$. By Chebyshev's inequality, $|\log q-\mu_\sigma|<\sqrt{2V_\sigma}$ with probability at least $\frac12$, and then $q\le Q$ and $q^\sigma\ge e^{\sigma(T-2\sqrt{2V_\sigma})}$. Hence
+\begin{align}
+L(Q)&\ge\sum_{\substack{q\le Q\\ |\log q-\mu_\sigma|<\sqrt{2V_\sigma}}}\mu^2(q)\frac{\prod_{p\mid q}g(p)}{q^\sigma}\,q^\sigma\notag\\
+&\ge\frac12\,e^{\sigma T-2\sigma\sqrt{2V_\sigma}}\prod_{p\le Q}(1+y_p).\label{eq:tilt}
+\end{align}
+In Appendix~\ref{app:sigma} we show that such a $\sigma$ exists, that $\sigma T\to\infty$ and $\sigma\asymp T^{-1/3}$, that $V_\sigma\ll\sigma^{-4}$, and that $\sum_{p\le Q}\log(1+y_p)\ge(2a-o(1))\sigma^{-2}$. Then \eqref{eq:tilt} gives
+\[
+\log L(Q)\ge\sigma T+\frac{2a-o(1)}{\sigma^2}-O(T^{1/3}),
+\]
+and $\sigma T+2a'/\sigma^2\ge\frac32(4a')^{1/3}T^{2/3}$ for every $\sigma>0$ and $a'>0$.
+\end{proof}
+
+The lower bound \eqref{eq:tilt} is an exponential tilt: the weight $q^{-\sigma}$ moves the distribution of $\log q$ so that its mean sits at $\log Q$, and the sum of the large sieve is then comparable to the whole Euler product.\footnote{The same picture explains the shape of the bound. The Euler product grows like $\exp(2a/\sigma^2)$, the tilt costs $Q^{-\sigma}$, and the balance $\sigma\asymp(\log Q)^{-1/3}$ gives the exponent $(\log Q)^{2/3}$. With $Q=\sqrt N$ the factor $(\frac12)^{2/3}$ combines with $(4a)^{1/3}$ to give $a^{1/3}$, which is why the final constant is $\frac32a^{1/3}$.}
+
+\section{Proofs of the theorems}\label{sec:proofs}
+
+\begin{proof}[Proof of Theorem~\ref{thm:A}]
+Fix $\delta\in(0,\frac1{10}]$ and take $\Omega_p$ to be the set of the $\omega_\delta(p)$ classes $-\cl(t)$ from the three corners at level $X_j$, for $p\in I_j$ and $j\ge2/\delta$, and empty otherwise. By Lemma~\ref{lem:identity}, every $n\in\Ex(N)$ avoids these classes for all $p$. Lemma~\ref{lem:ls} with $Q=\sqrt N$ gives
+\[
+|\Ex(N)|\le\frac{2N}{L_\delta(\sqrt N)}.
+\]
+By Corollary~\ref{cor:density} and Proposition~\ref{prop:tilt}(ii) with $T=\frac12\log N$,
+\[
+\log L_\delta(\sqrt N)\ge\frac32(4a_\delta)^{1/3}\Bigl(\frac{\log N}2\Bigr)^{2/3}(1-o(1)).
+\]
+Since $(4a_\delta)^{1/3}2^{-2/3}=a_\delta^{1/3}$, this is $\frac32a_\delta^{1/3}(\log N)^{2/3}(1-o(1))$. Given $\eps>0$, choose $\delta$ so small that $\frac32a_\delta^{1/3}>c_0-\eps/2$; this is possible because $\frac32a_0^{1/3}=c_0$. Then \eqref{eq:main} holds for all large $N$.
+\end{proof}
+
+Theorem~\ref{thm:B} needs only an upper bound for the density of the classes $\Omega^\sharp_p$, which come from triples with one product at most $\sqrt p$. Let $\omega^\sharp(p)=|\Omega^\sharp_p|$ and $N^\sharp(\lambda)=\sum_{p\le e^\lambda}\omega^\sharp(p)/p$.
+
+\begin{proposition}\label{prop:upper}
+$N^\sharp(\lambda)\le(a_0+o(1))\lambda^2$.
+\end{proposition}
+
+\begin{proof}
+We have $\omega^\sharp(p)\le|A^\sharp_p|+|B_p(\sqrt p)|+|C_p(\sqrt p)|$, where $A^\sharp_p$ is $A_p(\sqrt p)$ together with the triples with $u=1$ or $a=1$ and $ua\le\sqrt p$. Fix $\delta>0$ and split each corner according to whether the relevant product is at most $p^{1/2-\delta}$ or lies in $(p^{1/2-\delta},p^{1/2}]$. The first parts are counted as in Proposition~\ref{prop:primes}, with the upper bound $|B_p|\le|B^{(z)}_p|$ and the level $(2^{j+1})^{1/2-\delta}$ on the block $I_j$; they contribute $(a_\delta+o(1))\lambda^2$. For the second parts we drop the condition $\gcd(u,a)=1$ and use the Brun--Titchmarsh inequality, which loses a constant factor but applies to a range of measure $O(\delta)$; they contribute $O(\delta\lambda^2)$ (Appendix~\ref{app:band}). Since $\delta$ is arbitrary and $a_\delta\le a_0$, the proposition follows.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:B}]
+Let $T_0=\frac12\log N$ and $\sigma=(4a_0/T_0)^{1/3}$. By Propositions~\ref{prop:upper} and~\ref{prop:tilt}(i), for $N$ large,
+\[
+\sigma T_0+F^\sharp(\sigma)\le\frac32(4a_0)^{1/3}T_0^{2/3}(1+\eps')=(c_0+\eps)(\log N)^{2/3},
+\]
+with $\eps'$ chosen in terms of $\eps$. If $Q\le\sqrt N$, then $L^\sharp(Q)\le L^\sharp(\sqrt N)\le e^{\sigma T_0+F^\sharp(\sigma)}$, and $(N+Q^2)/L^\sharp(Q)\ge N/L^\sharp(\sqrt N)$. If $Q>\sqrt N$, then by \eqref{eq:rankin} and $\sigma<2$,
+\[
+\frac{N+Q^2}{L^\sharp(Q)}\ge Q^{2-\sigma}e^{-F^\sharp(\sigma)}\ge N^{1-\sigma/2}e^{-F^\sharp(\sigma)}=Ne^{-\sigma T_0-F^\sharp(\sigma)}.
+\]
+In both cases the bound of the theorem follows.
+\end{proof}
+
+\section{Remarks}\label{sec:remarks}
+
+\begin{table}[t]
+\caption{The constant given by the large sieve for regions of the triangle of Figure~\ref{fig:simplex}. The density is $a=$ (share of the triangle)$\cdot\kappa/4$, and $c=\frac32a^{1/3}$. The last row would need primes in progressions beyond $\sqrt p$ and distinct classes in the centre; neither is available.}
+\label{tab:ladder}
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Region & Share & $a$ & $c$\\
+\midrule
+One corner & $1/4$ & $0.0284966$ & $0.4582$\\
+Two corners & $1/2$ & $0.0569932$ & $0.5773$\\
+Three corners & $3/4$ & $0.0854897$ & $0.6608$\\
+Whole triangle & $1$ & $0.1139863$ & $0.7273$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[Smaller and larger regions]\label{rem:ladder}
+The argument applies to any union of corners, and the density is proportional to the area covered (Table~\ref{tab:ladder} and Figure~\ref{fig:ladder}). A single corner gives $c=\frac32(\kappa/16)^{1/3}=0.4582$, two corners give $\frac32(\kappa/8)^{1/3}=0.5773$, and the three corners give $c_0$. The whole triangle would give $\frac32(\kappa/4)^{1/3}=0.7273$.
+\end{remark}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_ladder.png}
+\caption{The constant $c$ in $N\exp(-c(\log N)^{2/3})$ for one, two and three corners, and for the whole triangle, which is not available.}
+\label{fig:ladder}
+\end{figure}
+
+\begin{remark}[The level]\label{rem:level}
+Section~\ref{sec:distinct} uses the level $16X^2\le p$. The factor $16$ does not affect $c_0$, since only $\log X/\log p\to\frac12$ enters the density, but the bounds \eqref{eq:BC-bounds} do depend on it. For the primes $p\equiv3\pmod4$ below $10^6$ no two triples in the corners at level $\sqrt p/4$ share a class, while at level $\sqrt p/2$ there are $17{,}568$ such pairs, all between $B$ and $C$. The first is at $p=31$, where $(1,4,2)\in B_{31}(2)$ and $(8,1,1)\in C_{31}(2)$ both have the class $8$; here $P=8$, far below the bound $P\ge1024$ of \eqref{eq:BC-bounds}.
+
+The family of Proposition~\ref{prop:BC} is not empty. At the prime $p=531359$, with $P=132840$, the triples $t=(81,328,5)$ and $t'=(1640,81,1)$ have the same class, since
+\[
+81^2-328\cdot1640=-531359.
+\]
+Here $u\alpha=405$ and $a'\alpha'=81$, so $t\in B_p(\sqrt p)$ and $t'\in C_p(\sqrt p)$ with $\sqrt p=728.9\ldots$, while $405>\sqrt p/4$. The pair is the case $(k,m,r,d_1,e_1,\tau)=(5,1,1,5,1,4)$ of the parametrisation, with $G=81$, and it satisfies \eqref{eq:BC-bounds}: $P=132840\ge1024\cdot5^2\cdot5=128000$. Its mirror image under $\iota$ is a second coincidence at the same prime. Among the primes $p\equiv3\pmod4$ below $10^6$, these two are the only coincidences between triples with $u,a\ge2$ that lie outside the corners at level $\sqrt p/16$.
+\end{remark}
+
+\begin{remark}[The centre]
+To count the triples of the centre, where all three products exceed $\sqrt p$, one needs primes in progressions to moduli up to $p^{2/3}$; the Elliott--Halberstam conjecture \cite{EH} would supply them. Even then the classes of the centre are not distinct, as Remark~\ref{rem:level} shows, so the last row of Table~\ref{tab:ladder} is not reached by the present method.
+\end{remark}
+
+\begin{remark}[Vaughan's count of classes]
+In the form given in \cite[Section~4]{PW}, Vaughan's argument uses at each prime $f(p)=\lfloor\frac12\sum_{t\mid P}|\mu(t)|\tau(P/t)\rfloor$ classes. The sum equals $\sum_{d\mid P}2^{\omega(d)}$, the number of Type~II triples, so $f(p)$ is half of $|\Tp(p)|$. If the primes are equidistributed in progressions to moduli up to $p^{2/3}$, the number of triples has density $\kappa/4$, the whole triangle, and the classes $f(p)$ have density at most $\kappa/8$. By Proposition~\ref{prop:tilt}(i) and the argument of Theorem~\ref{thm:B}, no sieve with $f(p)$ classes at each prime can then give a constant above $\frac32(\kappa/8)^{1/3}=0.5773$, below the unconditional $c_0$ of Theorem~\ref{thm:A}.
+\end{remark}
+
+\section{Formal and numerical verification}\label{sec:verification}
+
+The algebraic steps are checked in Lean~4 \cite{Lean} with Mathlib \cite{Mathlib}: the normal forms \eqref{eq:forms}; the identities \eqref{eq:hj} and \eqref{eq:dj}; the identities \eqref{eq:BC-s}, \eqref{eq:BC-P}, \eqref{eq:BC-M} and \eqref{eq:BC-quad} as consequences of their hypotheses; the three inequalities \eqref{eq:BC-bounds}; the relation $\varphi(qn)=q\,\varphi(n)$ for $q\mid n$; the local factors of $S_B$; the optimisation in Proposition~\ref{prop:tilt}; the value $c_0^3=729/(256\pi^2)$; and the coincidence of Remark~\ref{rem:level}, with the primality of $531359$. All these theorems depend at most on the axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The analytic estimates of Sections~\ref{sec:counting} and~\ref{sec:sieve} are not formalised.
+
+Independent programs in C, C\texttt{++}, Python and Julia check the remaining steps numerically. Over the $332{,}398$ primes $p\equiv3\pmod4$ below $10^7$, with $37{,}093{,}810$ Type~II triples, the corners at level $\sqrt p/16$ are disjoint, the three normal forms agree, the classes in each corner are distinct, and there is no coincidence at all between different corners. The sums $\sum_p|A_p|/p$ and $\sum_p|B_p|/p$ agree with the predictions $\sum_pS_A/p$ and $\sum_pS_B/p$ to within $0.25\%$. The parametrisation of Proposition~\ref{prop:BC} is checked by brute force against all coincidences with $P\le4000$, without the restriction to the corners. The mean values of Lemma~\ref{lem:mean} are computed to $X=2\cdot10^6$, where $(S-\frac\kappa2\log^2X)/\log X$ settles near $-0.47$ for $S_A$ and $0.55$ for $S_B$. The two bounds of Proposition~\ref{prop:tilt} are evaluated for the density $a_0$ up to $T=10^{15}$, where their ratio to the exact optimum is $1.0000$. The engine run of the footnote in Section~\ref{sec:intro} is reproduced by a script in the archive \cite{Zen}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig_engine.png}
+\caption{The 128 constructions of the engine run, by the number of corners and by whether the centre is included. Seven are accepted; the rest are rejected because a normal form does not separate the classes, because of the coincidences in the centre, or because they sieve nothing.}
+\label{fig:engine}
+\end{figure}
+
+\appendix
+
+\section{Detailed derivations}\label{app:derivations}
+
+\subsection{The local factors}\label{app:local}
+
+\emph{The totient of $4n$.} If $n$ is odd then $\varphi(4n)=\varphi(4)\varphi(n)=2\varphi(n)$. If $n=2^\beta n'$ with $\beta\ge1$ and $n'$ odd then $\varphi(4n)=2^{\beta+1}\varphi(n')=4\varphi(n)$. In both cases
+\begin{equation}\label{eq:phi4n}
+\frac1{\varphi(4n)}=\frac{\psi(n)}{2n},\qquad\psi(n)=\prod_{q\mid n,\ q\text{ odd}}\frac q{q-1}.
+\end{equation}
+For a prime $q$ dividing $n$, $\varphi(qn)=q\,\varphi(n)$.
+
+\emph{The corner $B$.} With \eqref{eq:phi4n},
+\[
+S_B(X)=\frac12\sum_{u\alpha\le X}\frac{W(u,\alpha)}{u\alpha},\qquad W(u,\alpha)=\frac{\varphi(u)}u\,\psi(u\alpha).
+\]
+The function $W$ is multiplicative in the pair: $W(u,\alpha)=\prod_qW(q^{i},q^{j})$ with $q^i\parallel u$ and $q^j\parallel\alpha$. At an odd prime $q$ its local values are $W=1$ at $(0,0)$, $W=(1-\frac1q)\frac q{q-1}=1$ for $i\ge1$, and $W=\frac q{q-1}$ for $i=0$, $j\ge1$. At $q=2$ the factor $\psi$ is absent and $W=\frac12$ for $i\ge1$, $W=1$ for $i=0$.
+
+The local generating function at an odd prime $q$ is
+\[
+\sum_{i,j\ge0}W(q^i,q^j)x^iy^j=1+\frac x{(1-x)(1-y)}+\frac q{q-1}\cdot\frac y{1-y},
+\]
+and multiplying by $(1-x)(1-y)$ gives
+\[
+G_q(x,y)=1+\frac{y}{q-1}-\frac{xy}{q-1}.
+\]
+At $q=2$ the same computation gives $G_2(x,y)=1-\frac x2$. Hence $W(u,\alpha)=\sum_{d\mid u,\,e\mid\alpha}g(d,e)$, where $g$ is multiplicative in the pair with the local values read off from $G_q$: $g(1,q)=\frac1{q-1}$ and $g(q,q)=-\frac1{q-1}$ for odd $q$, $g(2,1)=-\frac12$, and $g=0$ at all other prime powers except $g(1,1)=1$. At $x=y=1/q$,
+\[
+G_q\Bigl(\frac1q,\frac1q\Bigr)=1+\frac{1}{q(q-1)}-\frac{1}{q^2(q-1)}=1+\frac1{q^2},
+\]
+and $G_2(\frac12,\frac12)=\frac34$. The same value $1+q^{-2}$ is the quotient of the local sum $\sum_{i,j}W(q^i,q^j)q^{-i-j}=(q^2+1)/(q-1)^2$ by $(1-1/q)^{-2}$.
+
+\emph{The corner $A$.} Here $S_A(X)+R(X)=\frac12\sum_{ua\le X}V(u,a)/(ua)$, with $V(u,a)=\psi(ua)$ when $\gcd(u,a)=1$ and $V=0$ otherwise, and $R(X)$ the sum over the pairs with $u=1$ or $a=1$. Since $\sum_{n\le X}1/\varphi(4n)=O(\log X)$, $R(X)=O(\log X)$. The local values of $V$ at an odd prime are $1$ at $(0,0)$, $\frac q{q-1}$ when exactly one exponent is positive, and $0$ when both are; at $q=2$ they are $1,1,0$. The local generating functions after multiplication by $(1-x)(1-y)$ are
+\[
+G^A_q(x,y)=1+\frac{x+y}{q-1}-\frac{(q+1)xy}{q-1},\qquad G^A_2=1-xy,
+\]
+with $G^A_q(\frac1q,\frac1q)=1+q^{-2}$ and $G^A_2(\frac12,\frac12)=\frac34$.
+
+\begin{table}[h]
+\caption{The local factors of the two mean values. Both corners give $1+q^{-2}$ at odd $q$ and $\frac34$ at $2$.}
+\label{tab:local}
+\centering
+\begin{tabular}{@{}lccc@{}}
+\toprule
+& $G(x,y)$ at odd $q$ & at $x=y=\frac1q$ & $q=2$\\
+\midrule
+$B$ & $1+\frac{y-xy}{q-1}$ & $1+q^{-2}$ & $\frac34$\\
+$A$ & $1+\frac{x+y-(q+1)xy}{q-1}$ & $1+q^{-2}$ & $\frac34$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{The constant.} The Euler product of the values at $x=y=1/q$ is
+\[
+\frac34\prod_{q\ \mathrm{odd}}\Bigl(1+\frac1{q^2}\Bigr)=\frac34\cdot\frac45\cdot\frac{\zeta(2)}{\zeta(4)}=\frac34\cdot\frac45\cdot\frac{15}{\pi^2}=\frac9{\pi^2}=2\kappa,
+\]
+using $\zeta(2)=\pi^2/6$ and $\zeta(4)=\pi^4/90$.
+
+\subsection{The hyperbola sum}\label{app:hyperbola}
+
+For $Y\ge1$ let $H(Y)=\sum_{mn\le Y}1/(mn)$ and $H(Y)=0$ for $Y<1$. With $h(x)=\sum_{m\le x}1/m=\log x+\gamma+O(1/x)$,
+\[
+H(Y)=\sum_{m\le Y}\frac1m\,h\Bigl(\frac Ym\Bigr)=\sum_{m\le Y}\frac{\log Y-\log m+\gamma}m+O\Bigl(\frac{\log Y}Y\Bigr).
+\]
+Since $\sum_{m\le Y}(\log m)/m=\frac12\log^2Y+O(1)$, this gives $H(Y)=\frac12\log^2Y+2\gamma\log Y+O(1)$.
+
+Write $\Lambda=\log X$. Then, with $g$ as in Appendix~\ref{app:local},
+\[
+2S_B(X)=\sum_{de\le X}\frac{g(d,e)}{de}\Bigl(\frac12(\Lambda-\log de)^2+O(1+\Lambda)\Bigr).
+\]
+The series $\sum_{d,e}|g(d,e)|(1+\log de)^2/(de)$ converges, since its Euler factor at an odd $q$ is $1+O(q^{-2}\log^2q)$. For the pairs with $de>X$, $\sum_{de>X}|g(d,e)|/(de)\le X^{-1/4}\sum_{d,e}|g(d,e)|(de)^{-3/4}$, and the last series converges because its terms at $q$ are $O(q^{-7/4})$ and $O(q^{-5/2})$. Expanding the square,
+\[
+2S_B(X)=\frac{\Lambda^2}2\sum_{d,e}\frac{g(d,e)}{de}+O(\Lambda)=\kappa\Lambda^2+O(\Lambda).
+\]
+For $S_A$ the coefficients of $G^A_q$ are of size $q^{-1}$ at $(1,0)$ and $(0,1)$ and of size $1$ at $(1,1)$, so the terms of $\sum|g^A(d,e)|(de)^{-3/4}$ at $q$ are $O(q^{-7/4})$ and $O(q^{-3/2})$; the rest is identical.
+
+\subsection{The Bombieri--Vinogradov theorem with multiplicities}\label{app:bv}
+
+The Bombieri--Vinogradov theorem \cite{Bom}, \cite[Chapter~28]{Dav} states that for every $A>0$ there is $B>0$ such that
+\[
+\sum_{q\le x^{1/2}(\log x)^{-B}}\max_{(b,q)=1}\max_{y\le x}\Bigl|\pi(y;q,b)-\frac{\pi(y)}{\varphi(q)}\Bigr|\ll_A\frac x{(\log x)^A}.
+\]
+Let $E(q)$ be the inner maximum. In the proof of Proposition~\ref{prop:primes} each modulus $q=4n$ occurs with multiplicity at most $\tau_3(n)$. Using the trivial bound $E(q)\ll x/q$, Cauchy's inequality and $\sum_{n\le x}\tau_3(n)^2/n\ll(\log x)^9$,
+\begin{align*}
+\sum_q\tau_3(q)E(q)&\le\Bigl(\sum_q\tau_3(q)^2E(q)\Bigr)^{1/2}\Bigl(\sum_qE(q)\Bigr)^{1/2}\\
+&\ll\frac{x}{(\log x)^{(A-9)/2}}.
+\end{align*}
+Taking $A=15$ gives the error $O(x(\log x)^{-3})$ used in the proof. The inclusion--exclusion over $d\mid(u,P_z)$ replaces each pair by the progressions modulo $4u\alpha d$ with $d\mid u$; a modulus $4m$ arises from at most $\tau_3(m)$ triples $(u,\alpha,d)$, so the same estimate covers all of them. The moduli $4u\alpha d\le4X_je^{2z}$, since $\prod_{q\le z}q\le e^{2z}$, are below $x^{1/2}(\log x)^{-B}$ for $j$ large because $X_j=2^{j(1/2-\delta)}$ and $z=j^{1/2}$.
+
+\subsection{Large prime factors of \texorpdfstring{$\gcd(u,a)$}{gcd(u,a)}}\label{app:large}
+
+\emph{The truncated product.} For $u\ge1$,
+\[
+0\le\prod_{\substack{q\mid u\\ q\le z}}\Bigl(1-\frac1q\Bigr)-\frac{\varphi(u)}u\le\sum_{\substack{q\mid u\\ q>z}}\frac1q.
+\]
+Writing $u=qu'$ and using $\varphi(4qu'\alpha)\ge(q-1)\varphi(4u'\alpha)$,
+\[
+S_B^{(z)}(X)-S_B(X)\le\sum_{q>z}\frac1{q(q-1)}\sum_{u'\alpha\le X}\frac1{\varphi(4u'\alpha)}\ll\frac{\log^2X}z,
+\]
+because $\sum_{n\le X}\tau(n)/\varphi(4n)\ll\log^2X$.
+
+\emph{The pairs with a common prime $q>z$.} Such a pair satisfies $p\equiv-1\pmod{4u\alpha q}$ with $q\mid u$, and $m=4u\alpha q\le4X_j^2\le4\cdot2^{j(1-2\delta)}$. For $x=2^{j+1}$ we have $\log(x/m)\ge\delta j\log2$ when $j\ge3/\delta$. The Brun--Titchmarsh inequality $\pi(x;m,b)\le2x/(\varphi(m)\log(x/m))$ \cite{MV} gives
+\[
+\pi(x;m,-1)\le\frac{2\cdot2^{j+1}}{\varphi(m)\,\delta j\log2}\le\frac{5\,\pi(I_j)}{\delta\,\varphi(m)}
+\]
+for $j$ large, since $\pi(I_j)\sim2^j/(j\log2)$. Summing over $q>z$ and the pairs, with $\varphi(4u\alpha q)=q\,\varphi(4u\alpha)$, the total over $p\in I_j$ is at most
+\[
+\frac{5\,\pi(I_j)}\delta\sum_{q>z}\frac1{q(q-1)}\sum_{u'\alpha\le X_j}\frac1{\varphi(4u'\alpha)}\ll\frac{\pi(I_j)\log^2X_j}{\delta z}.
+\]
+With the weight $1/p\le2^{-j}$ this contributes $O(j/(\delta z))$ to $\sum_{p\in I_j}|B_p|/p$.
+
+\subsection{Partial summation in a block}\label{app:block}
+
+Let $f(p)\ge0$ and $F(y)=\sum_{2^j<p\le y}f(p)$ for $y\in I_j$. Suppose $F(y)=(\pi(y)-\pi(2^j))S+E(y)$ with $|E(y)|\le E$ for all $y\in I_j$. Then
+\begin{align*}
+\sum_{p\in I_j}\frac{f(p)}p&=\frac{F(2^{j+1})}{2^{j+1}}+\int_{2^j}^{2^{j+1}}\frac{F(y)}{y^2}\,dy\\
+&=S\sum_{p\in I_j}\frac1p+O\Bigl(\frac E{2^j}\Bigr),
+\end{align*}
+because the same identity holds for $\pi(y)-\pi(2^j)$ in place of $F$ and $\int_{2^j}^{2^{j+1}}y^{-2}\,dy=2^{-j-1}$. With $E\ll2^j(\log2^j)^{-3}$ the error is $O(j^{-3})$. The pairs removed in Appendix~\ref{app:large} are handled with the trivial weight $1/p\le2^{-j}$. Finally, the prime number theorem with the error term $O(y\exp(-c\sqrt{\log y}))$ gives $\sum_{p\le y}1/p=\log\log y+M_1+O(\exp(-c\sqrt{\log y}))$, so $\sum_{p\in I_j}1/p=\log(1+1/j)+O(e^{-c\sqrt j})=1/j+O(1/j^2)$.
+
+\subsection{From the density to the Euler product}\label{app:abel}
+
+Let $N(\lambda)=\sum_{p\le e^\lambda}\omega(p)/p$ and $G_0(\sigma)=\sum_p(\omega(p)/p)p^{-\sigma}$. Since $N(\lambda)=O(\lambda^2)$, integration by parts gives
+\[
+G_0(\sigma)=\int_0^\infty e^{-\sigma\lambda}\,dN(\lambda)=\sigma\int_0^\infty e^{-\sigma\lambda}N(\lambda)\,d\lambda.
+\]
+If $N(\lambda)\le(a+\eps)\lambda^2+C_\eps$, then $G_0(\sigma)\le(a+\eps)\sigma\cdot2\sigma^{-3}+C_\eps=2(a+\eps)\sigma^{-2}+C_\eps$. In the same way
+\begin{align*}
+\sum_p\frac{\omega(p)\log p}{p^{1+\sigma}}&=\int_0^\infty N(\lambda)(\sigma\lambda-1)e^{-\sigma\lambda}\,d\lambda,\\
+\sum_p\frac{\omega(p)\log^2p}{p^{1+\sigma}}&=\int_0^\infty N(\lambda)(\sigma\lambda^2-2\lambda)e^{-\sigma\lambda}\,d\lambda,
+\end{align*}
+and, when $N(\lambda)=(a+o(1))\lambda^2$, these are $(4a+o(1))\sigma^{-3}$ and $(12a+o(1))\sigma^{-4}$ as $\sigma\to0^+$, from $\int_0^\infty\lambda^2(\sigma\lambda-1)e^{-\sigma\lambda}d\lambda=4\sigma^{-3}$ and $\int_0^\infty\lambda^2(\sigma\lambda^2-2\lambda)e^{-\sigma\lambda}d\lambda=12\sigma^{-4}$. If the sums are restricted to $p\le Q=e^T$, the same asymptotics hold provided $\sigma T\to\infty$, since the tails are bounded by $\sigma^{-k}\int_{\sigma T}^\infty x^{k+1}e^{-x}\,dx$ with $k=2,3,4$. Finally $0\le g(p)-\omega(p)/p\le2\omega(p)^2/p^2$ once $\omega(p)\le p/2$, which holds for all large $p$ because $\omega(p)\le C_\eta p^\eta$; hence $F(\sigma)=G_0(\sigma)+O(1)$, and the same holds for the sums with $\log p$ and $\log^2p$.
+
+\subsection{The choice of \texorpdfstring{$\sigma$}{sigma}}\label{app:sigma}
+
+Assume $N(\lambda)=(a+o(1))\lambda^2$ with $a>0$. With $y_p=g(p)p^{-\sigma}$ and $\pi_p=y_p/(1+y_p)$,
+\[
+\mu_\sigma=\sum_{p\le Q}\pi_p\log p,\qquad V_\sigma=\sum_{p\le Q}\pi_p(1-\pi_p)\log^2p.
+\]
+Both are continuous in $\sigma$, and both tend to $0$ as $\sigma\to\infty$ because the sums are finite. Since $y_p-y_p^2\le\pi_p\le y_p$, Appendix~\ref{app:abel} gives, whenever $\sigma T\to\infty$,
+\[
+\mu_\sigma=(4a+o(1))\sigma^{-3},\qquad V_\sigma\le(12a+o(1))\sigma^{-4}.
+\]
+Take $\sigma_1=\eps_0T^{-1/3}$ with $\eps_0>0$ small. Then $\sigma_1T\to\infty$ and $\mu_{\sigma_1}\ge3a\eps_0^{-3}T>T$, so by continuity there is $\sigma\ge\sigma_1$ with $\mu_\sigma+\sqrt{2V_\sigma}=T$. If $\sigma T$ stayed bounded along a sequence of $T$, say $\sigma T\le K$, then $p^{-\sigma}\ge e^{-K}$ for $p\le Q$ and
+\[
+\mu_\sigma\ge\frac{e^{-K}}2\sum_{p\le Q}\frac{\omega(p)\log p}p\gg e^{-K}T^3,
+\]
+contradicting $\mu_\sigma\le T$ for large $T$. Hence $\sigma T\to\infty$, the asymptotics apply, and $\mu_\sigma\le T$ gives $\sigma\ge(4a-o(1))^{1/3}T^{-1/3}$, while $\sigma\ge\sigma_1$ already gives $\sigma\gg T^{-1/3}$ from below and $T=\mu_\sigma+\sqrt{2V_\sigma}\ll\sigma^{-3}$ gives $\sigma\ll T^{-1/3}$. Therefore $\sigma\sqrt{2V_\sigma}\ll\sigma^{-1}\ll T^{1/3}$. Finally
+\[
+\sum_{p\le Q}\log(1+y_p)\ge\sum_{p\le Q}y_p-\frac12\sum_py_p^2\ge F_Q(\sigma)-O(1),
+\]
+where $F_Q$ is $F$ restricted to $p\le Q$, and $F_Q(\sigma)=(2a+o(1))\sigma^{-2}$ by Appendix~\ref{app:abel}. This is what the proof of Proposition~\ref{prop:tilt}(ii) uses.
+
+\subsection{The band below \texorpdfstring{$\sqrt p$}{sqrt p}}\label{app:band}
+
+Proposition~\ref{prop:upper} uses the following count. For $p\in I_j$ take the pairs $(u,\alpha)$ with $p^{1/2-\delta}<u\alpha\le p^{1/2}$ and $p\equiv-1\pmod{4u\alpha}$; the corners $A$ and $C$ are treated in the same way. Every such pair has $2^{j(1/2-\delta)}<u\alpha\le2^{(j+1)/2}$, and the modulus $m=4u\alpha$ satisfies $\log(2^{j+1}/m)\ge(\frac j2-2)\log2$. The Brun--Titchmarsh inequality gives $\pi(2^{j+1};m,-1)\le(9+o(1))\pi(I_j)/\varphi(m)$, so the number of these pairs, summed over $p\in I_j$, is at most
+\[
+(9+o(1))\,\pi(I_j)\sum_{2^{j(1/2-\delta)}<n\le2^{(j+1)/2}}\frac{\tau(n)}{\varphi(4n)}.
+\]
+The sum over $n$ is $O(\log^2(2^{j/2})-\log^2(2^{j(1/2-\delta)}))+O(j)=O(\delta j^2)+O(j)$. With the weight $1/p\le2^{-j}$, the contribution of the block is $O(\delta j)+O(1)$, and the sum over $j\le J$ is $O(\delta J^2)+O(J)=O(\delta\lambda^2)+O(\lambda)$.
+
+\section*{Data availability}
+\begingroup\raggedright
+The \LaTeX{} source of this paper, the Lean~4 formalisation and the C, C\texttt{++}, Python, Julia and shell programs described in Section~\ref{sec:verification}, the record of the engine run and the script that reproduces it are available at \url{\repoURL} and in the archive \cite{Zen}. The construction of the three corners was selected with the engine Anaxia of the BLLM project \cite{Ana,BLLM}, version 3.0.5. Deep Bhattacharjee carried out the computations and the Lean, C, C\texttt{++}, Python, Julia and shell verifications, and the proofs and the text were drafted, with AI assistance (Claude, Anthropic); both authors approved the final version.\par
+\endgroup
+
+\section*{Funding}
+None.
+
+\section*{Competing interests}
+None.
+
+\makeatletter
+\def\bibsection{\par\begingroup\baselineskip26\p@\bib@device{\hsize}{72\p@}\endgroup\nobreak\@nobreaktrue\addvspace{19\p@}}
+\makeatother
+\begingroup\raggedright
+\begin{thebibliography}{99}
+
+\bibitem{Ana}
+D.~Bhattacharjee, \emph{BLLM: Beyond the LLM with Deep Human-Mind-AI}, software archive with the engine Anaxia, version 3.0.5, Zenodo, 2026, doi:\href{https://doi.org/10.5281/zenodo.23469389}{10.5281/zenodo.23469389}; all versions: doi:\href{https://doi.org/10.5281/zenodo.23286641}{10.5281/zenodo.23286641}.
+
+\bibitem{BLLM}
+D.~Bhattacharjee and U.~Bhattacharya, \emph{BLLM: Beyond the LLM with Deep Human-Mind-AI}, 2026, paper in the archive \cite{Ana}.
+
+\bibitem{BB26}
+D.~Bhattacharjee and U.~Bhattacharya, \emph{Maximal large sieve and coefficient uniform failure for Liouville correlations}, Preprints.org, 2026, doi:\href{https://doi.org/10.20944/preprints202606.1350.v1}{10.20944/preprints202606.1350.v1}.
+
+\bibitem{BBv1}
+D.~Bhattacharjee and U.~Bhattacharya, \emph{A power-saving asymptotic for the two-parameter Type~II sieve sum of the Erd\H{o}s--Straus equation}, 2026, paper in the archive \cite{Zen}.
+
+\bibitem{Bom}
+E.~Bombieri, \emph{On the large sieve}, Mathematika \textbf{12} (1965), 201--225, doi:\href{https://doi.org/10.1112/S0025579300005313}{10.1112/S0025579300005313}.
+
+\bibitem{Dah}
+B.~Dahan, \emph{Sieve dimension and search depth for the Erd\H{o}s--Straus conjecture, $n\equiv1\pmod{24}$}, arXiv:\href{https://arxiv.org/abs/2608.24035}{2608.24035}, 2026.
+
+\bibitem{Dav}
+H.~Davenport, \emph{Multiplicative Number Theory}, 2nd ed., Graduate Texts in Mathematics 74, Springer, New York, 1980, doi:\href{https://doi.org/10.1007/978-1-4757-5927-3}{10.1007/978-1-4757-5927-3}.
+
+\bibitem{Dya}
+E.~Dyachenko, \emph{Constructive proofs of the Erd\H{o}s--Straus conjecture for prime numbers with $P$ congruent to $1$ modulo $4$}, arXiv:\href{https://arxiv.org/abs/2511.07465}{2511.07465}, 2025.
+
+\bibitem{EH}
+P.~D.~T.~A.~Elliott and H.~Halberstam, \emph{A conjecture in prime number theory}, in: Symposia Mathematica, Vol.~IV (INDAM, Rome, 1968/69), Academic Press, London, 1970, pp.~59--72.
+
+\bibitem{ET}
+C.~Elsholtz and T.~Tao, \emph{Counting the number of solutions to the Erd\H{o}s--Straus equation on unit fractions}, J. Aust. Math. Soc. \textbf{94} (2013), 50--105, doi:\href{https://doi.org/10.1017/S1446788712000468}{10.1017/S1446788712000468}.
+
+\bibitem{Guy}
+R.~K.~Guy, \emph{Unsolved Problems in Number Theory}, 3rd ed., Problem Books in Mathematics, Springer, New York, 2004, doi:\href{https://doi.org/10.1007/978-0-387-26677-0}{10.1007/978-0-387-26677-0}.
+
+\bibitem{Lean}
+L.~de~Moura and S.~Ullrich, \emph{The Lean~4 theorem prover and programming language}, in: Automated Deduction -- CADE 28, Lecture Notes in Comput. Sci. 12699, Springer, 2021, pp.~625--635, doi:\href{https://doi.org/10.1007/978-3-030-79876-5_37}{10.1007/978-3-030-79876-5\_37}.
+
+\bibitem{Liu}
+Z.~Liu, \emph{The exact reciprocal-totient constant in the two-parameter Erd\H{o}s--Straus sieve}, preprint, Zenodo, 2026, doi:\href{https://doi.org/10.5281/zenodo.22650516}{10.5281/zenodo.22650516}.
+
+\bibitem{Mathlib}
+The mathlib Community, \emph{The Lean mathematical library}, in: Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs (CPP 2020), ACM, 2020, pp.~367--381, doi:\href{https://doi.org/10.1145/3372885.3373824}{10.1145/3372885.3373824}.
+
+\bibitem{MD}
+A.~Mihnea and M.~Dumitru, \emph{Verification of the Erd\H{o}s--Straus conjecture up to $10^{18}$}, arXiv:\href{https://arxiv.org/abs/2509.00128}{2509.00128}, 2025.
+
+\bibitem{Mon}
+H.~L.~Montgomery, \emph{The analytic principle of the large sieve}, Bull. Amer. Math. Soc. \textbf{84} (1978), 547--567, doi:\href{https://doi.org/10.1090/S0002-9904-1978-14497-8}{10.1090/S0002-9904-1978-14497-8}.
+
+\bibitem{MV}
+H.~L.~Montgomery and R.~C.~Vaughan, \emph{The large sieve}, Mathematika \textbf{20} (1973), 119--134, doi:\href{https://doi.org/10.1112/S0025579300004708}{10.1112/S0025579300004708}.
+
+\bibitem{Mor}
+L.~J.~Mordell, \emph{Diophantine Equations}, Pure and Applied Mathematics 30, Academic Press, London, 1969.
+
+\bibitem{PW}
+C.~Pomerance and A.~Weingartner, \emph{Exceptions to the Erd\H{o}s--Straus--Schinzel conjecture}, Ramanujan J. \textbf{69} (2026), Paper No.~31, doi:\href{https://doi.org/10.1007/s11139-025-01312-2}{10.1007/s11139-025-01312-2}.
+
+\bibitem{Ran}
+R.~A.~Rankin, \emph{The difference between consecutive prime numbers}, J. London Math. Soc. \textbf{13} (1938), 242--247, doi:\href{https://doi.org/10.1112/jlms/s1-13.4.242}{10.1112/jlms/s1-13.4.242}.
+
+\bibitem{Sal}
+S.~E.~Salez, \emph{The Erd\H{o}s--Straus conjecture: new modular equations and checking up to $N=10^{17}$}, arXiv:\href{https://arxiv.org/abs/1406.6307}{1406.6307}, 2014.
+
+\bibitem{Vau}
+R.~C.~Vaughan, \emph{On a problem of Erd\H{o}s, Straus and Schinzel}, Mathematika \textbf{17} (1970), 193--198, doi:\href{https://doi.org/10.1112/S0025579300002886}{10.1112/S0025579300002886}.
+
+\bibitem{Zen}
+D.~Bhattacharjee and U.~Bhattacharya, \emph{Erd\H{o}s--Straus equation: papers, Lean~4 formalisation and verification code}, Zenodo, 2026, \url{\repoURL}, doi:\href{https://doi.org/10.5281/zenodo.23480292}{10.5281/zenodo.23480292}.
+
+\end{thebibliography}
+\endgroup
+
+\end{document}

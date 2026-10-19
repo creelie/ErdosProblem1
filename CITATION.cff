@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "The exact constant of the two-parameter Type II sieve for the Erdős–Straus equation"
+title: "Erdős–Straus equation: an explicit exponent for the exceptional set and the Type II sieve sum"
 type: software
 authors:
   - family-names: Bhattacharjee
@@ -13,7 +13,7 @@ authors:
     orcid: "https://orcid.org/0009-0002-2254-3914"
     affiliation: "Formerly, National Taiwan University, Taipei 106319, Taiwan"
     email: rai.bhattacharya.in@gmail.com
-version: 1.0.0
+version: 2.0.0
 date-released: 2026-10-19
 license: MIT
 repository-code: "https://github.com/creelie/ErdosProblem1"
@@ -22,13 +22,17 @@ keywords:
   - Egyptian fractions
   - sieve methods
   - Euler totient function
+  - large sieve
+  - exceptional set
   - Lean 4
 abstract: >-
-  We find the exact asymptotic size of the weighted count of search pairs that
-  controls a recent sieve bound for the Erdős–Straus equation, settling the
-  first open question left by that work. The leading constant is three times
-  the one previously proved, and the exponents of the resulting bounds for the
-  exceptional primes improve accordingly.
+  We prove that the integers up to N for which the Erdős–Straus equation has
+  no solution number at most N exp(-(c0 - eps)(log N)^(2/3)) with the explicit
+  constant c0 = 9/(2^(8/3) pi^(2/3)) = 0.6607..., and that this is the best
+  constant the large sieve gives with the residue classes used. We also find
+  the full asymptotic expansion, with a power-saving error term, of the
+  weighted count of search pairs that controls a recent sieve bound for the
+  equation; its first two terms were found earlier by Liu.
 references:
   - type: article
     title: "Sieve dimension and search depth for the Erdős–Straus conjecture, n ≡ 1 (mod 24)"
@@ -37,3 +41,27 @@ references:
         given-names: Benjamin
     year: 2026
     url: "https://arxiv.org/abs/2608.24035"
+  - type: article
+    title: "The Exact Reciprocal-Totient Constant in the Two-Parameter Erdős–Straus Sieve"
+    authors:
+      - family-names: Liu
+        given-names: Zongmin
+    year: 2026
+    doi: "10.5281/zenodo.22650516"
+  - type: article
+    title: "On a problem of Erdős, Straus and Schinzel"
+    authors:
+      - family-names: Vaughan
+        given-names: Robert C.
+    journal: Mathematika
+    volume: 17
+    year: 1970
+    doi: "10.1112/S0025579300002886"
+  - type: software
+    title: "BLLM: Beyond the LLM with Deep Human-Mind-AI"
+    authors:
+      - family-names: Bhattacharjee
+        given-names: Deep
+    version: 3.0.5
+    year: 2026
+    doi: "10.5281/zenodo.23469389"
