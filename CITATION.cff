@@ -16,6 +16,13 @@ authors:
 version: 3.0.0
 date-released: 2026-10-19
 license: MIT
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23483694"
+    description: "Version 3.0.0"
+  - type: doi
+    value: "10.5281/zenodo.23480292"
+    description: "All versions"
 repository-code: "https://github.com/creelie/ErdosProblem1"
 keywords:
   - Erdős–Straus conjecture
