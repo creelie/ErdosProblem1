@@ -1,0 +1,589 @@
+{
+ "summary": {
+  "engine": "Anaxia (ebllm) 3.1.0",
+  "library": 16,
+  "closed": 12,
+  "accepted": 7,
+  "rejected": 4,
+  "conditional": 1,
+  "best": {
+   "deep": "split",
+   "rule": "two",
+   "G": [
+    0.03
+   ],
+   "assignments_tested": 2582,
+   "fill_failures": 0,
+   "first_failure": null,
+   "nint": 3000,
+   "n0": 1000000000,
+   "K_estimate": 0.011968,
+   "c": 0.698612,
+   "nmc": 300
+  },
+  "accepted_constants": [
+   0.67921,
+   0.696109,
+   0.696128,
+   0.698604,
+   0.698612
+  ],
+  "memory": {
+   "events": 12,
+   "distinct_composites": 12,
+   "survivors": 7,
+   "refuted": 5,
+   "blocks": 0,
+   "literature": 0,
+   "retrievals": 0,
+   "weights": 0,
+   "attempts": 2
+  },
+  "modlog": [
+   {
+    "target": "Explicit exponent for E(N), the deep strips",
+    "attempt": 1,
+    "rules_version": 0,
+    "outcome": "failed",
+    "failed_part": "Maynard's window past 1/42",
+    "evidence": "the window is empty at every depth from 1/42 on (longest 0.0000)",
+    "diagnosis": "missing-mode",
+    "change": {
+     "rule": "input for the deep strips",
+     "kind": "library",
+     "old": "primes to moduli with a divisor in a window",
+     "new": "Maynard's second theorem for moduli that split into three factors of admissible sizes",
+     "improves": "share of the centre counted"
+    },
+    "retry": "partial",
+    "note": ""
+   },
+   {
+    "target": "Explicit exponent for E(N), the deep strips",
+    "attempt": 2,
+    "rules_version": 1,
+    "outcome": "partial",
+    "failed_part": "the noreserve splitting rule",
+    "evidence": "the noreserve rule allows 924 of 3339 assignments that the fill cannot reach",
+    "diagnosis": "overclaim",
+    "change": {
+     "rule": "fill of two groups",
+     "kind": "check",
+     "old": "fill two groups up to their targets",
+     "new": "keep a reserve G for the overshoot of the first group",
+     "improves": "assignments the fill reaches"
+    },
+    "retry": "partial",
+    "note": "best accepted: rule two, G [0.03], K = 0.011968"
+   }
+  ],
+  "depths": [
+   0.023809523809523808,
+   0.025,
+   0.03,
+   0.035,
+   0.04,
+   0.045,
+   0.05,
+   0.055,
+   0.06,
+   0.065,
+   0.07,
+   0.075,
+   0.08,
+   0.085,
+   0.09,
+   0.095,
+   0.1,
+   0.105,
+   0.11,
+   0.115,
+   0.12,
+   0.125,
+   0.13,
+   0.135,
+   0.14,
+   0.145,
+   0.15,
+   0.155,
+   0.16,
+   0.165
+  ],
+  "nint": 3000,
+  "nmc": 300,
+  "mc": {
+   "0.023809523809523808:0.03:0": 0.7167,
+   "0.023809523809523808:0.03:1": 0.7167,
+   "0.023809523809523808:0.04:0": 0.7167,
+   "0.023809523809523808:0.04:1": 0.7167,
+   "0.025:0.03:0": 0.7267,
+   "0.025:0.03:1": 0.7267,
+   "0.025:0.04:0": 0.7267,
+   "0.025:0.04:1": 0.7267,
+   "0.03:0.03:0": 0.74,
+   "0.03:0.03:1": 0.74,
+   "0.03:0.04:0": 0.74,
+   "0.03:0.04:1": 0.74,
+   "0.035:0.03:0": 0.7267,
+   "0.035:0.03:1": 0.7267,
+   "0.035:0.04:0": 0.7267,
+   "0.035:0.04:1": 0.7267,
+   "0.04:0.03:0": 0.6933,
+   "0.04:0.03:1": 0.6933,
+   "0.04:0.04:0": 0.6833,
+   "0.04:0.04:1": 0.6833,
+   "0.045:0.03:0": 0.6667,
+   "0.045:0.03:1": 0.6667,
+   "0.045:0.04:0": 0.6367,
+   "0.045:0.04:1": 0.6333,
+   "0.05:0.03:0": 0.68,
+   "0.05:0.03:1": 0.68,
+   "0.05:0.04:0": 0.6367,
+   "0.05:0.04:1": 0.6333,
+   "0.055:0.03:0": 0.63,
+   "0.055:0.03:1": 0.63,
+   "0.055:0.04:0": 0.5733,
+   "0.055:0.04:1": 0.5733,
+   "0.06:0.03:0": 0.6,
+   "0.06:0.03:1": 0.6,
+   "0.06:0.04:0": 0.4767,
+   "0.06:0.04:1": 0.4767,
+   "0.065:0.03:0": 0.5467,
+   "0.065:0.03:1": 0.5433,
+   "0.065:0.04:0": 0.3133,
+   "0.065:0.04:1": 0.3133,
+   "0.07:0.03:0": 0.43,
+   "0.07:0.03:1": 0.43,
+   "0.07:0.04:0": 0.2133,
+   "0.07:0.04:1": 0.2133,
+   "0.075:0.03:0": 0.2467,
+   "0.075:0.03:1": 0.2467,
+   "0.075:0.04:0": 0.1,
+   "0.075:0.04:1": 0.1,
+   "0.08:0.03:0": 0.1667,
+   "0.08:0.03:1": 0.1667,
+   "0.08:0.04:0": 0.0533,
+   "0.08:0.04:1": 0.0533,
+   "0.085:0.03:0": 0.0833,
+   "0.085:0.03:1": 0.0833,
+   "0.085:0.04:0": 0.01,
+   "0.085:0.04:1": 0.01,
+   "0.09:0.03:0": 0.02,
+   "0.09:0.03:1": 0.02,
+   "0.09:0.04:0": 0.0033,
+   "0.09:0.04:1": 0.0033,
+   "0.095:0.03:0": 0.0,
+   "0.095:0.03:1": 0.0,
+   "0.095:0.04:0": 0.0,
+   "0.095:0.04:1": 0.0,
+   "0.1:0.03:0": 0.0,
+   "0.1:0.03:1": 0.0,
+   "0.1:0.04:0": 0.0,
+   "0.1:0.04:1": 0.0,
+   "0.105:0.03:0": 0.0,
+   "0.105:0.03:1": 0.0,
+   "0.105:0.04:0": 0.0,
+   "0.105:0.04:1": 0.0,
+   "0.11:0.03:0": 0.0,
+   "0.11:0.03:1": 0.0,
+   "0.11:0.04:0": 0.0,
+   "0.11:0.04:1": 0.0,
+   "0.115:0.03:0": 0.0,
+   "0.115:0.03:1": 0.0,
+   "0.115:0.04:0": 0.0,
+   "0.115:0.04:1": 0.0,
+   "0.12:0.03:0": 0.0,
+   "0.12:0.03:1": 0.0,
+   "0.12:0.04:0": 0.0,
+   "0.12:0.04:1": 0.0,
+   "0.125:0.03:0": 0.0,
+   "0.125:0.03:1": 0.0,
+   "0.125:0.04:0": 0.0,
+   "0.125:0.04:1": 0.0,
+   "0.13:0.03:0": 0.0,
+   "0.13:0.03:1": 0.0,
+   "0.13:0.04:0": 0.0,
+   "0.13:0.04:1": 0.0,
+   "0.135:0.03:0": 0.0,
+   "0.135:0.03:1": 0.0,
+   "0.135:0.04:0": 0.0,
+   "0.135:0.04:1": 0.0,
+   "0.14:0.03:0": 0.0,
+   "0.14:0.03:1": 0.0,
+   "0.14:0.04:0": 0.0,
+   "0.14:0.04:1": 0.0,
+   "0.145:0.03:0": 0.0,
+   "0.145:0.03:1": 0.0,
+   "0.145:0.04:0": 0.0,
+   "0.145:0.04:1": 0.0,
+   "0.15:0.03:0": 0.0,
+   "0.15:0.03:1": 0.0,
+   "0.15:0.04:0": 0.0,
+   "0.15:0.04:1": 0.0,
+   "0.155:0.03:0": 0.0,
+   "0.155:0.03:1": 0.0,
+   "0.155:0.04:0": 0.0,
+   "0.155:0.04:1": 0.0,
+   "0.16:0.03:0": 0.0,
+   "0.16:0.03:1": 0.0,
+   "0.16:0.04:0": 0.0,
+   "0.16:0.04:1": 0.0,
+   "0.165:0.03:0": 0.0,
+   "0.165:0.03:1": 0.0,
+   "0.165:0.04:0": 0.0,
+   "0.165:0.04:1": 0.0
+  }
+ },
+ "composites": [
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.strips)<-es.deep.split)<-es.split.noreserve)<-es.G.g03)<-es.maynard2)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.split",
+    "es.split.noreserve",
+    "es.G.g03",
+    "es.maynard2"
+   ],
+   "outcome": "rejected",
+   "reason": "the noreserve rule allows 924 of 3339 assignments that the fill cannot reach",
+   "measurement": {
+    "deep": "split",
+    "rule": "noreserve",
+    "G": [
+     0.03
+    ],
+    "assignments_tested": 3339,
+    "fill_failures": 924,
+    "first_failure": {
+     "n": 1000000002,
+     "depth": 0.135,
+     "G": 0.03,
+     "F": [
+      1,
+      0
+     ],
+     "targets": {
+      "1": 0.21613501963660925,
+      "0": 0.03470516851440203
+     },
+     "small": [
+      0.021239338580908866
+     ]
+    },
+    "nint": 3000,
+    "n0": 1000000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.strips)<-es.deep.split)<-es.split.noreserve)<-es.G.g0304)<-es.maynard2)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.split",
+    "es.split.noreserve",
+    "es.G.g0304",
+    "es.maynard2"
+   ],
+   "outcome": "rejected",
+   "reason": "the noreserve rule allows 995 of 3673 assignments that the fill cannot reach",
+   "measurement": {
+    "deep": "split",
+    "rule": "noreserve",
+    "G": [
+     0.03,
+     0.04
+    ],
+    "assignments_tested": 3673,
+    "fill_failures": 995,
+    "first_failure": {
+     "n": 1000000004,
+     "depth": 0.155,
+     "G": 0.03,
+     "F": [
+      0,
+      1
+     ],
+     "targets": {
+      "0": 0.013817767660257833,
+      "1": 0.5219283889966054
+     },
+     "small": [
+      0.0219082941246499,
+      0.0219082941246499
+     ]
+    },
+    "nint": 3000,
+    "n0": 1000000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.strips)<-es.deep.split)<-es.split.noreserve)<-es.G.g04)<-es.maynard2)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.split",
+    "es.split.noreserve",
+    "es.G.g04",
+    "es.maynard2"
+   ],
+   "outcome": "rejected",
+   "reason": "the noreserve rule allows 1046 of 4002 assignments that the fill cannot reach",
+   "measurement": {
+    "deep": "split",
+    "rule": "noreserve",
+    "G": [
+     0.04
+    ],
+    "assignments_tested": 4002,
+    "fill_failures": 1046,
+    "first_failure": {
+     "n": 1000000004,
+     "depth": 0.155,
+     "G": 0.04,
+     "F": [
+      0,
+      1
+     ],
+     "targets": {
+      "0": 0.013817767660257833,
+      "1": 0.5219283889966054
+     },
+     "small": [
+      0.0219082941246499,
+      0.0219082941246499
+     ]
+    },
+    "nint": 3000,
+    "n0": 1000000000
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.strips)<-es.deep.split)<-es.split.one)<-es.G.g03)<-es.maynard2)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.split",
+    "es.split.one",
+    "es.G.g03",
+    "es.maynard2"
+   ],
+   "outcome": "accepted",
+   "reason": "K = 0.01196, c = 0.698604 (Monte Carlo)",
+   "measurement": {
+    "deep": "split",
+    "rule": "one",
+    "G": [
+     0.03
+    ],
+    "assignments_tested": 3315,
+    "fill_failures": 0,
+    "first_failure": null,
+    "nint": 3000,
+    "n0": 1000000000,
+    "K_estimate": 0.011963,
+    "c": 0.698604,
+    "nmc": 300
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.strips)<-es.deep.split)<-es.split.one)<-es.G.g0304)<-es.maynard2)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.split",
+    "es.split.one",
+    "es.G.g0304",
+    "es.maynard2"
+   ],
+   "outcome": "accepted",
+   "reason": "K = 0.01196, c = 0.698604 (Monte Carlo)",
+   "measurement": {
+    "deep": "split",
+    "rule": "one",
+    "G": [
+     0.03,
+     0.04
+    ],
+    "assignments_tested": 3664,
+    "fill_failures": 0,
+    "first_failure": null,
+    "nint": 3000,
+    "n0": 1000000000,
+    "K_estimate": 0.011963,
+    "c": 0.698604,
+    "nmc": 300
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.strips)<-es.deep.split)<-es.split.one)<-es.G.g04)<-es.maynard2)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.split",
+    "es.split.one",
+    "es.G.g04",
+    "es.maynard2"
+   ],
+   "outcome": "accepted",
+   "reason": "K = 0.01039, c = 0.696109 (Monte Carlo)",
+   "measurement": {
+    "deep": "split",
+    "rule": "one",
+    "G": [
+     0.04
+    ],
+    "assignments_tested": 4002,
+    "fill_failures": 0,
+    "first_failure": null,
+    "nint": 3000,
+    "n0": 1000000000,
+    "K_estimate": 0.010386,
+    "c": 0.696109,
+    "nmc": 300
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.strips)<-es.deep.split)<-es.split.two)<-es.G.g03)<-es.maynard2)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.split",
+    "es.split.two",
+    "es.G.g03",
+    "es.maynard2"
+   ],
+   "outcome": "accepted",
+   "reason": "K = 0.01197, c = 0.698612 (Monte Carlo)",
+   "measurement": {
+    "deep": "split",
+    "rule": "two",
+    "G": [
+     0.03
+    ],
+    "assignments_tested": 2582,
+    "fill_failures": 0,
+    "first_failure": null,
+    "nint": 3000,
+    "n0": 1000000000,
+    "K_estimate": 0.011968,
+    "c": 0.698612,
+    "nmc": 300
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.strips)<-es.deep.split)<-es.split.two)<-es.G.g0304)<-es.maynard2)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.split",
+    "es.split.two",
+    "es.G.g0304",
+    "es.maynard2"
+   ],
+   "outcome": "accepted",
+   "reason": "K = 0.01197, c = 0.698612 (Monte Carlo)",
+   "measurement": {
+    "deep": "split",
+    "rule": "two",
+    "G": [
+     0.03,
+     0.04
+    ],
+    "assignments_tested": 2834,
+    "fill_failures": 0,
+    "first_failure": null,
+    "nint": 3000,
+    "n0": 1000000000,
+    "K_estimate": 0.011968,
+    "c": 0.698612,
+    "nmc": 300
+   }
+  },
+  {
+   "composite": "((((((es.sieve<-es.corners)<-es.strips)<-es.deep.split)<-es.split.two)<-es.G.g04)<-es.maynard2)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.split",
+    "es.split.two",
+    "es.G.g04",
+    "es.maynard2"
+   ],
+   "outcome": "accepted",
+   "reason": "K = 0.01040, c = 0.696128 (Monte Carlo)",
+   "measurement": {
+    "deep": "split",
+    "rule": "two",
+    "G": [
+     0.04
+    ],
+    "assignments_tested": 3043,
+    "fill_failures": 0,
+    "first_failure": null,
+    "nint": 3000,
+    "n0": 1000000000,
+    "K_estimate": 0.010398,
+    "c": 0.696128,
+    "nmc": 300
+   }
+  },
+  {
+   "composite": "((((es.sieve<-es.corners)<-es.strips)<-es.deep.eh)<-es.eh)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.eh",
+    "es.eh"
+   ],
+   "outcome": "conditional",
+   "reason": "c = 0.727292 if the Elliott-Halberstam conjecture holds",
+   "measurement": {
+    "deep": "eh",
+    "c": 0.727292
+   }
+  },
+  {
+   "composite": "((((es.sieve<-es.corners)<-es.strips)<-es.deep.window)<-es.maynard)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.window",
+    "es.maynard"
+   ],
+   "outcome": "rejected",
+   "reason": "the window is empty at every depth from 1/42 on (longest 0.0000)",
+   "measurement": {
+    "deep": "window",
+    "longest_window": 0.0
+   }
+  },
+  {
+   "composite": "(((es.sieve<-es.corners)<-es.strips)<-es.deep.none)",
+   "parts": [
+    "es.sieve",
+    "es.corners",
+    "es.strips",
+    "es.deep.none"
+   ],
+   "outcome": "accepted",
+   "reason": "c = 0.679210",
+   "measurement": {
+    "deep": "none",
+    "K": 0,
+    "c": 0.67921
+   }
+  }
+ ]
+}
