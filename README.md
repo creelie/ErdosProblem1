@@ -71,7 +71,7 @@ Every release is archived on Zenodo. The concept DOI [10.5281/zenodo.23480292](h
 
 | Version | Content | DOI |
 |---|---|---|
-| 4.0.1 | two corrections in the appendix: the error term of the hyperbola sum (Appendix A.2) and the bound for the small variables in Case (ii) of Appendix A.5; theorems and constants unchanged | to be recorded |
+| 4.0.1 | two corrections in the appendix: the error term of the hyperbola sum (Appendix A.2) and the bound for the small variables in Case (ii) of Appendix A.5; theorems and constants unchanged | [10.5281/zenodo.23770866](https://doi.org/10.5281/zenodo.23770866) |
 | 4.0.0 | the deep strips through Maynard's second theorem: certified c₁ > 0.6931, Monte Carlo c₁ ≈ 0.7015 (Section 7, Appendix A.11, final inequality in Lean) | [10.5281/zenodo.23764189](https://doi.org/10.5281/zenodo.23764189) |
 | 3.1.0 | the certified bound c₁ > 0.67916 (Appendix A.8, final inequality in Lean) | [10.5281/zenodo.23486200](https://doi.org/10.5281/zenodo.23486200) |
 | 3.0.0 | Theorem A with the centre and Maynard's strips: c₁ = 0.6792, at least 0.66571 in closed form | [10.5281/zenodo.23483694](https://doi.org/10.5281/zenodo.23483694) |
