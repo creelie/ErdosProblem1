@@ -5,7 +5,9 @@
 #        scripts/run_all.sh --no-lean   (skip the Lean build)
 # Environment:
 #   CHECKS="python julia c cpp cert engine"   the checks to run (default: all six; "" runs none);
-#                                 cert is the certified bound for the loss J of the paper
+#                                 cert is the certified bound for the loss J of the paper; python
+#                                 also adds up the cell bounds of the deep strips (certify_K.out),
+#                                 whose computation takes about five hours and is not rerun here
 #   SKIP_LEAN=1                   same as --no-lean
 # Requirements: elan (Lean 4) for the Lean build; python3 with numpy, julia, a C compiler and a
 # C++20 compiler for the checks that are run; the engine check also needs network access to install
@@ -79,7 +81,8 @@ for c in $CHECKS; do
       step "Python"
       python3 -I "$ROOT/checks/python/check.py"
       python3 -I "$ROOT/checks/python/exceptional.py"
-      python3 -I "$ROOT/checks/python/centre.py" ;;
+      python3 -I "$ROOT/checks/python/centre.py"
+      python3 -I "$ROOT/checks/python/sum_K.py" ;;
     julia)
       step "Julia"
       julia "$ROOT/checks/julia/check.jl"
