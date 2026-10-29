@@ -53,7 +53,11 @@ rule, the form of Maynard's second theorem with sizes that depend on the long
 variable, the factorable profiles and the bound at the depth 1/10, the mean
 values, the tilted lower bound and the matching upper bound),
 the Lean 4 formalisation, the checking programs, the figures and the LaTeX
-text. No other AI system took part.
+text. A review of version 4.0.0 prepared with OpenAI Codex pointed out
+two corrections in the appendix, the intermediate error term of the hyperbola
+sum (Appendix A.2) and the bound for the small variables in Case (ii) of the
+proof of the adapted well-factorable estimate (Appendix A.5); they are made in
+version 4.0.1 and change no theorem or constant. No other AI system took part.
 
 ## How the result is checked
 
