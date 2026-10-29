@@ -62,7 +62,7 @@ for entry in $PAPERS; do
   cp "$DIR/main.tex" "$SRC/"
   cp "$DIR"/figures/*.png "$SRC/figures/"
   ( cd "$SRC" && latex main.tex && latex main.tex && rm -f main.aux main.log main.out main.toc main.pdf mainNotes.bib )
-  ( cd "$STAGE" && zip -qrX "${NAME}_final2-tex.zip" "${NAME}_final2-tex" )
+  ( cd "$STAGE" && zip -qrXD "${NAME}_final2-tex.zip" "${NAME}_final2-tex" )
   mv "$STAGE/${NAME}_final2-tex.zip" dist/
   entries="$(zipinfo -1 "dist/${NAME}_final2-tex.zip" | wc -l)"
   [ "$entries" -le 512 ] || { echo "build_paper.sh: the tex zip has $entries entries (at most 512)" >&2; exit 1; }

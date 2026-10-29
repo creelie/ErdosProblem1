@@ -6,20 +6,20 @@ authors:
   - family-names: Bhattacharjee
     given-names: Deep
     orcid: "https://orcid.org/0000-0003-0466-750X"
-    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India"
-    email: itsdeep@live.com
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta (Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029, West Bengal, India"
+    email: d.bhattacharjee@erl-forschung.de
   - family-names: Bhattacharya
     given-names: Ushashi
     orcid: "https://orcid.org/0009-0002-2254-3914"
     affiliation: "Formerly, National Taiwan University, Taipei 106319, Taiwan"
     email: rai.bhattacharya.in@gmail.com
-version: 3.1.0
-date-released: 2026-10-19
+version: 4.0.0
+date-released: 2026-10-29
 license: MIT
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23486200"
-    description: "Version 3.1.0"
+    value: "DOI_V40"
+    description: "Version 4.0.0"
   - type: doi
     value: "10.5281/zenodo.23480292"
     description: "All versions"
@@ -35,15 +35,17 @@ keywords:
 abstract: >-
   We prove that the integers up to N for which the Erdős–Straus equation has
   no solution number at most N exp(-(c1 - eps)(log N)^(2/3)) with an explicit
-  constant c1, given by an integral; c1 = 0.6792 numerically and
-  c1 >= 0.66571 in closed form. The residue classes from the three corners of
-  the triangle of factorisations give exactly c0 = 9/(2^(8/3) pi^(2/3)) =
+  constant c1 > 0.6931, proved by computations in which every rounding is
+  directed against the bound (c1 >= 0.66571 in closed form, c1 = 0.7015 by a
+  Monte Carlo simulation). The residue classes from the three corners of the
+  triangle of factorisations give exactly c0 = 9/(2^(8/3) pi^(2/3)) =
   0.6607..., the best constant the large sieve gives with them; the gain comes
-  from classes of the centre, counted with Maynard's theorem on primes in
-  progressions to large moduli. We also find the full asymptotic expansion,
-  with a power-saving error term, of the weighted count of search pairs that
-  controls a recent sieve bound for the equation; its first two terms were
-  found earlier by Liu.
+  from classes of the centre, counted with Maynard's two theorems on primes in
+  progressions to large moduli, the second of which reaches moduli up to the
+  three-fifths power of each prime. We also find the full asymptotic
+  expansion, with a power-saving error term, of the weighted count of search
+  pairs that controls a recent sieve bound for the equation; its first two
+  terms were found earlier by Liu.
 references:
   - type: article
     title: "Sieve dimension and search depth for the Erdős–Straus conjecture, n ≡ 1 (mod 24)"
@@ -84,6 +86,13 @@ references:
     version: 3.1.0
     year: 2026
     doi: "10.5281/zenodo.23484160"
+  - type: article
+    title: "Divisor-Ratio Arithmetic and Cross-Shift Constraints in the Erdős–Straus Problem"
+    authors:
+      - family-names: Newton
+        given-names: Tony
+    year: 2026
+    doi: "10.5281/zenodo.23760689"
   - type: book
     title: "Primes in arithmetic progressions to large moduli I: Fixed residue classes"
     authors:
@@ -94,3 +103,13 @@ references:
     issue: 1542
     year: 2025
     doi: "10.1090/memo/1542"
+  - type: book
+    title: "Primes in arithmetic progressions to large moduli II: Well-factorable estimates"
+    authors:
+      - family-names: Maynard
+        given-names: James
+    journal: "Memoirs of the American Mathematical Society"
+    volume: 306
+    issue: 1543
+    year: 2025
+    doi: "10.1090/memo/1543"

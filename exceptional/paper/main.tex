@@ -31,6 +31,11 @@
 \newcommand{\Zc}{\mathcal{Z}}
 \newcommand{\Jc}{\mathcal{J}}
 \newcommand{\Mc}{\mathcal{M}}
+\newcommand{\Kc}{\mathcal{K}}
+\newcommand{\Kbound}{0.00859}
+\newcommand{\cbound}{0.6931}
+\newcommand{\Kmc}{0.0138}
+\newcommand{\cmc}{0.7015}
 \newcommand{\cl}{\mathrm{c}}
 \newcommand{\one}{\mathbf{1}}
 \newcommand{\repoURL}{https://github.com/creelie/ErdosProblem1}
@@ -45,21 +50,22 @@
 \title{An explicit exponent for the exceptional set of the Erd\H{o}s--Straus equation}
 
 \author{Deep Bhattacharjee\,\orcidlink{0000-0003-0466-750X}}
-\email{itsdeep@live.com}
 \email{d.bhattacharjee@erl-forschung.de}
-\thanks{Corresponding author.}
+\email{itsdeep@live.com}
+\email{egspl@proton.me}
+\thanks{Corresponding author. The third address is for questions about the GitHub repository (account creelie).}
 \affiliation{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India}
-\affiliation{Formerly, University of Calcutta, Senate House, 87/1 College Street, Kolkata 700073, West Bengal, India}
+\affiliation{Formerly, University of Calcutta (Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029, West Bengal, India}
 
 \author{Ushashi Bhattacharya\,\orcidlink{0009-0002-2254-3914}}
 \email{rai.bhattacharya.in@gmail.com}
 \affiliation{Formerly, National Taiwan University, Taipei 106319, Taiwan}
 
-\date{October 19, 2026}
+\date{October 29, 2026}
 
 \begin{abstract}
 \itshape
-The Erd\H{o}s--Straus conjecture says that four divided by any integer greater than one is a sum of three unit fractions. In 1970 Vaughan showed that the integers up to $N$ for which this fails are few: their number is at most $N$ times the exponential of minus a positive constant times the two-thirds power of $\log N$, and his argument gives no value of the constant. We prove this bound with an explicit constant, given by an integral whose value is $0.6792$ and which a computation with directed rounding proves to exceed $0.67916$. The residue classes we sieve with include classes to moduli beyond the square root of each prime, which a recent theorem of Maynard lets us count.
+The Erd\H{o}s--Straus conjecture says that four divided by any integer greater than one is a sum of three unit fractions. In 1970 Vaughan showed that the integers up to $N$ for which it fails number at most $N$ times the exponential of minus a positive constant times the two-thirds power of $\log N$, with no value of the constant. We prove this bound with a constant that a computation with directed rounding shows to exceed $\cbound$. The residue classes we sieve with include classes to moduli up to the three-fifths power of each prime, which two recent theorems of Maynard let us count.
 \par\medskip\upshape\noindent\textit{2020 Mathematics Subject Classification.} 11D68; 11N36; 11N35; 11N13.
 \end{abstract}
 
@@ -81,7 +87,7 @@ Let $\Ex(N)$ be the set of $n\le N$ for which \eqref{eq:es} has no solution. Vau
 \begin{equation}\label{eq:vaughan}
 |\Ex(N)|\ll N\exp\bigl(-c(\log N)^{2/3}\bigr)
 \end{equation}
-for some constant $c>0$, by applying the large sieve to the residue classes produced by one family of identities. Elsholtz and Tao \cite{ET} later determined the average number of solutions of \eqref{eq:es} for prime $n$. Pomerance and Weingartner \cite{PW} extended \eqref{eq:vaughan} to $m/n$ uniformly in $m$, with the exponent $C(\log N)^{2/3}/\varphi(m)^{1/3}$ for an absolute constant $C$. In both papers the number of residue classes at each prime is controlled only up to constant factors, and no numerical value of $c$ follows.\footnote{In \cite[Section~4]{PW} the number of classes, summed over the primes $p\le x$ with weight $1/p$, is shown to be of order $(\log x)^2$: the upper bound comes from the Brun--Titchmarsh inequality and the lower bound from the Bombieri--Vinogradov theorem, with different implied constants, and the exponent is written through these two constants.} Dahan \cite{Dah} has recently run Vaughan's large-sieve scheme on a two-parameter Type~II system for the primes $n\equiv1\pmod{24}$, which contain every prime in $\Ex(N)$, and obtained \eqref{eq:vaughan} for these primes with $c=0.065$. The sum that governs his system has the leading constant $9/(2\pi^2)$, found by Liu \cite{Liu} and, with a power-saving error term, in \cite{BBv1}; with it the same argument gives $c=0.0943$ for the primes. Here we give an explicit constant for the whole set $\Ex(N)$, and we take it beyond the value that the residue classes reachable by the Bombieri--Vinogradov theorem can give.
+for some constant $c>0$, by applying the large sieve to the residue classes produced by one family of identities. Elsholtz and Tao \cite{ET} later determined the average number of solutions of \eqref{eq:es} for prime $n$. Pomerance and Weingartner \cite{PW} extended \eqref{eq:vaughan} to $m/n$ uniformly in $m$, with the exponent $C(\log N)^{2/3}/\varphi(m)^{1/3}$ for an absolute constant $C$. In both papers the number of residue classes at each prime is controlled only up to constant factors, and no numerical value of $c$ follows.\footnote{In \cite[Section~4]{PW} the number of classes, summed over the primes $p\le x$ with weight $1/p$, is shown to be of order $(\log x)^2$: the upper bound comes from the Brun--Titchmarsh inequality and the lower bound from the Bombieri--Vinogradov theorem, with different implied constants, and the exponent is written through these two constants.} Dahan \cite{Dah} has recently run Vaughan's large-sieve scheme on a two-parameter Type~II system for the primes $n\equiv1\pmod{24}$, which contain every prime in $\Ex(N)$, and obtained \eqref{eq:vaughan} for these primes with $c=0.065$. The sum that governs his system has the leading constant $9/(2\pi^2)$, found by Liu \cite{Liu} and, with a power-saving error term, in \cite{BBv1}; with it the same argument gives $c=0.0943$ for the primes. For the same primes Newton \cite{New} studies the exact divisor tests attached to a prescribed first denominator: his finite menu of Type~II congruences covers the proportion $25651/26496$ of their reduced residue classes, and he shows that several ways of combining the tests at different denominators cannot by themselves force a solution.\footnote{Each family of \cite[Section~3]{New} is a residue class of $n$ to a fixed modulus $4j-1$ with $j\le12$. Such classes settle a fixed proportion of the primes up to $N$ and leave the exponent in \eqref{eq:vaughan} unchanged. The large sieve used here takes classes of $n$ modulo primes $p$ that grow with $N$, and the constant comes from the number of these classes at each $p$.} Here we give an explicit constant for the whole set $\Ex(N)$, and we take it beyond the value that the residue classes reachable by the Bombieri--Vinogradov theorem can give.
 
 \begin{mainthm}\label{thm:A}
 For every $\eps>0$ there is $N_0(\eps)$ such that, for all $N\ge N_0(\eps)$,
@@ -90,15 +96,15 @@ For every $\eps>0$ there is $N_0(\eps)$ such that, for all $N\ge N_0(\eps)$,
 \end{equation}
 where
 \begin{equation}\label{eq:c1}
-c_1=\frac32\Bigl(\frac{9}{8\pi^2}\Bigl(\frac{40}{49}-6\Jc\Bigr)\Bigr)^{1/3}
+c_1=\frac32\Bigl(\frac{9}{8\pi^2}\Bigl(\frac{40}{49}-6\Jc+6\Kc\Bigr)\Bigr)^{1/3},
 \end{equation}
-and $\Jc$ is the integral \eqref{eq:J} of Section~\ref{sec:strips}. Moreover $0\le\Jc<0.000335$, so that $c_1>0.67916$; in closed form $\Jc\le533/64680$, so that
+$\Jc$ is the integral \eqref{eq:J} and $\Kc$ the measure \eqref{eq:K} of Section~\ref{sec:deep}. Moreover $0\le\Jc<0.000335$ and $\Kc>\Kbound$, so that $c_1>\cbound$; in closed form $\Jc\le533/64680$ and $\Kc\ge0$, so that
 \begin{equation}\label{eq:cvar}
 c_1\ge c_{\mathrm{var}}=\Bigl(\frac{286983}{98560\,\pi^2}\Bigr)^{1/3}=0.6657102497\ldots
 \end{equation}
 \end{mainthm}
 
-The number $40/49$ is the share of the triangle of factorisations (Figure~\ref{fig:simplex}) covered by the regions whose residue classes we count, and $6\Jc$ is the part of that share which our count misses. Numerical integration gives $\Jc=0.0003$ and $c_1=0.6792$ (Section~\ref{sec:constant}); two independent programs agree on $c_1$ to four decimals, and a Monte Carlo simulation agrees with the integrand. The bound $c_1>0.67916$ is proved by a computation in which every rounding error is directed upward (Proposition~\ref{prop:cert}), and the weaker bound \eqref{eq:cvar} in closed form.
+The number $40/49$ is the share of the triangle of factorisations (Figure~\ref{fig:simplex}) covered by the corners and by the strips of the centre along them, $6\Jc$ is the part of that share which our count of the strips misses, and $6\Kc$ is the share added by the deep strips behind them, which we count through a second theorem of Maynard. Numerical integration gives $\Jc=0.0003$ (Section~\ref{sec:constant}), and two independent programs and a Monte Carlo simulation agree with it. A second simulation gives $\Kc\approx\Kmc$ and $c_1\approx\cmc$. The bounds $\Jc<0.000335$ and $\Kc>\Kbound$ are proved by computations in which every rounding error is directed against the bound (Propositions~\ref{prop:cert} and~\ref{prop:cert2}), and the weaker bound \eqref{eq:cvar} in closed form.
 
 The second theorem concerns the classes that the Bombieri--Vinogradov theorem can count. For a prime $p\equiv3\pmod4$ with $P=(p+1)/4$, let $\Omega^\sharp_p$ be the set of classes $-u/a\pmod p$ attached to factorisations $P=ua\alpha$ with $\gcd(u,a)=1$ in which one of the three products $ua$, $u\alpha$, $a\alpha$ is at most $\sqrt p$ (Section~\ref{sec:typeII}). Let $L^\sharp(Q)$ be the sum that the large sieve attaches to these classes, as in \eqref{eq:L} below.
 
@@ -119,14 +125,16 @@ The classes $\Omega^\sharp_p$ come from the three corners of the triangle, and w
 
 The rest of the triangle is the centre, where $u$, $a$ and $\alpha$ are all below $\sqrt P$. There the class $u/a$ is a Farey fraction of order $\sqrt P$, so the classes of the centre are distinct. They differ from the classes of the corners, apart from a family described by five integers, which contains one explicit polynomial family of primes and again contributes a convergent series (Propositions~\ref{prop:centre} and~\ref{prop:centreC}). To count the centre we use a theorem of Maynard \cite{May}: the primes $p\equiv-1\pmod q$ have the expected number for almost all moduli $q$ up to $p^{1/2+\vartheta}$ with $\vartheta<1/42$, provided that $q$ has a divisor in a range that depends on $\vartheta$. A divisor chain (Lemma~\ref{lem:chain}) finds such a divisor for most moduli in three strips of the centre along the corners, and we compute the proportion it misses (Lemma~\ref{lem:density}). If nothing were missed, the strips would add $6(\frac1{84}-\frac3{3528})=\frac{13}{196}$ to the share $\frac34$ of the corners; the loss $6\Jc$ is $0.0018$.
 
-The corners, their normal forms, the treatment of the centre and the rule that finds the divisors were selected by the engine Anaxia of the BLLM project \cite{Ana,BLLM}.\footnote{Anaxia, version~3.0.5, builds constructions by typed crossing of proof components and tests them on data. We ran it twice. On the corners it tested 128 constructions on the $39{,}322$ primes $p\equiv3\pmod4$ below $10^6$ and kept the seven built from one, two or three corners with matching normal forms; the best of them gives $c_0$. On the centre it tested 37 constructions and accepted five, the best of which is the construction of this paper. It rejected the forms $4u^2\alpha$ and $(4a^2\alpha)^{-1}$ in the centre, and a rule that omits the bound on the steps of the divisor chain, by finding counterexamples on data. Section~\ref{sec:verification} describes both runs in full. Version~3.1.0 \cite{Ana31} records the comparison of the divisor rules in its log of failed constructions. The engine selected the constructions; the proofs are ours.}
+Beyond the depth $\frac1{42}$ the range of divisors in Maynard's theorem is empty. There we use his second theorem \cite{May2}, which counts primes in progressions to moduli beyond $p^{1/2}$ when the weight attached to the moduli is a convolution of three sequences of suitable sizes. We prove a form of it in which the sizes of the three factors may depend on the size of the long variable of Heath-Brown's identity (Theorem~\ref{thm:maynard2}), and we split each modulus according to the sizes of its prime factors: the large prime factors are placed in three groups and the small ones fill two of the groups to prescribed sizes (Definition~\ref{def:factorable} and Figure~\ref{fig:deep}). The pairs whose moduli split in this way have measure $\Kc$ in the rest of the centre, the deep strips, and add $6\Kc$ to the share. No splitting exists beyond the depth $\frac1{10}$ (Lemma~\ref{lem:tenth}). A computation that bounds the density of the factorable pairs from below on cells of depth (Proposition~\ref{prop:cert2}) proves $\Kc>\Kbound$.
+
+The corners, their normal forms, the treatment of the centre, the rule that finds the divisors and the splitting of the moduli in the deep strips were selected by the engine Anaxia of the BLLM project \cite{Ana,BLLM}.\footnote{Anaxia builds constructions by typed crossing of proof components and tests them on data. We ran version~3.0.5 twice and version~3.1.0 once. On the corners it tested 128 constructions on the $39{,}322$ primes $p\equiv3\pmod4$ below $10^6$ and kept the seven built from one, two or three corners with matching normal forms; the best of them gives $c_0$. On the centre it tested 37 constructions and accepted five, the best of which is the construction of this paper. It rejected the forms $4u^2\alpha$ and $(4a^2\alpha)^{-1}$ in the centre, and a rule that omits the bound on the steps of the divisor chain, by finding counterexamples on data. On the deep strips, version~3.1.0 \cite{Ana31} tested 15 constructions: it rejected Maynard's window beyond the depth $\frac1{42}$, where it is empty, and every rule that fills two groups without a reserve for the overshoot of the first, by finding profiles that the fill cannot bring to its targets; the best of the constructions it accepted splits the moduli as in Definition~\ref{def:factorable}. Section~\ref{sec:verification} describes the three runs in full. The engine selected the constructions; the proofs are ours.}
 
 The rest of the argument is analytic. A Rankin-type upper bound and a tilted lower bound determine the sum of the large sieve to leading order once the density of the classes is known (Proposition~\ref{prop:tilt}); the same upper bound proves Theorem~\ref{thm:B}. Section~\ref{sec:constant} computes the constant, Section~\ref{sec:remarks} compares regions of the triangle (Table~\ref{tab:ladder}) and explains where the method stops, and Appendix~\ref{app:derivations} contains every computation in full.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{figures/fig_simplex.png}
-\caption{In the coordinates $(\log u,\log a,\log\alpha)/\log P$ the factorisations $P=ua\alpha$ fill a triangle. The three corners $A$, $B$, $C$ are the parts in which one product of two variables is at most $X$; each carries its own normal form of the class $u/a$ (Lemma~\ref{lem:forms}). At $X=\sqrt p$ each corner has a quarter of the area. In the centre the three coordinates are below $\frac12$ and the class $u/a$ itself separates the classes (Proposition~\ref{prop:centre}). The light strips of the centre along the corners, of depth $\frac1{42}$, are counted with Maynard's theorem (Section~\ref{sec:strips}); they are drawn wider than they are. The inner centre would need moduli beyond Maynard's range.}
+\caption{In the coordinates $(\log u,\log a,\log\alpha)/\log P$ the factorisations $P=ua\alpha$ fill a triangle. The three corners $A$, $B$, $C$ are the parts in which one product of two variables is at most $X$; each carries its own normal form of the class $u/a$ (Lemma~\ref{lem:forms}). At $X=\sqrt p$ each corner has a quarter of the area. In the centre the three coordinates are below $\frac12$ and the class $u/a$ itself separates the classes (Proposition~\ref{prop:centre}). The light strips of the centre along the corners, of depth $\frac1{42}$, are counted with Maynard's theorem (Section~\ref{sec:strips}); they are drawn wider than they are. The deep strips behind them, to the depth $\frac1{10}$, are counted in part with Maynard's second theorem (Section~\ref{sec:deep}). The inner centre would need moduli beyond $p^{3/5}$.}
 \label{fig:simplex}
 \end{figure}
 
@@ -194,7 +202,7 @@ Suppose $16X^2\le p$. Then:
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{figures/fig_triples.png}
-\caption{The $185{,}895$ Type~II triples of the prime $p=342670648319$, for which $P=2^8\cdot3^2\cdot5\cdot7\cdot11\cdot13\cdot17\cdot19\cdot23$, with the corners at level $X=\sqrt p/16$, the strips of the centre (largest coordinate at least $P^{1/2-1/42}$) and the inner centre. The light grey triples lie in no corner and outside the centre. The corners $B$ and $C$ have the same size, as the involution $\iota$ shows.}
+\caption{The $185{,}895$ Type~II triples of the prime $p=342670648319$, for which $P=2^8\cdot3^2\cdot5\cdot7\cdot11\cdot13\cdot17\cdot19\cdot23$, with the corners at level $X=\sqrt p/16$, the strips of the centre (largest coordinate at least $P^{1/2-1/42}$), the deep strips (largest coordinate from $P^{2/5}$ to $P^{1/2-1/42}$) and the inner centre. The light grey triples lie in no corner and outside the centre. The corners $B$ and $C$ have the same size, as the involution $\iota$ shows.}
 \label{fig:triples}
 \end{figure}
 
@@ -629,24 +637,166 @@ where $(u,a)$ runs over the coprime pairs that pass the rule with $(\log u,\log 
 \emph{The piece $B$.} A pair $(u,\alpha)$ gives a triple of $\Zc^B_{p,i}$ when $p\equiv-1\pmod{4u\alpha}$ and $\gcd(u,a)=1$ with $a=(p+1)/(4u\alpha)$. As in Proposition~\ref{prop:primes}, inclusion and exclusion over $d\mid(u,P_z)$ with $z=j^{1/2}$ replaces this by the progressions modulo $4u\alpha d$. These moduli are at most $4x^{1/2+\vartheta_{i+1}}e^{2z}\le y^{1/2+\vartheta_i^+}$ and keep the divisor of $u\alpha$ found by Lemma~\ref{lem:chain}, so they lie in $Q_{\vartheta_i^+,\eta}(y)$, and a modulus $4n$ arises from at most $\tau_3(n)$ triples $(u,\alpha,d)$. The main term carries the weight $\psi(u\alpha)\prod_{q\mid u,\,q\le z}(1-1/q)$, which differs from $W_B(u,\alpha)=\psi(u\alpha)\varphi(u)/u$ by a total of $O(j^2/z)$ over the piece (Appendix~\ref{app:large}), and $W_B$ has $H=2\kappa$. The pairs with a common prime factor $q>z$ of $u$ and $a$ contribute $O(j/z)+o(1)$ (Appendix~\ref{app:Blarge}). The rest is as for $A$.
 \end{proof}
 
+\section{The deep strips}\label{sec:deep}
+
+Below the depth $\frac1{42}$ a divisor of the modulus in a window lets Theorem~\ref{thm:maynard} count the primes. Beyond it we use Maynard's second theorem \cite{May2}, which reaches moduli up to $p^{3/5}$ when the weight attached to the moduli is a convolution of three factors of prescribed sizes. Whether such a splitting exists is decided by the sizes of the prime factors of the modulus, and this section counts the pairs for which it does.
+
+\subsection{Maynard's second theorem}
+
+Let $n\in\mathbb R$ and $\mu\ge0$. A triple $(d_1,d_2,d_3)$ of real numbers is \emph{admissible for $n$ with margin $\mu$} if
+\begin{equation}\label{eq:adm}
+\begin{split}
+d_1&<n-\mu,\quad 2n+d_2+2d_3<1-\mu,\\
+2n+d_1+4d_2+3d_3&<2-\mu,\quad n+d_1+5d_2+2d_3<2-\mu.
+\end{split}
+\end{equation}
+These are the four conditions of \cite[Proposition~8.2]{May2} for a variable of size $N=y^n$ and factors of the moduli of sizes at most $Q_i=y^{d_i}$, with $\eps=\mu/15$.\footnote{In \cite{May2} they read $Q_1<N/y^{\eps}$, $N^2Q_2Q_3^2<y^{1-8\eps}$, $N^2Q_1Q_2^4Q_3^3<y^{2-15\eps}$ and $NQ_1Q_2^5Q_3^2<y^{2-15\eps}$. Each of them becomes weaker when one of the $Q_i$ decreases, so a triple that bounds the sizes of the factors from above may be used in place of their exact sizes.} They become weaker when any $d_i$ decreases.
+
+\begin{theorem}[Maynard {\cite{May2}}]\label{thm:maynard2}
+Let $0<\vartheta<\frac16$, $0<\eps<\frac1{100}$ and $B,J\ge1$, and put $\mathcal N_\vartheta=[\frac16-\vartheta-4\eps,\frac13+4\eps]$. Let $(\lambda_q)$ be complex numbers supported on $q\le y^{1/2+\vartheta}$ with $|\lambda_q|\le\tau(q)^B$. Suppose that for every $n\in\mathcal N_\vartheta$ there are sequences $\gamma^{(j)}$, $\beta^{(j)}$, $\nu^{(j)}$, $1\le j\le J$, bounded by $\tau^B$ and supported on $[1,y^{d_1^{(j)}}]$, $[1,y^{d_2^{(j)}}]$ and $[1,y^{d_3^{(j)}}]$ for triples $d^{(j)}$ admissible for $n$ with margin $15\eps$, such that
+\[
+\lambda-\sum_{j=1}^J\gamma^{(j)}*\beta^{(j)}*\nu^{(j)}
+\]
+is bounded by $\tau^B$ and supported on the moduli divisible by $p'^2$ for a prime $p'>y^\eta$, where $\eta>0$ is fixed.
+Then, for every $A>0$,
+\[
+\sum_q\lambda_q\Bigl(\pi(y;q,-1)-\frac{\pi(y)}{\varphi(q)}\Bigr)\ll_{A,B,J,\eps,\eta}\frac y{(\log y)^A}.
+\]
+\end{theorem}
+
+Maynard states this for weights that are triply well factorable of level $y^{3/5-\eps}$, with the range $[\eps,\frac25]$ for $n$ \cite[Theorem~1.1]{May2}, and his Section~9 applies the same reduction to the linear sieve. The proof uses his Propositions~5.2 and~8.2 and the identity of Heath-Brown; Appendix~\ref{app:maynard2} gives it for the range $\mathcal N_\vartheta$, whose lower end comes from the small variables of that identity.\footnote{The lower end $\frac16-\vartheta$ is $\frac23$ minus the level $\frac12+\vartheta$. A product of variables of the identity that are all below $y^{1/6-\vartheta}$ stays below it, because the range $\mathcal N_\vartheta$ is longer than its lower end, and such a product is handled together with two large variables by Maynard's estimate for the divisor function, which needs moduli at most $y^{2/3}$ divided by the product.}
+
+\subsection{Factorable profiles}
+
+Fix $G\in(0,\frac1{10})$. The $G$-profile of an integer $n$ is the pair $(t,Z)$ of Appendix~\ref{app:density}: $t$ is the logarithmic size of the part of $n$ made of the primes below $x^G$, and $Z$ is the multiset of the logarithmic sizes of the prime factors of $n$ from $x^G$ on. The combined profile of a pair $(u,v)$ is $(t_1+t_2,Z_1\cup Z_2)$, which is the profile of $uv$ when $\gcd(u,v)=1$.
+
+\begin{definition}\label{def:factorable}
+Let $(t,Z)$ be a $G$-profile of size $s=t+\sum Z$ and let $\mu\ge0$. An \emph{assignment} for $(t,Z)$ is a partition $Z=Z_1\sqcup Z_2\sqcup Z_3$, with sums $b_1,b_2,b_3$, together with an index $L\in\{1,2,3\}$, a set $F\subset\{1,2,3\}\setminus\{L\}$ and numbers $x_i\ge b_i$ for $i\in F$ such that
+\begin{equation}\label{eq:budget}
+\sum_{i\in F}(x_i-b_i)+(|F|-1)^+G<t-\mu.
+\end{equation}
+It \emph{serves} $n$ with margin $\mu$ if every triple $(d_1,d_2,d_3)$ with $d_i\in[x_i,x_i+G]$ for $i\in F$, $d_i=b_i$ for $i\notin F\cup\{L\}$ and $d_L=s-\sum_{i\ne L}d_i$ is admissible for $n$ with margin $\mu$. The profile is \emph{factorable with margin $\mu$} if no element of $Z$ lies within $\mu$ of $G$ and every $n\in[\frac23-s-\mu,\frac13+\mu]$ is served by some assignment with margin $\mu$. A pair of integers, or of profiles, is \emph{factorable} if for some $G\in(0,\frac1{10})$ its combined $G$-profile is factorable with some margin $\mu>0$.
+\end{definition}
+
+An assignment describes a splitting of the modulus $q=4uv$ into three factors. The primes from $x^G$ on are placed according to $Z_1,Z_2,Z_3$, and the primes below $x^G$, whose total size is $t$, are added one at a time to the groups $i\in F$ until each reaches the size $x_i$, which it overshoots by less than $G$; the condition \eqref{eq:budget} leaves enough of them for the second group, and the rest go to the group $L$. The definition asks for the conditions of Theorem~\ref{thm:maynard2} for every size the factors can take in this process (Figure~\ref{fig:deep}).\footnote{The targets $x_i$ are fixed numbers, so the size of a filled group is known only up to $G$, and the size of the group $L$ is what remains. The four conditions \eqref{eq:adm} are affine, so it is enough to check them at the vertices of the box of possible sizes, which is how the computation of Appendix~\ref{app:cert2} proceeds.}
+
+\begin{lemma}\label{lem:margin}
+Let $(t,Z)$ be a $G$-profile of size $s$ with no element equal to $G$, and suppose that every $n\in[\frac23-s,\frac13]$ is served by some assignment with margin $0$. Then $(t,Z)$ is factorable with some margin $\mu>0$.
+\end{lemma}
+
+\begin{proof}
+Let $n_0\in[\frac23-s,\frac13]$ be served by an assignment with margin $0$. The inequality \eqref{eq:budget} is strict, and the triples in the definition form a compact set on which the strict inequalities \eqref{eq:adm} hold, so the assignment serves $n_0$ with some margin $\mu_0>0$. The left sides of \eqref{eq:adm} change by at most $2|n-n_0|$ when $n_0$ is replaced by $n$, so the assignment serves every $n$ with $|n-n_0|<\mu_0/4$ with margin $\mu_0/2$. Finitely many of these intervals cover $[\frac23-s,\frac13]$, and their union contains a closed interval that is larger by some $\mu_1>0$ at each end. The least of $\mu_1$, the margins $\mu_0/2$ of the finitely many assignments and the distance from $Z$ to $G$ is a margin for $(t,Z)$.
+\end{proof}
+
+Let $D$ be the set of $(s_1,s_2)$ with $s_1+s_2\ge\frac12+\frac1{42}$, $2s_1+s_2<1$ and $s_1+2s_2<1$; in the coordinates $(s_1,\vartheta)$ with $\vartheta=s_1+s_2-\frac12$ it is the part of the strips $2\vartheta<s_1<\frac12-\vartheta$ with $\frac1{42}\le\vartheta<\frac16$. Put
+\begin{equation}\label{eq:K}
+\mathcal K=\lambda_1\otimes\lambda_1\bigl(\{(\Pi(u),\Pi(v))\ \text{factorable, sizes in }D\}\bigr),
+\end{equation}
+the measure, for the product of the measures $\lambda_1$ of Appendix~\ref{app:density} on the $\xi$-profiles of $u$ and $v$ with $\xi$ small, of the factorable pairs whose sizes lie in $D$. The set of factorable pairs is the union over the rational $G$ of the sets defined with a fixed $G$, since a profile that is factorable for $G$ with margin $\mu$ is factorable for every $G'\in[G,G+\mu/10]$ with margin $\mu/2$,\footnote{The elements of $Z$ lie above $G+\mu$, so $t$ and $Z$ do not change; the budget \eqref{eq:budget} and the sizes $d_i$ change by at most $G'-G$, and each of the four conditions \eqref{eq:adm} by at most $5(G'-G)$.} and it does not depend on $\xi$ once $\xi\le G$. Since the image of $\lambda_1$ under the size is Lebesgue measure, $0\le\mathcal K\le\operatorname{area}(D)=\frac3{98}$.\footnote{In the coordinates $(s_1,\vartheta)$ the area of $D$ is $\int_{1/42}^{1/6}(\frac12-3\vartheta)\,d\vartheta=\frac12(\frac12-\frac1{14})^2\cdot\frac13=\frac3{98}$, the triangle with vertices $(\frac1{21},\frac1{42})$, $(\frac{10}{21},\frac1{42})$ and $(\frac13,\frac16)$.}
+
+The deep strips cannot be counted in this way beyond the depth $\frac1{10}$.
+
+\begin{lemma}\label{lem:tenth}
+Let $s=\frac12+\vartheta$ with $\vartheta\ge\frac1{10}$. For no $n$ is there a triple $(d_1,d_2,d_3)$ with $d_1+d_2+d_3=s$ that is admissible for $n$ with margin $0$. Hence no profile of size $s$ is factorable, and
+\begin{multline*}
+\mathcal K=\lambda_1\otimes\lambda_1\bigl(\{(\Pi(u),\Pi(v))\ \text{factorable},\\
+\text{sizes in }D,\ \vartheta<\tfrac1{10}\}\bigr)\le\frac{88}{3675}.
+\end{multline*}
+\end{lemma}
+
+\begin{proof}
+Put $d_3=s-d_1-d_2$ in the second and third conditions of \eqref{eq:adm}. With margin $0$ they read
+\[
+d_2>2s-1+2(n-d_1),\qquad d_2<2-3s-2(n-d_1),
+\]
+and the first condition gives $n-d_1>0$. Hence $2s-1<d_2<2-3s$, which needs $5s<3$, that is $\vartheta<\frac1{10}$. A factorable profile of size $s$ has an assignment that serves $n=\frac13$, and every triple of that assignment has sum $s$ and is admissible. The bound is the area $\int_{1/42}^{1/10}(\frac12-3\vartheta)\,d\vartheta=\frac{88}{3675}$ of the part of $D$ below $\vartheta=\frac1{10}$.\footnote{In terms of the sizes: the second condition asks the modulus to have a factor $q_2$ of size above $p^{2\vartheta}$, the third asks $q_2$ to be below $p^{1/2-3\vartheta}$, and these two ranges meet only for $\vartheta<\frac1{10}$, whatever the size of the long variable.}
+\end{proof}
+
+\subsection{The deep pieces}
+
+Fix $\delta\in(0,\frac1{200}]$ as in Section~\ref{sec:strips}, a finite set $\mathcal G\subset(0,\frac1{10})$, a margin $\mu\in(0,\frac1{100})$ and $\eps_1\in(0,\delta^2)$ with $\eps_1<\mu^2$, and put $\eps_0=\eps_1^2$ and $h=\eps_0^2$. For a prime $q\ge x^{\eps_0}$ let its \emph{box} be $k(q)=\lceil\log q/(h\log x)\rceil$ and its \emph{nominal size} $k(q)h$, so that $\log q/\log x\in((k-1)h,kh]$. Every $n\ge1$ factors as $n=D(n)r(n)$, where $D(n)$, the \emph{dust} of $n$, is the part made of the primes below $x^{\eps_0}$. The \emph{box datum} $\beta(n)$ is the multiset of the boxes of the prime factors of $r(n)$, with multiplicity, and $\sigma(n)=\sum_{k\in\beta(n)}kh$.
+
+\begin{definition}\label{def:deep}
+A pair of box data $(\beta_1,\beta_2)$ with nominal sizes $\sigma_1,\sigma_2$ is \emph{good} if $2\sigma_1+\sigma_2<1-4\eps_1$, $\sigma_1+2\sigma_2<1-4\eps_1$, and for some $G\in\mathcal G$ the nominal profile
+\[
+\Bigl(2\eps_1+\sum_{\substack{k\in\beta_1\cup\beta_2\\kh<G}}kh,\ \{kh:k\in\beta_1\cup\beta_2,\ kh\ge G\}\Bigr)
+\]
+is factorable with margin $\mu$ for this $G$. Let $\frac1{42}=\vartheta'_0<\vartheta'_1<\dots<\vartheta'_{m'}=\frac16$ be a partition with $\vartheta'_{i+1}-\vartheta'_i\le\delta$. For a prime $p\equiv3\pmod4$ in $I_j$ and $0\le i<m'$, let $\mathcal Y^A_{p,i}$ be the set of triples $t=(u,a,\alpha)\in\Tp(p)$ such that $D(u),D(a)\le x^{\eps_1}$, $r(u)r(a)$ is squarefree, $(\beta(u),\beta(a))$ is good, and
+\[
+\tfrac12+\vartheta'_i<\sigma(u)+\sigma(a)\le\tfrac12+\vartheta'_{i+1}.
+\]
+Let $\mathcal Y^B_{p,i}$ be defined in the same way with the pair $(u,\alpha)$ in place of $(u,a)$, and $\mathcal Y^C_{p,i}=\iota(\mathcal Y^B_{p,i})$, defined with $(a,\alpha)$.
+\end{definition}
+
+\begin{lemma}\label{lem:deeppieces}
+Let $j$ be large in terms of $\delta$, $\mathcal G$, $\mu$ and $\eps_1$, and let $p\in I_j$. Every piece $\mathcal Y^K_{p,i}$ lies in the centre $\Zc_p$, with largest coordinate $\alpha$, $a$ and $u$ for $K=A,B,C$. The pieces $\mathcal Y^K_{p,i}$ are pairwise disjoint and disjoint from the pieces $\Zc^K_{p,i}$ of Definition~\ref{def:pieces}.
+\end{lemma}
+
+\begin{proof}
+Let $t\in\mathcal Y^A_{p,i}$ and write $s_1=\log u/\log x$, $s_2=\log a/\log x$. A number $n$ with $D(n)\le x^{\eps_1}$ has at most $1/\eps_0$ prime factors from $x^{\eps_0}$ on, each of them below its nominal size and above it minus $h$, so
+\[
+\sigma(n)-\eps_0\le\frac{\log n}{\log x}\le\sigma(n)+\eps_1.
+\]
+Hence $2s_1+s_2<1-\eps_1$ and $s_1+2s_2<1-\eps_1$. Since $\log\alpha/\log x=1-s_1-s_2+O(1/j)$, this gives $u,a<\alpha$ for $j$ large, and then $u^2<u\alpha\le P$ and $a^2<P$; also $s_1+s_2>\frac12+\frac1{42}-2\eps_0$, so $\alpha^2<P$. Thus $t\in\Zc_p$ with largest coordinate $\alpha$, and the pieces $B$ and $C$ are treated in the same way. Pieces with different $K$ have different largest coordinates; pieces with the same $K$ and different $i$ have disjoint ranges of $\sigma(u)+\sigma(a)$. Finally $\log(ua)/\log x>\frac12+\frac1{42}-2\eps_0$ on the new pieces, while $ua\le x^{1/2+1/42-2\delta}$ on the pieces of Definition~\ref{def:pieces}, and $2\eps_0<2\delta$.
+\end{proof}
+
+\begin{proposition}\label{prop:deep}
+For $K\in\{A,B,C\}$ and $0\le i<m'$, as $j\to\infty$,
+\[
+\sum_{p\in I_j}\frac{|\mathcal Y^K_{p,i}|}p=\kappa(\log2)^2\,\mathcal K_i\,j+o(j),
+\]
+where $\mathcal K_i=\lambda_1\otimes\lambda_1(E_i)$ and $E_i$ is the set of pairs of $\eps_0$-profiles with dust at most $\eps_1$ whose box data form a good pair with $\frac12+\vartheta'_i<\sigma_1+\sigma_2\le\frac12+\vartheta'_{i+1}$.
+\end{proposition}
+
+\begin{proof}
+For $C$ the statement is the one for $B$. The set $E_i$ is a finite union of sets of profile pairs defined by the numbers of prime factors in each box and by the bounds on the dust, so it is bounded and its boundary is $\lambda_1\otimes\lambda_1$-null.
+
+\emph{The piece $A$.} Let $\mathcal B$ be the finite set of good pairs $(\beta_1,\beta_2)$ in the range of the piece, and for $\beta\in\mathcal B$ let $\lambda^\beta_q$ be the number of pairs $(u,a)$ with $4ua=q$, $(\beta(u),\beta(a))=\beta$, $D(u),D(a)\le x^{\eps_1}$, $\gcd(D(u),D(a))=1$ and $r(u)r(a)$ squarefree. These are the coprime pairs with the conditions of Definition~\ref{def:deep}, so
+\[
+|\mathcal Y^A_{p,i}|=\sum_{\beta\in\mathcal B}\ \sum_{q\mid p+1}\lambda^\beta_q.
+\]
+Put $\sigma_\beta=\sigma_1+\sigma_2+2\eps_1$. Since $\log n/\log x\le\sigma(n)+\eps_1$, every modulus satisfies $q\le4x^{\sigma_\beta}$. By Lemma~\ref{lem:boxes}, for every $n\in[\frac23-\sigma_\beta-\mu,\frac13+\mu]$ the weight $\lambda^\beta$ is a fixed multiple of a convolution of three sequences bounded by $\tau^2$, whose supports have sizes admissible for $n$ with margin $\mu$, up to a sequence bounded by $\tau^6$ and supported on the moduli divisible by the square of a prime above $x^{\eps_0}$. We apply Theorem~\ref{thm:maynard2} at every $y\in[x,2x]$ with $\vartheta=\sigma_\beta-\frac12+\eps_1/10$, $\eps=\mu/40$ and $\eta=\eps_0/2$: the moduli are below $y^{1/2+\vartheta}$, $0<\vartheta<\frac16$ because $\frac12+\frac1{42}<\sigma_\beta<\frac23-\frac23\eps_1$, the range $\mathcal N_\vartheta$ lies in $[\frac23-\sigma_\beta-\mu,\frac13+\mu]$, and replacing $x$ by $y$ changes the sizes by $o(1)$, which the margin $\mu-15\eps>0$ absorbs. Partial summation over the points $y_l=x(1+l/j)$, as in Appendix~\ref{app:maynard}, now gives
+\[
+\sum_{p\in I_j}\frac{|\mathcal Y^A_{p,i}|}p=\Bigl(\sum_{p\in I_j}\frac1p\Bigr)\sum_{(u,a)}\frac1{\varphi(4ua)}+o(1),
+\]
+where $(u,a)$ runs over the pairs counted by the weights $\lambda^\beta$, $\beta\in\mathcal B$. These are the coprime pairs whose profile pair lies in $E_i$, except for the pairs in which $r(u)$ or $r(a)$ has a repeated prime factor, whose total weight is $O(x^{-\eps_0}j^2)$. With $W_A$ as in the proof of Proposition~\ref{prop:strips}, Lemma~\ref{lem:densityF} gives $\sum_{(u,a)}1/\varphi(4ua)=\kappa(j\log2)^2\mathcal K_i+o(j^2)$.
+
+\emph{The piece $B$.} Here $\lambda^\beta$ counts the pairs $(u,\alpha)$ with the conditions of Definition~\ref{def:deep}, with no coprimality between $D(u)$ and $D(\alpha)$, and such a pair gives a triple of $\mathcal Y^B_{p,i}$ when $p\equiv-1\pmod{4u\alpha}$ and $\gcd(u,a)=1$ with $a=(p+1)/(4u\alpha)$. As in Proposition~\ref{prop:strips}, inclusion and exclusion over $d\mid(u,P_z)$ with $z=j^{1/2}$ replaces this by the progressions modulo $4u\alpha d$ with the weights $\mu(d)$. The prime factors of $d$ lie below $z<x^{\eps_0}$, so $d$ divides the dust of $u$, and the weight on the moduli $4u\alpha d$ has the form of Lemma~\ref{lem:boxes} with a weight on the dust bounded by $\tau_3$; the sizes change by $o(1)$. The pairs with a common prime factor of $u$ and $a$ above $z$ contribute $O(j/z)+o(1)$ (Appendix~\ref{app:Blarge}, whose bounds hold for $u\alpha\le x^{2/3}$), and the main term carries the weight of Proposition~\ref{prop:strips}. The rest is as for $A$.
+\end{proof}
+
+\begin{lemma}\label{lem:deeplimit}
+For every $\eta>0$ the parameters $\mathcal G$, $\mu$ and $\eps_1$ can be chosen, in this order, so that $\sum_i\mathcal K_i\ge\mathcal K-\eta$ for every partition $(\vartheta'_i)$.
+\end{lemma}
+
+\begin{proof}
+The sets $E_i$ are disjoint and their union $E$ does not depend on the partition. For a finite set $\mathcal G$ and $\mu>0$ let $A(\mathcal G,\mu)$ be the set of pairs of profiles with sizes in $D$ whose combined $G$-profile is factorable with margin $2\mu$ for some $G\in\mathcal G$. These sets increase as $\mathcal G$ grows and $\mu$ decreases, and by the remark after \eqref{eq:K} their union over the finite sets of rationals and over $\mu>0$ is the set of factorable pairs, so we may fix $\mathcal G$ and $\mu$ with $\lambda_1\otimes\lambda_1(A(\mathcal G,\mu))>\mathcal K-\eta/2$. A pair in $A(\mathcal G,\mu)$ lies in $E$ if its dust is at most $\eps_1$, its sizes lie at distance more than $5\eps_1$ from the boundary of $D$, and none of its prime factors has size in $[G-h,G)$ for a $G\in\mathcal G$ (Lemma~\ref{lem:stable}, with $\eps_1$ small in terms of $\mu$). As $\eps_1\to0$ the measure of the pairs excluded by these three conditions tends to $0$: the dust exceeds $\eps_1$ with probability $O(\rho(\eps_1/\eps_0))=O(\rho(1/\eps_1))$, a prime factor falls in $[G-h,G)$ with probability $O(h/G)$ for each of the finitely many $G$, and the strip of width $5\eps_1$ along the boundary of $D$ has area $O(\eps_1)$. Hence $\lambda_1\otimes\lambda_1(E)>\mathcal K-\eta$ for $\eps_1$ small.
+\end{proof}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_deep.png}
+\caption{Splitting a modulus $q=4ua$ of size $x^s$, $s=0.55$, into three factors $q_1q_2q_3$ for Theorem~\ref{thm:maynard2}, with $G=0.03$. (a) One assignment: the prime factors above $x^G$ (dark) are placed in the groups $Z_1$, $Z_2$, $Z_3$; the primes below $x^G$ (light) fill the groups $1$ and $2$ up to the targets $x_1$, $x_2$ (solid planes), which they overshoot by less than $G$ (dashed planes), and the rest go to the group $3$. (b) Each assignment serves an interval of sizes $n$ of the long variable: there the sizes $(d_1,d_2,d_3)$ satisfy the four inequalities \eqref{eq:adm} however the fill ends. Six assignments, the one of (a) among them, cover $[\frac23-s,\frac13]$, so this profile is factorable.}
+\label{fig:deep}
+\end{figure*}
+
 \subsection{The density of all the classes}
 
-For $p\in I_j$ with $j$ large in terms of $\delta$, let $\omega_\delta(p)$ be the number of distinct classes $-\cl(t)$ with $t$ in one of the three corners at level $X_j$ or in one of the pieces $\Zc^K_{p,i}$, and let $\omega_\delta(p)=0$ for all other primes.
+For $p\in I_j$ with $j$ large in terms of $\delta$, $\mathcal G$, $\mu$ and $\eps_1$, let $\omega_\delta(p)$ be the number of distinct classes $-\cl(t)$ with $t$ in one of the three corners at level $X_j$, in one of the pieces $\Zc^K_{p,i}$ or in one of the pieces $\mathcal Y^K_{p,i}$, and let $\omega_\delta(p)=0$ for all other primes. The subscript records $\delta$ only; the other parameters are fixed with it.
 
 \begin{corollary}\label{cor:combined}
 As $\lambda\to\infty$, $N[\omega_\delta](\lambda)=(a_\delta+o(1))\lambda^2$ with
 \[
-a_\delta=\frac{3\kappa}4\Bigl(\frac12-\delta\Bigr)^2+\frac{3\kappa}2\sum_{i<m}\Mc_i.
+a_\delta=\frac{3\kappa}4\Bigl(\frac12-\delta\Bigr)^2+\frac{3\kappa}2\sum_{i<m}\Mc_i+\frac{3\kappa}2\sum_{i<m'}\mathcal K_i.
 \]
 \end{corollary}
 
 \begin{proof}
-The corners at level $X_j\le\sqrt p/4$ are pairwise disjoint (Lemma~\ref{lem:geometry}), the pieces lie in the centre and are pairwise disjoint (Lemma~\ref{lem:pieces}), and the centre is disjoint from the corners (Lemma~\ref{lem:centre}). The classes are injective on each corner and on the centre, and the only coincidences between different regions are those counted by $\nu(p)$ and $\nu'(p)$ (Propositions~\ref{prop:distinct}, \ref{prop:centre} and~\ref{prop:centreC}). Hence
+The corners at level $X_j\le\sqrt p/4$ are pairwise disjoint (Lemma~\ref{lem:geometry}), the pieces $\Zc^K_{p,i}$ and $\mathcal Y^K_{p,i}$ lie in the centre and are pairwise disjoint (Lemmas~\ref{lem:pieces} and~\ref{lem:deeppieces}), and the centre is disjoint from the corners (Lemma~\ref{lem:centre}). The classes are injective on each corner and on the centre, and the only coincidences between different regions are those counted by $\nu(p)$ and $\nu'(p)$ (Propositions~\ref{prop:distinct}, \ref{prop:centre} and~\ref{prop:centreC}). Hence
 \[
 \Sigma_p-\nu(p)-\nu'(p)\le\omega_\delta(p)\le\Sigma_p,
 \]
-where $\Sigma_p$ is the sum of $|K_p(X_j)|$ over the three corners and of $|\Zc^K_{p,i}|$ over the pieces.
-Propositions~\ref{prop:primes} and~\ref{prop:strips}, summed over the blocks $j\le J$, give
+where $\Sigma_p$ is the sum of $|K_p(X_j)|$ over the three corners and of the sizes of all the pieces.
+Propositions~\ref{prop:primes}, \ref{prop:strips} and~\ref{prop:deep}, summed over the blocks $j\le J$, give
 \[
 \sum_{p\le2^{J+1}}\frac{\Sigma_p}p=a_\delta\,(J\log2)^2+o(J^2),
 \]
@@ -658,9 +808,9 @@ For $0<\vartheta<\frac1{42}$ let $U_\vartheta$ be the function \eqref{eq:U} for 
 \begin{equation}\label{eq:J}
 \ell(\vartheta)=\int_{2\vartheta}^{1/2-\vartheta}U_\vartheta(s,\tfrac12+\vartheta-s)\,ds,\quad\Jc=\int_0^{1/42}\ell(\vartheta)\,d\vartheta.
 \end{equation}
-Then $\sum_i\Mc_i\to\frac{13}{1176}-\Jc$ as $\delta\to0$, uniformly over the partitions of mesh at most $\delta$. Consequently
+Then $\sum_i\Mc_i\to\frac{13}{1176}-\Jc$ as $\delta\to0$, uniformly over the partitions of mesh at most $\delta$. Consequently, for every $\eta>0$ the parameters $\delta$, $\mathcal G$, $\mu$ and $\eps_1$ can be chosen so that $a_\delta>a_1-\eta$, where
 \[
-a_\delta\to a_1=\frac\kappa4\Bigl(\frac{40}{49}-6\Jc\Bigr).
+a_1=\frac\kappa4\Bigl(\frac{40}{49}-6\Jc+6\mathcal K\Bigr).
 \]
 \end{lemma}
 
@@ -669,7 +819,7 @@ The union of the regions $R_i$ is the set of $(s_1,s_2)$ with $\vartheta=s_1+s_2
 \[
 \int_0^{1/42}\Bigl(\frac12-3\vartheta\Bigr)d\vartheta=\frac1{84}-\frac3{3528}=\frac{13}{1176},
 \]
-and $\sum_i\iint_{R_i}U_i$ tends to $\Jc$ by dominated convergence, because the windows $(\theta_i^-,\theta_i^+)$ converge to $(2\vartheta,\theta(\vartheta))$ (Appendix~\ref{app:density}). Finally $\frac{3\kappa}{16}+\frac{3\kappa}2(\frac{13}{1176}-\Jc)=\frac\kappa4(\frac{40}{49}-6\Jc)$.
+and $\sum_i\iint_{R_i}U_i$ tends to $\Jc$ by dominated convergence, because the windows $(\theta_i^-,\theta_i^+)$ converge to $(2\vartheta,\theta(\vartheta))$ (Appendix~\ref{app:density}). Choose $\delta$ with $\frac{3\kappa}4(\frac12-\delta)^2+\frac{3\kappa}2\sum_i\Mc_i>\frac{3\kappa}{16}+\frac{3\kappa}2(\frac{13}{1176}-\Jc)-\frac\eta2$, and then $\mathcal G$, $\mu$ and $\eps_1<\delta^2$ by Lemma~\ref{lem:deeplimit} with $\frac{3\kappa}2\sum_i\mathcal K_i>\frac{3\kappa}2\mathcal K-\frac\eta2$. Finally $\frac{3\kappa}{16}+\frac{3\kappa}2(\frac{13}{1176}-\Jc)+\frac{3\kappa}2\mathcal K=\frac\kappa4(\frac{40}{49}-6\Jc+6\mathcal K)$.
 \end{proof}
 
 \section{The large sieve and the tilt}\label{sec:sieve}
@@ -727,7 +877,7 @@ The lower bound \eqref{eq:tilt} is an exponential tilt: the weight $q^{-\sigma}$
 \section{Proofs of the theorems}\label{sec:proofs}
 
 \begin{proof}[Proof of Theorem~\ref{thm:A}]
-Fix $\delta\in(0,\frac1{200}]$ and a partition of mesh at most $\delta$ as in Section~\ref{sec:strips}. For $p\in I_j$ with $j$ large, take $\Omega_p$ to be the set of the $\omega_\delta(p)$ classes $-\cl(t)$ with $t$ in the corners at level $X_j$ or in the pieces $\Zc^K_{p,i}$, and take $\Omega_p$ empty otherwise. By Lemma~\ref{lem:identity}, every $n\in\Ex(N)$ avoids these classes for all $p$. Lemma~\ref{lem:ls} with $Q=\sqrt N$ gives
+Fix $\delta\in(0,\frac1{200}]$, the partitions of mesh at most $\delta$ of Sections~\ref{sec:strips} and~\ref{sec:deep}, and the parameters $\mathcal G$, $\mu$ and $\eps_1$ of Definition~\ref{def:deep}. For $p\in I_j$ with $j$ large, take $\Omega_p$ to be the set of the $\omega_\delta(p)$ classes $-\cl(t)$ with $t$ in the corners at level $X_j$, in the pieces $\Zc^K_{p,i}$ or in the pieces $\mathcal Y^K_{p,i}$, and take $\Omega_p$ empty otherwise. By Lemma~\ref{lem:identity}, every $n\in\Ex(N)$ avoids these classes for all $p$. Lemma~\ref{lem:ls} with $Q=\sqrt N$ gives
 \[
 |\Ex(N)|\le\frac{2N}{L_\delta(\sqrt N)}.
 \]
@@ -735,7 +885,7 @@ By Corollary~\ref{cor:combined} and Proposition~\ref{prop:tilt}(ii) with $T=\fra
 \[
 \log L_\delta(\sqrt N)\ge\frac32(4a_\delta)^{1/3}\Bigl(\frac{\log N}2\Bigr)^{2/3}(1-o(1)).
 \]
-Since $(4a_\delta)^{1/3}2^{-2/3}=a_\delta^{1/3}$, this is $\frac32a_\delta^{1/3}(\log N)^{2/3}(1-o(1))$. By Lemma~\ref{lem:limit}, $\frac32a_\delta^{1/3}\to\frac32a_1^{1/3}=c_1$ as $\delta\to0$, since $\kappa/4=9/(8\pi^2)$. Given $\eps>0$, choose $\delta$ with $\frac32a_\delta^{1/3}>c_1-\eps/2$; then \eqref{eq:main} holds for all large $N$. The bounds $\Jc<0.000335$ and $c_1>0.67916$ are Proposition~\ref{prop:cert}, the bound \eqref{eq:cvar} is Proposition~\ref{prop:var}, and $\Jc\ge0$ because $U\ge0$.
+Since $(4a_\delta)^{1/3}2^{-2/3}=a_\delta^{1/3}$, this is $\frac32a_\delta^{1/3}(\log N)^{2/3}(1-o(1))$. Since $\kappa/4=9/(8\pi^2)$, the number $\frac32a_1^{1/3}$ of Lemma~\ref{lem:limit} is $c_1$. Given $\eps>0$, Lemma~\ref{lem:limit} lets us choose the parameters with $\frac32a_\delta^{1/3}>c_1-\eps/2$; then \eqref{eq:main} holds for all large $N$. The bound $\Jc<0.000335$ is Proposition~\ref{prop:cert}, the bounds $\Kc>\Kbound$ and $c_1>\cbound$ are Proposition~\ref{prop:cert2}, the bound \eqref{eq:cvar} is Proposition~\ref{prop:var}, and $\Jc\ge0$ because $U\ge0$.
 \end{proof}
 
 Theorem~\ref{thm:B} needs only an upper bound for the density of the classes $\Omega^\sharp_p$, which come from triples with one product at most $\sqrt p$. Let $\omega^\sharp(p)=|\Omega^\sharp_p|$ and $N^\sharp(\lambda)=N[\omega^\sharp](\lambda)$.
@@ -763,7 +913,7 @@ In both cases the bound of the theorem follows.
 \section{The value of the constant}\label{sec:constant}
 
 \begin{proposition}\label{prop:var}
-$\Jc\le\frac{533}{64680}$. Hence $\frac{40}{49}-6\Jc\ge\frac{1181}{1540}$ and $c_1\ge c_{\mathrm{var}}$, with $c_{\mathrm{var}}^3=286983/(98560\pi^2)$.
+$\Jc\le\frac{533}{64680}$. Hence $\frac{40}{49}-6\Jc+6\Kc\ge\frac{1181}{1540}$ and $c_1\ge c_{\mathrm{var}}$, with $c_{\mathrm{var}}^3=286983/(98560\pi^2)$.
 \end{proposition}
 
 \begin{proof}
@@ -776,23 +926,19 @@ On $(0,\frac1{44}]$ the right side is $\frac3{10}+\frac{19}5\vartheta$, and on $
 \int_0^{1/44}\Bigl(\frac3{10}+\frac{19\vartheta}5\Bigr)d\vartheta&=\frac{151}{19360},\\
 \int_{1/44}^{1/42}\Bigl(39\vartheta-\frac12\Bigr)d\vartheta&=\frac{251}{569184},
 \end{align*}
-with sum $\frac{533}{64680}$. Then $\frac{40}{49}-\frac{6\cdot533}{64680}=\frac{1181}{1540}$, and $c_1^3\ge\frac{27}8\cdot\frac9{8\pi^2}\cdot\frac{1181}{1540}=\frac{286983}{98560\pi^2}$.
+with sum $\frac{533}{64680}$. Then $\frac{40}{49}-\frac{6\cdot533}{64680}=\frac{1181}{1540}$, and since $\Kc\ge0$, $c_1^3\ge\frac{27}8\cdot\frac9{8\pi^2}\cdot\frac{1181}{1540}=\frac{286983}{98560\pi^2}$.
 \end{proof}
 
-The bound of Proposition~\ref{prop:var} uses only (R1). To include (R2) and (R3) we compute $\Jc$ numerically. For each depth $\vartheta$ we solve \eqref{eq:varpi} on a grid of step $\xi/16$, tabulate Dickman's function and Buchstab's function on a grid of step $2\cdot10^{-5}$, and evaluate \eqref{eq:U} and the two outer integrals of \eqref{eq:J} by Gauss--Legendre quadrature, with the nodes split at the points where the integrand has kinks, among them $\vartheta=\frac1{54}$ and $\vartheta=\frac1{44}$. This gives
-\[
-\Jc=0.000306,\qquad c_1=0.67921.
-\]
-A second program, written independently, solves \eqref{eq:varpi} on the same grid and evaluates the integrals by the midpoint rule; it gives $\Jc=0.000300$ and $c_1=0.67922$, and its loss $\ell$ agrees with the first to within $0.75\%$ at five depths. A Monte Carlo simulation, which draws the prime factors of $u$ and $v$ by stick breaking and applies the rule of Definition~\ref{def:rule} directly, agrees with the computed values of $U$ at four points to within $0.002$. The value $c_1=0.6792$ is therefore stable to four decimals. The next proposition turns it into a proved bound that falls short of it only in the fourth decimal.
+The bound of Proposition~\ref{prop:var} uses only (R1). To include (R2) and (R3) we compute $\Jc$ numerically. For each depth $\vartheta$ we solve \eqref{eq:varpi} on a grid of step $\xi/16$, tabulate Dickman's function and Buchstab's function on a grid of step $2\cdot10^{-5}$, and evaluate \eqref{eq:U} and the two outer integrals of \eqref{eq:J} by Gauss--Legendre quadrature, with the nodes split at the points where the integrand has kinks, among them $\vartheta=\frac1{54}$ and $\vartheta=\frac1{44}$. This gives $\Jc=0.000306$, and with $\Kc$ replaced by $0$ in \eqref{eq:c1} the constant $0.67921$, the value that the corners and the strips give without the deep strips. A second program, written independently, solves \eqref{eq:varpi} on the same grid and evaluates the integrals by the midpoint rule; it gives $\Jc=0.000300$ and the constant $0.67922$, and its loss $\ell$ agrees with the first to within $0.75\%$ at five depths. A Monte Carlo simulation, which draws the prime factors of $u$ and $v$ by stick breaking and applies the rule of Definition~\ref{def:rule} directly, agrees with the computed values of $U$ at four points to within $0.002$. The value $0.6792$ of the corners and the strips is therefore stable to four decimals. The next proposition turns the value of $\Jc$ into a proved bound.
 
 \begin{proposition}\label{prop:cert}
 $\Jc<0.000335$. Hence $c_1>0.67916$.
 \end{proposition}
 
 \begin{proof}
-Appendix~\ref{app:cert} proves $\Jc<0.000335$. Since $\pi<3.141593$,
+Appendix~\ref{app:cert} proves $\Jc<0.000335$. Since $\pi<3.141593$ and $\Kc\ge0$,
 \begin{align*}
-c_1^3&=\frac{27}8\cdot\frac9{8\pi^2}\Bigl(\frac{40}{49}-6\Jc\Bigr)\\
+c_1^3&\ge\frac{27}8\cdot\frac9{8\pi^2}\Bigl(\frac{40}{49}-6\Jc\Bigr)\\
 &>\frac{27}8\cdot\frac9{8\cdot3.141593^2}\Bigl(\frac{40}{49}-6\cdot0.000335\Bigr)>0.67916^3.\qedhere
 \end{align*}
 \end{proof}
@@ -806,7 +952,7 @@ The computed bound $0.0003342$ lies $9\%$ above the value $0.000306$ of the quad
 \label{fig:cert}
 \end{figure*}
 
-The rules (R1) alone, (R1) with (R2), and (R1) with (R2) and the condition that the part of $uv$ made of primes up to $A$ lies in $(A,B)$, give the losses shown in Figure~\ref{fig:strips}(b) and the constants $0.66571$, $0.67760$ and $0.67831$. Almost all the remaining loss of the full rule comes from depths $\vartheta$ near $\frac1{42}$, where the window of Maynard's theorem closes.
+The rules (R1) alone, (R1) with (R2), and (R1) with (R2) and the condition that the part of $uv$ made of primes up to $A$ lies in $(A,B)$, give the losses shown in Figure~\ref{fig:strips}(b) and, without the deep strips, the constants $0.66571$, $0.67760$ and $0.67831$. Almost all the remaining loss of the full rule comes from depths $\vartheta$ near $\frac1{42}$, where the window of Maynard's theorem closes.
 
 \begin{figure*}[t]
 \centering
@@ -815,10 +961,52 @@ The rules (R1) alone, (R1) with (R2), and (R1) with (R2) and the condition that 
 \label{fig:strips}
 \end{figure*}
 
+The deep strips are treated in the same way. For the measure $\Kc$ of \eqref{eq:K} a Monte Carlo simulation draws the prime factors of $u$ and $v$ by stick breaking at a fixed depth, places the factors above $x^G$ in the three groups in all ways, and tests the assignments of Definition~\ref{def:factorable} on a grid of targets. The share of the strip that it finds factorable is about $0.74$ at the depth $\frac1{42}$, about one half at the depth $0.075$, and falls to $0$ at the depth $\frac1{10}$, as Lemma~\ref{lem:tenth} requires (Figure~\ref{fig:cert2}). Up to the depth $0.045$ the values $0.015$, $0.02$, $0.025$, $0.03$ and $0.04$ of $G$ give shares within $0.03$ of each other. Beyond it the smaller values are better, because deeper moduli need finer adjustments of the sizes of their factors: at the depth $0.085$ the share for $G=0.015$ is four times the share for $G=0.03$. Since Definition~\ref{def:factorable} lets $G$ depend on the pair, the best of these values may be taken at each depth, and then the simulation gives $\Kc\approx\Kmc$ and $c_1\approx\cmc$. It uses $1000$ profiles at each depth and each $G$, the same profiles for every $G$; with $20{,}000$ profiles at the depths $0.04$, $0.06$, $0.08$ and $0.09$ and $G=0.015$, $0.03$ no share moves by more than $0.021$. The next proposition proves a lower bound.
+
+\begin{proposition}\label{prop:cert2}
+$\Kc>\Kbound$. Hence $c_1>\cbound$.
+\end{proposition}
+
+\begin{proof}
+Appendix~\ref{app:cert2} bounds the density $k(\vartheta)$ of the factorable pairs from below on each cell $[\frac k{1024},\frac{k+1}{1024}]$ with $24\le k\le70$, with $G=0.04$ for $k\le45$ and $G=0.03$ for $k\ge46$. On the first cell only the part above $\frac1{42}$ is counted. Since $k(\vartheta)\ge0$, the depths from $\frac{71}{1024}$ to $\frac1{10}$, where the bound is small and its computation long, are counted as $0$, and beyond $\frac1{10}$ there is nothing to count. The sum of the cell bounds times the lengths exceeds $\Kbound$ (Table~\ref{tab:cert2}). Since $\pi<3.141593$ and $\Jc<0.000335$ (Proposition~\ref{prop:cert}),
+\begin{multline*}
+c_1^3>\frac{27}8\cdot\frac9{8\cdot3.141593^2}\\
+\times\Bigl(\frac{40}{49}-6\cdot0.000335+6\cdot\Kbound\Bigr)>\cbound^3.\qedhere
+\end{multline*}
+\end{proof}
+
+\begin{table}[t]
+\caption{The certified lower bound for $\Kc$ and the Monte Carlo value by ranges of the depth. The cells have length $\frac1{1024}$; the first range starts at $\frac1{42}$, and the last row, from $\frac{71}{1024}$ to $\frac1{10}$, is not certified.}
+\label{tab:cert2}
+\centering
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Depths & Cells & $G$ & Bound & Monte Carlo\\
+\midrule
+$0.0238$--$0.0352$ & $24$--$35$ & $0.04$ & $0.00296$ & $0.0034$\\
+$0.0352$--$0.0449$ & $36$--$45$ & $0.04$ & $0.00219$ & $0.0026$\\
+$0.0449$--$0.0566$ & $46$--$57$ & $0.03$ & $0.00207$ & $0.0028$\\
+$0.0566$--$0.0693$ & $58$--$70$ & $0.03$ & $0.00137$ & $0.0025$\\
+$0.0693$--$0.1000$ & & & $0$ & $0.0025$\\
+\midrule
+All & $24$--$70$ & & $\Kbound$ & $\Kmc$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The bound captures $62\%$ of the simulated value. The difference has three sources. The certificate stops at the depth $\frac{71}{1024}$, beyond which the simulation finds $0.0025$ of $\Kc$. It uses one value of $G$ on each cell, while the simulation takes the best of five at each depth, and the deeper cells lose most here: at the depth $0.08$ the value $G=0.03$ gives less than half of the share of $G=0.015$. And it counts only the configurations that it decides within seven prime factors above $x^G$ and at the smallest width of its tree; the configurations that fail at that width carry most of the rest.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_cert2.png}
+\caption{The deep strips. (a) For $\frac1{42}\le\vartheta\le\frac1{10}$: the certified lower bound for the density $k(\vartheta)$ of the factorable pairs on each cell of the computation of Appendix~\ref{app:cert2}, the density given by the Monte Carlo simulation with the best $G$ at each depth, and the length $\frac12-3\vartheta$ of the strip, which bounds $k$. Their integrals are $\Kc>\Kbound$, $\Kc\approx\Kmc$ and $\frac{88}{3675}$. (b) The share of the strip that the simulation finds factorable, by depth and $G$. Smaller values of $G$ are better at larger depths, and every share vanishes at $\vartheta=\frac1{10}$ (Lemma~\ref{lem:tenth}).}
+\label{fig:cert2}
+\end{figure*}
+
 \section{Remarks}\label{sec:remarks}
 
 \begin{table}[t]
-\caption{The constant given by the large sieve for regions of the triangle of Figure~\ref{fig:simplex}. The density is $a=$ (share of the triangle)$\cdot\kappa/4$, and $c=\frac32a^{1/3}$. The rows with strips count them through the rules of Definition~\ref{def:rule}; the row with all of the strips would need a divisor in Maynard's range for every modulus, and the last row would need moduli beyond that range.}
+\caption{The constant given by the large sieve for regions of the triangle of Figure~\ref{fig:simplex}. The density is $a=$ (share of the triangle)$\cdot\kappa/4$, and $c=\frac32a^{1/3}$. The rows with strips count them through the rules of Definition~\ref{def:rule}; the row with all of the strips would need a divisor in Maynard's range for every modulus. The rows with deep strips add $6\Kc$, with the certified bound and with the Monte Carlo value of $\Kc$; the row to the depth $\frac1{10}$ would need every modulus of the strips and deep strips to split, and the last row would need moduli beyond $p^{3/5}$.}
 \label{tab:ladder}
 \centering
 \begin{tabular}{@{}lccc@{}}
@@ -832,28 +1020,31 @@ Strips by (R1) & $0.766883$ & $0.0874142$ & $0.6657$\\
 Strips by (R1), (R2) & $0.808696$ & $0.0921802$ & $0.6776$\\
 Strips by (R1)--(R3) & $0.814491$ & $0.0928408$ & $0.6792$\\
 All of the strips & $0.816327$ & $0.0930501$ & $0.6797$\\
+With the deep strips, certified & $0.866031$ & $0.0987157$ & $0.6932$\\
+With the deep strips, Monte Carlo & $0.897213$ & $0.1022700$ & $0.7015$\\
+To the depth $\frac1{10}$ & $0.96$ & $0.1094269$ & $0.7175$\\
 Whole triangle & $1$ & $0.1139863$ & $0.7273$\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{remark}[Smaller and larger regions]\label{rem:ladder}
-The argument applies to any union of corners, and the density is proportional to the area covered (Table~\ref{tab:ladder} and Figure~\ref{fig:ladder}). A single corner gives $c=\frac32(\kappa/16)^{1/3}=0.4582$, two corners give $\frac32(\kappa/8)^{1/3}=0.5773$, and the three corners give $c_0$. Each row with strips includes the three corners; the share of the strips counted by (R1) alone is the closed form $\frac{1181}{1540}$ of Proposition~\ref{prop:var}, and the share of all of the strips is $\frac{40}{49}$.
+The argument applies to any union of corners, and the density is proportional to the area covered (Table~\ref{tab:ladder} and Figure~\ref{fig:ladder}). A single corner gives $c=\frac32(\kappa/16)^{1/3}=0.4582$, two corners give $\frac32(\kappa/8)^{1/3}=0.5773$, and the three corners give $c_0$. Each row with strips includes the three corners; the share of the strips counted by (R1) alone is the closed form $\frac{1181}{1540}$ of Proposition~\ref{prop:var}, and the share of all of the strips is $\frac{40}{49}$. The deep strips below the depth $\frac1{10}$ have area $\frac{88}{3675}$, so that every pair counted up to that depth would give the share $\frac{40}{49}+\frac{6\cdot88}{3675}=\frac{24}{25}$; the simulation finds a little more than half of these pairs factorable.
 \end{remark}
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig_ladder.png}
-\caption{The constant $c$ in $N\exp(-c(\log N)^{2/3})$ for one, two and three corners, for the corners with the strips counted by the three rules, for the corners with all of the strips, and for the whole triangle, which is not available.}
+\includegraphics[width=\textwidth]{figures/fig_ladder.png}
+\caption{The constant $c$ in $N\exp(-c(\log N)^{2/3})$ for one, two and three corners, for the corners with the strips counted by the three rules, for the corners with all of the strips, with the deep strips (certified bound and Monte Carlo value), with every pair counted to the depth $\frac1{10}$, and for the whole triangle. The last two are not available.}
 \label{fig:ladder}
-\end{figure}
+\end{figure*}
 
 \begin{remark}[The level]\label{rem:level}
 Section~\ref{sec:distinct} uses the level $16X^2\le p$. The factor $16$ does not affect the constants, since only $\log X/\log p\to\frac12$ enters the density, but the bounds \eqref{eq:BC-bounds} do depend on it. For the primes $p\equiv3\pmod4$ below $10^6$ no two triples in the corners at level $\sqrt p/4$ share a class, while at level $\sqrt p/2$ there are $17{,}568$ such pairs, all between $B$ and $C$. The first is at $p=31$, where $(1,4,2)\in B_{31}(2)$ and $(8,1,1)\in C_{31}(2)$ both have the class $8$; here $P=8$, far below the bound $P\ge1024$ of \eqref{eq:BC-bounds}.
 \end{remark}
 
 \begin{remark}[Where the method stops]\label{rem:ceiling}
-The strips have depth $\frac1{42}$ because the range of divisors in Theorem~\ref{thm:maynard} is empty for $\vartheta\ge\frac1{42}$. If every triple of the strips were counted, the share would be $\frac34+6(\frac1{84}-\frac3{3528})=\frac{40}{49}$ and the constant $\frac32(45/(49\pi^2))^{1/3}=0.6797$; the rule of Definition~\ref{def:rule} loses $6\Jc=0.0018$ of this share. A larger constant needs primes in a fixed residue class to moduli beyond $p^{1/2+1/42}$. Under the Elliott--Halberstam conjecture \cite{EH} the whole centre could be counted through the smallest of the three products, which is at most $P^{2/3}$; since the classes of the centre are distinct and differ from those of the corners apart from the pairs counted by $\nu'(p)$ (Propositions~\ref{prop:centre} and~\ref{prop:centreC}), the whole triangle would then give $\frac32(\kappa/4)^{1/3}=0.7273$.
+The strips have depth $\frac1{42}$ because the range of divisors in Theorem~\ref{thm:maynard} is empty for $\vartheta\ge\frac1{42}$. If every triple of the strips were counted, the share would be $\frac34+6(\frac1{84}-\frac3{3528})=\frac{40}{49}$ and the constant $\frac32(45/(49\pi^2))^{1/3}=0.6797$; the rule of Definition~\ref{def:rule} loses $6\Jc=0.0018$ of this share. Beyond the depth $\frac1{42}$ Theorem~\ref{thm:maynard2} counts the factorable pairs, and Lemma~\ref{lem:tenth} stops it at the depth $\frac1{10}$, which is the level $p^{3/5}$ of Maynard's second theorem: the second and third conditions of \eqref{eq:adm} ask for a factor of the modulus above $p^{2\vartheta}$ and below $p^{1/2-3\vartheta}$. Even if every pair up to that depth were counted, the share would be $\frac{24}{25}$ and the constant $\frac32(27/(25\pi^2))^{1/3}=0.7175$. A larger constant needs primes in a fixed residue class to moduli beyond $p^{3/5}$. Under the Elliott--Halberstam conjecture \cite{EH} the whole centre could be counted through the smallest of the three products, which is at most $P^{2/3}$; since the classes of the centre are distinct and differ from those of the corners apart from the pairs counted by $\nu'(p)$ (Propositions~\ref{prop:centre} and~\ref{prop:centreC}), the whole triangle would then give $\frac32(\kappa/4)^{1/3}=0.7273$.
 \end{remark}
 
 \begin{remark}[Vaughan's count of classes]
@@ -862,16 +1053,16 @@ In the form given in \cite[Section~4]{PW}, Vaughan's argument uses at each prime
 
 \section{Formal and numerical verification}\label{sec:verification}
 
-The algebraic steps are checked in Lean~4 \cite{Lean} with Mathlib \cite{Mathlib}, in 52 theorems. For the corners: the normal forms \eqref{eq:forms}; the identities \eqref{eq:hj} and \eqref{eq:dj}; the identities \eqref{eq:BC-s}, \eqref{eq:BC-P}, \eqref{eq:BC-M} and \eqref{eq:BC-quad} as consequences of their hypotheses; the three inequalities \eqref{eq:BC-bounds}; the relation $\varphi(qn)=q\,\varphi(n)$ for $q\mid n$; the local factors of $S_B$; the optimisation in Proposition~\ref{prop:tilt}; and the value $c_0^3=729/(256\pi^2)$. For the centre: the Farey bound and the bound $4u^2\alpha<p+1$ of Proposition~\ref{prop:centre}; the identities \eqref{eq:C1}--\eqref{eq:C3}, the inequality $4ks\le a$ and the case $j=0$ of Proposition~\ref{prop:centreC}; and the family of Remark~\ref{rem:family}, with the primality of $531359$ and $1442783$. For the strips: the range of Theorem~\ref{thm:maynard} and the values $\frac1{44}$ and $\frac1{54}$; the divisor chain of Lemma~\ref{lem:chain}; the area $\frac{13}{1176}$ and the share $\frac{40}{49}$. For Proposition~\ref{prop:cert}: the monotonicity of the bound of Proposition~\ref{prop:var}, the lower bound for $\xi$ on a cell, the geometric sum behind \eqref{eq:celltail}, and the final inequality of the proof, with $\pi<3.141593$ from Mathlib. All these theorems depend at most on the axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The analytic estimates of Sections~\ref{sec:counting}, \ref{sec:strips} and~\ref{sec:sieve} are not formalised.
+The algebraic steps are checked in Lean~4 \cite{Lean} with Mathlib \cite{Mathlib}, in 59 theorems. For the corners: the normal forms \eqref{eq:forms}; the identities \eqref{eq:hj} and \eqref{eq:dj}; the identities \eqref{eq:BC-s}, \eqref{eq:BC-P}, \eqref{eq:BC-M} and \eqref{eq:BC-quad} as consequences of their hypotheses; the three inequalities \eqref{eq:BC-bounds}; the relation $\varphi(qn)=q\,\varphi(n)$ for $q\mid n$; the local factors of $S_B$; the optimisation in Proposition~\ref{prop:tilt}; and the value $c_0^3=729/(256\pi^2)$. For the centre: the Farey bound and the bound $4u^2\alpha<p+1$ of Proposition~\ref{prop:centre}; the identities \eqref{eq:C1}--\eqref{eq:C3}, the inequality $4ks\le a$ and the case $j=0$ of Proposition~\ref{prop:centreC}; and the family of Remark~\ref{rem:family}, with the primality of $531359$ and $1442783$. For the strips: the range of Theorem~\ref{thm:maynard} and the values $\frac1{44}$ and $\frac1{54}$; the divisor chain of Lemma~\ref{lem:chain}; the area $\frac{13}{1176}$ and the share $\frac{40}{49}$. For Proposition~\ref{prop:cert}: the monotonicity of the bound of Proposition~\ref{prop:var}, the lower bound for $\xi$ on a cell, the geometric sum behind \eqref{eq:celltail}, and the final inequality of the proof, with $\pi<3.141593$ from Mathlib. For the deep strips: the bound $5s<3$ behind Lemma~\ref{lem:tenth}, the monotonicity of the conditions \eqref{eq:adm}, the areas $\frac3{98}$ and $\frac{88}{3675}$, the share $\frac{24}{25}$, and the final inequality of Proposition~\ref{prop:cert2}. All these theorems depend at most on the axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The analytic estimates of Sections~\ref{sec:counting}, \ref{sec:strips} and~\ref{sec:sieve} are not formalised.
 
-Independent programs in C, C\texttt{++}, Python and Julia check the remaining steps numerically. Over the $332{,}398$ primes $p\equiv3\pmod4$ below $10^7$, with $37{,}093{,}810$ Type~II triples, the corners at level $\sqrt p/16$ are disjoint, the three normal forms agree, the classes in each corner are distinct, and there is no coincidence at all between different corners. The same primes have $6{,}943{,}856$ triples in the centre, of which $1{,}760{,}868$ have their largest coordinate at least $P^{1/2-1/42}$. The classes of the centre are distinct; they agree with no class of $A$ at level $\sqrt p/4$, with no class of $B$ for $u<a$ and no class of $C$ for $u>a$; and the remaining coincidences are the four pairs of Remark~\ref{rem:family}. The divisor chain of Lemma~\ref{lem:chain} holds in all $128{,}000{,}000$ cases of the integers up to $2\cdot10^6$ with 64 windows. The sums $\sum_p|A_p|/p$ and $\sum_p|B_p|/p$ agree with the predictions $\sum_pS_A/p$ and $\sum_pS_B/p$ to within $0.25\%$. The parametrisation of Proposition~\ref{prop:BC} is checked by brute force against all coincidences with $P\le4000$, without the restriction to the corners. The mean values of Lemma~\ref{lem:mean} are computed to $X=2\cdot10^6$, where $(S-\frac\kappa2\log^2X)/\log X$ settles near $-0.47$ for $S_A$ and $0.55$ for $S_B$. The two bounds of Proposition~\ref{prop:tilt} are evaluated for the density $a_0$ up to $T=10^{15}$, where their ratio to the exact optimum is $1.0000$. The integral $\Jc$ is computed as in Section~\ref{sec:constant}, and the bound of Proposition~\ref{prop:cert} by the C program of Appendix~\ref{app:cert}, which runs in about 25 minutes on one processor core.
+Independent programs in C, C\texttt{++}, Python and Julia check the remaining steps numerically. Over the $332{,}398$ primes $p\equiv3\pmod4$ below $10^7$, with $37{,}093{,}810$ Type~II triples, the corners at level $\sqrt p/16$ are disjoint, the three normal forms agree, the classes in each corner are distinct, and there is no coincidence at all between different corners. The same primes have $6{,}943{,}856$ triples in the centre, of which $1{,}760{,}868$ have their largest coordinate at least $P^{1/2-1/42}$. The classes of the centre are distinct; they agree with no class of $A$ at level $\sqrt p/4$, with no class of $B$ for $u<a$ and no class of $C$ for $u>a$; and the remaining coincidences are the four pairs of Remark~\ref{rem:family}. The divisor chain of Lemma~\ref{lem:chain} holds in all $128{,}000{,}000$ cases of the integers up to $2\cdot10^6$ with 64 windows. The sums $\sum_p|A_p|/p$ and $\sum_p|B_p|/p$ agree with the predictions $\sum_pS_A/p$ and $\sum_pS_B/p$ to within $0.25\%$. The parametrisation of Proposition~\ref{prop:BC} is checked by brute force against all coincidences with $P\le4000$, without the restriction to the corners. The mean values of Lemma~\ref{lem:mean} are computed to $X=2\cdot10^6$, where $(S-\frac\kappa2\log^2X)/\log X$ settles near $-0.47$ for $S_A$ and $0.55$ for $S_B$. The two bounds of Proposition~\ref{prop:tilt} are evaluated for the density $a_0$ up to $T=10^{15}$, where their ratio to the exact optimum is $1.0000$. The integral $\Jc$ is computed as in Section~\ref{sec:constant}, and the bound of Proposition~\ref{prop:cert} by the C program of Appendix~\ref{app:cert}, which runs in about 25 minutes on one processor core. For the deep strips a C program simulates the density of the factorable pairs at a given depth and $G$, and the bound of Proposition~\ref{prop:cert2} is computed cell by cell by the C program of Appendix~\ref{app:cert2}, in about $5$ hours on one processor core in all; a Python script adds up the cell bounds in exact rational arithmetic.
 
-\emph{The engine runs.} In the first run the library of Anaxia held 22 typed construction nodes: the large sieve with the tilted lower bound; each corner paired with each of the three normal forms, or left out; the centre, left out or counted under the Elliott--Halberstam conjecture; and the inputs that each of these needs. Typed crossing produced 128 closed constructions, which the engine tested on the $39{,}322$ primes $p\equiv3\pmod4$ below $10^6$. It kept 7, those with one, two or three corners and the matching normal forms; it rejected 112 because a normal form failed to separate the classes, 8 that contain the centre because a class of the centre equals a class of a corner at $p=531359$ (Remark~\ref{rem:family}), and the empty construction. The best of the seven gives $c_0$. In the second run the library held 19 nodes for the centre: the three normal forms; five rules for finding a divisor of the modulus in Maynard's range, from (R1) alone to the rule of Definition~\ref{def:rule}, and a rule that omits the bound on the steps of the chain; the family of coincidences of Proposition~\ref{prop:centreC}, allowed or not; and the Elliott--Halberstam conjecture. Of its 37 closed constructions it accepted 5, with the constants $0.660789$ (centre left out), $0.665710$, $0.677596$, $0.678311$ and $0.679210$, marked one as conditional (the whole centre under the Elliott--Halberstam conjecture, $0.727292$), and rejected 31: 24 because the forms $4u^2\alpha$ and $(4a^2\alpha)^{-1}$ do not separate the classes of the centre (they fail on all $12{,}399$ primes tested), 6 because they do not allow the two coincidences of the family below $10^6$, and the rule without the bound on the steps, which claims a divisor that does not exist $1{,}449{,}392$ times among the integers up to $2\cdot10^5$ and 64 windows, first at $n=4$. The best construction is the one of this paper. The records of both runs and the scripts that reproduce them are in the archive \cite{Zen}.
+\emph{The engine runs.} In the first run the library of Anaxia held 22 typed construction nodes: the large sieve with the tilted lower bound; each corner paired with each of the three normal forms, or left out; the centre, left out or counted under the Elliott--Halberstam conjecture; and the inputs that each of these needs. Typed crossing produced 128 closed constructions, which the engine tested on the $39{,}322$ primes $p\equiv3\pmod4$ below $10^6$. It kept 7, those with one, two or three corners and the matching normal forms; it rejected 112 because a normal form failed to separate the classes, 8 that contain the centre because a class of the centre equals a class of a corner at $p=531359$ (Remark~\ref{rem:family}), and the empty construction. The best of the seven gives $c_0$. In the second run the library held 19 nodes for the centre: the three normal forms; five rules for finding a divisor of the modulus in Maynard's range, from (R1) alone to the rule of Definition~\ref{def:rule}, and a rule that omits the bound on the steps of the chain; the family of coincidences of Proposition~\ref{prop:centreC}, allowed or not; and the Elliott--Halberstam conjecture. Of its 37 closed constructions it accepted 5, with the constants $0.660789$ (centre left out), $0.665710$, $0.677596$, $0.678311$ and $0.679210$, marked one as conditional (the whole centre under the Elliott--Halberstam conjecture, $0.727292$), and rejected 31: 24 because the forms $4u^2\alpha$ and $(4a^2\alpha)^{-1}$ do not separate the classes of the centre (they fail on all $12{,}399$ primes tested), 6 because they do not allow the two coincidences of the family below $10^6$, and the rule without the bound on the steps, which claims a divisor that does not exist $1{,}449{,}392$ times among the integers up to $2\cdot10^5$ and 64 windows, first at $n=4$. The best construction is the one of this paper. In the third run, with version 3.1.0 \cite{Ana31}, the library held 17 nodes for the deep strips: the deep strips left out, counted by Maynard's window continued past $\frac1{42}$, split for Theorem~\ref{thm:maynard2}, or counted under the Elliott--Halberstam conjecture; three splitting rules, which fill one group, two groups with the reserve $G$ of \eqref{eq:budget}, or two groups without it; four sets of values of $G$, namely $\{0.04\}$, $\{0.03\}$, $\{0.02\}$ and the best of $\{0.015,0.02,0.025,0.03,0.04\}$ at each depth; the two theorems of Maynard and the Elliott--Halberstam conjecture; and the sieve, the corners and the strips of the first two runs. Of its 15 closed constructions it accepted 9, marked one as conditional (the deep strips under the Elliott--Halberstam conjecture, $0.727292$), and rejected 5: the window, which is empty at every depth from $\frac1{42}$ on, and the four rules without a reserve. Of the $89{,}890$ to $133{,}334$ assignments that each of these rules allows and that the engine tested on the integers from $10^9$ to $10^9+10^5$, between $25{,}404$ and $35{,}558$ could not be brought to their targets by the fill. The accepted constructions leave the deep strips out ($0.679210$) or split them with one or two filled groups; with the best $G$ at each depth both rules give $\Kc\approx\Kmc$ and $c_1\approx\cmc$ in the simulation, and the rule with two filled groups, which contains the rule with one, is that of Definition~\ref{def:factorable}. The records of the three runs and the scripts that reproduce them are in the archive \cite{Zen}.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_engine.png}
-\caption{The two engine runs. (a) The 128 constructions of the corners, by the number of corners and by whether the centre is included. Seven are accepted; the rest are rejected because a normal form does not separate the classes, because a class of the centre equals a class of a corner, or because they sieve nothing. (b) The 37 constructions of the strips, by the rule that finds the divisor and by the normal form used in the centre, with the family of coincidences allowed (front) or not (back). Five are accepted, and the whole centre under the Elliott--Halberstam conjecture is conditional.}
+\caption{The three engine runs. (a) The 128 constructions of the corners, by the number of corners and by whether the centre is included. Seven are accepted; the rest are rejected because a normal form does not separate the classes, because a class of the centre equals a class of a corner, or because they sieve nothing. (b) The 37 constructions of the strips, by the rule that finds the divisor and by the normal form used in the centre, with the family of coincidences allowed (front) or not (back). Five are accepted, and the whole centre under the Elliott--Halberstam conjecture is conditional. (c) The 15 constructions of the deep strips, by the rule that splits the moduli and the values of $G$ it may use. The window of Theorem~\ref{thm:maynard} is empty there, the rules without a reserve miss their targets, and the deep strips under the Elliott--Halberstam conjecture are conditional.}
 \label{fig:engine}
 \end{figure*}
 
@@ -984,6 +1175,45 @@ The same holds with $f$ replaced by $S$ times the indicator of the primes. Summi
 \]
 Since $S\ll j^2$ and $\sum_{p\in I_j}1/p\ll1/j$, the error is $O(1)$. The piece $B$ is treated in the same way with the moduli $4u\alpha d$.
 
+\subsection{Proof of Theorem~\ref{thm:maynard2}}\label{app:maynard2}
+
+We follow the proof of \cite[Theorem~1.1]{May2} in \cite[Section~5]{May2}; the changes concern the range of the Type~II variable, the form of the weights and the moduli with a large square factor. Write $\mathcal L=\log y$ and $z_0=y^{1/(\log\log y)^3}$, and recall that a sequence $\alpha$ satisfies the Siegel--Walfisz condition if, for all $d,q\ge1$, $(b,q)=1$, $A>0$ and $N\ge2$,
+\begin{equation}\label{eq:sw}
+\sum_{\substack{n\sim N\\n\equiv b\,(q)\\(n,d)=1}}\alpha_n-\frac1{\varphi(q)}\sum_{\substack{n\sim N\\(n,dq)=1}}\alpha_n\ll_A\frac{N\tau(d)^{O(1)}}{(\log N)^A},
+\end{equation}
+where $n\sim N$ means $N<n\le2N$. The sequences $\one_{P^-(n)\ge z_0}$, $\one_{P^-(n)\ge z_0}\log n$ and $\one_{P^-(n)\ge z_0}\mu(n)$ satisfy it, as used in \cite[Section~5]{May2}.
+
+\emph{The moduli with a square factor.} Let $E=\lambda-\sum_j\gamma^{(j)}*\beta^{(j)}*\nu^{(j)}$ for one value of $n$. For $q\le y^{2/3}$ the trivial bound and Shiu's theorem \cite[Lemma~6.1]{May2} give
+\[
+\sum_{\substack{m\le2y\\m\equiv-1\,(q)}}\tau_6(m)^{C}\ll\frac{y(\tau(q)\mathcal L)^{O_C(1)}}q,
+\]
+so
+\begin{multline*}
+\sum_q|E_q|\sum_{\substack{m\le2y\\m\equiv-1\,(q)}}\tau_6(m)^C\\
+\ll y\mathcal L^{O(1)}\sum_{p'>y^\eta}\sum_{q'}\frac{\tau(p'^2q')^{O(1)}}{p'^2q'}\ll y^{1-\eta/2},
+\end{multline*}
+and the same holds with the progression replaced by $1/\varphi(q)$ times the sum over $m\le2y$. Every sum below has this form, with coefficients bounded by $\tau_6(m)^C$, so in it $\lambda$ may be replaced by the convolutions attached to the relevant $n$.
+
+\emph{Bounded coefficients.} As in the proofs of \cite[Propositions~5.1 and~5.2]{May2}, Shiu's theorem shows that the moduli $q$ with $\tau(q)\ge\mathcal L^C$, and the integers $m$ at which one of the sequences below exceeds $\mathcal L^C$, contribute $O(y\mathcal L^{O(1)-C})$. Restricting each of $\gamma^{(j)},\beta^{(j)},\nu^{(j)}$ to $\tau<\mathcal L^C$ changes the convolutions only at moduli with $\tau(q)\ge\mathcal L^C$, and dividing by $\mathcal L^{3BC}$ we may assume these sequences $1$-bounded. A Siegel--Walfisz sequence truncated to $\tau(n)<\mathcal L^C$ still satisfies \eqref{eq:sw} \cite[Lemma~6.5]{May2}.
+
+\emph{The decomposition.} By partial summation, the negligible contribution of prime powers and the condition $P^-(n)\ge z_0$ for primes $n>z_0$, it suffices to show for every $t\in[y,2y]$ that
+\[
+\sum_q\lambda_q\sum_{\substack{y<n\le t\\P^-(n)\ge z_0}}\Lambda(n)\Bigl(\one_{n\equiv-1\,(q)}-\frac{\one_{(n,q)=1}}{\varphi(q)}\Bigr)\ll\frac y{\mathcal L^A}.
+\]
+The identity of Heath-Brown with $k=3$ \cite[Lemma~5.3]{May2} writes $\Lambda(n)$ as a combination of convolutions of six variables $n_1,n_2,n_3,m_1,m_2,m_3$, with the weights $\log n_1$, $1$, $1$, $\mu(m_1)$, $\mu(m_2)$, $\mu(m_3)$, all supported on $P^-\ge z_0$ and with $m_i\le(2y)^{1/3}$. We put each variable in a dyadic range, $n_i\sim N_i$ and $m_i\sim M_i$, which gives $O(\mathcal L^6)$ sums, and write $e_v=\log V/\log y$ for the range $V$ of a variable $v$. Put
+\[
+a=\tfrac16-\vartheta-3\eps,\qquad b=\tfrac13+3\eps,
+\]
+and note that $2a<b$.
+
+\emph{Case (i): some set $S$ of the six variables has $\sum_{v\in S}e_v\in[a,b]$.} By \cite[Lemma~6.2]{May2} the condition $y<n\le t$ can be replaced by conditions $v\in I_v$ on the variables, with intervals $I_v\subset[V,2V]$, at the cost of a factor $\mathcal L^{O(1)}$ and an admissible error. Let $\alpha$ be the convolution of the variables in $S$ and $\beta'$ that of the others. The support of $\alpha$ lies in $(\prod_SV,2^6\prod_SV]$; we split it into at most six dyadic ranges $n\sim N$, and then $\log N/\log y\in\mathcal N_\vartheta$ for $y$ large. Each restriction $\alpha^{(N)}$ of $\alpha$ to such a range satisfies \eqref{eq:sw}. Indeed, let $v_0\in S$ have the largest range $V_0$, so that $V_0\ge N^{1/6}/2$, and write $n=n'v_0$ with $n'$ the product of the other variables of $S$. The conditions $n\equiv b\pmod q$ and $(n,d)=1$ become $(n',dq)=1$, $(v_0,d)=1$ and $v_0\equiv b\bar n'\pmod q$, and $v_0$ runs over the interval $I_{v_0}\cap(N/n',2N/n']$. For a sequence $w$ satisfying \eqref{eq:sw} and an interval $(c_1,c_2]\subset[V_0,4V_0]$, we have $\one_{(c_1,c_2]}=\one_{(0,c_2]}-\one_{(0,c_1]}$ and $\one_{(0,c]}=\sum_{k\ge1}\one_{(c/2^k,c/2^{k-1}]}$; the ranges with $c/2^k\ge V_0^{1/2}$ satisfy \eqref{eq:sw}, and the rest has total $O(V_0^{1/2}\log V_0)$. Summing over $n'$, the left side of \eqref{eq:sw} for $\alpha^{(N)}$ is $\ll N\mathcal L^{O(1)}\tau(d)^{O(1)}(\log V_0)^{-A}$, and $\log V_0\ge\frac16\log N-1$. The same argument applies to the restrictions of $\alpha^{(N)}$ to subintervals of $(N,2N]$. Now we use the hypothesis at $n=\log N/\log y$: $\lambda=\sum_j\gamma^{(j)}*\beta^{(j)}*\nu^{(j)}$ up to $E$, with supports $q_i\le y^{d_i}$. Putting $q_1,q_2,q_3$ into dyadic ranges $Q'_i<y^{d_i}$, the admissibility with margin $15\eps$ gives the four conditions of \cite[Proposition~8.2]{May2} with $\eps$, because they become weaker as the $Q'_i$ decrease, and that proposition, applied to $\alpha^{(N)}$ and $\beta'$, bounds the sum.
+
+\emph{Case (ii): there is no such set.} Call a variable small if $e_v<a$ and large if $e_v>b$; every variable is one or the other. The product of the small variables has exponent below $a$: otherwise, adding them one at a time, the partial sums of the $e_v$ would pass from below $a$ to a value in $[a,2a)\subset[a,b]$. Hence the large variables have exponents adding up to more than $1-a-o(1)>b$, so there are one or two of them, since three would exceed $1$, and they are among $n_1,n_2,n_3$ because $e_{m_i}\le\frac13+o(1)<b$. If there is one, it runs over an interval of length at least $y^{1-a}/64\ge q\,y^{\eps}$ for $q\le y^{1/2+\vartheta}$, since $\frac12+\vartheta+\eps<\frac56+\vartheta+3\eps=1-a$, and \cite[Lemma~5.4]{May2}, summed over the other variables and over $q$ with $|\lambda_q|\le1$, bounds the sum. If there are two, they have ranges $N_1,N_2\ge y^{1/3}\ge y^{3\eps}$, the product $M$ of the ranges of the others satisfies $M<64y^a$, and
+\[
+y^{1/2+\vartheta}=\frac{y^{2/3-3\eps}}{y^a}<\frac{(2y)^{2/3-3\eps}}{M}
+\]
+for $y$ large, so \cite[Proposition~5.2]{May2}, which bounds the sum over $q$ of the absolute values and allows the weight $\log n_1$, bounds the sum. There is no case without a large variable, because the exponents of all six add up to $1+o(1)$.
+
 \subsection{Large prime factors of \texorpdfstring{$\gcd(u,a)$}{gcd(u,a)}}\label{app:large}
 
 \emph{The truncated product.} For $u\ge1$,
@@ -1008,11 +1238,15 @@ With the weight $1/p\le2^{-j}$ this contributes $O(j/(\delta z))$ to $\sum_{p\in
 
 \subsection{Large common prime factors in the strips}\label{app:Blarge}
 
-In the piece $B$ of Proposition~\ref{prop:strips} the pairs $(u,\alpha)$ satisfy $u\alpha\le x^{1/2+1/42}$. A pair whose $u$ and $a$ share a prime $q>z$ satisfies $p\equiv-1\pmod m$ with $m=4u\alpha q$, $q\mid u$. If $q\le x^{1/3}$, then $m\le4x^{1/2+1/42+1/3}$, so $\log(2x/m)\ge\frac18\log x$, and the Brun--Titchmarsh inequality gives $\pi(2x;m,-1)\ll x/(\varphi(m)\log x)$. As in Appendix~\ref{app:large}, the sum over $q>z$ and the pairs is $\ll(x/\log x)(\log x)^2/z$, and with the weight $1/p\le1/x$ it contributes $O(j/z)$. If $q>x^{1/3}$, we use $\pi(2x;m,-1)\le2x/m+1$. Writing $u=qu'$, the first term gives
+In the pieces $B$ of Propositions~\ref{prop:strips} and~\ref{prop:deep} the pairs $(u,\alpha)$ satisfy $u\alpha\le x^{2/3}$. A pair whose $u$ and $a$ share a prime $q>z$ satisfies $p\equiv-1\pmod m$ with $m=4u\alpha q$, $q\mid u$, and we write $u=qu'$. If $q\le x^{1/6}$, then $m\le4x^{5/6}$, so $\log(2x/m)\ge\frac17\log x$ for $j$ large, and the Brun--Titchmarsh inequality gives $\pi(2x;m,-1)\ll x/(\varphi(m)\log x)$. As in Appendix~\ref{app:large}, with $\varphi(4u\alpha q)\ge q(q-1)\varphi(4u'\alpha)$, the sum over $q>z$ and the pairs is
 \[
-\sum_{q>x^{1/3}}\frac{2x}{4q^2}\sum_{u'\alpha\le x}\frac1{u'\alpha}\ll x^{2/3}(\log x)^2,
+\ll\frac x{\log x}\sum_{q>z}\frac1{q(q-1)}\sum_{u'\alpha\le x^{2/3}}\frac1{\varphi(4u'\alpha)}\ll\frac{x\log x}z,
 \]
-and the second term is at most the number of triples $(q,u',\alpha)$ with $qu'\alpha\le x^{1/2+1/42}$, which is $O(x^{0.53})$. With the weight $1/p\le1/x$ both are $o(1)$.
+and with the weight $1/p\le1/x$ it contributes $O(j/z)$. If $q>x^{1/6}$, we use $\pi(2x;m,-1)\le2x/m+1$. The first term gives
+\[
+\sum_{q>x^{1/6}}\frac{2x}{4q^2}\sum_{u'\alpha\le x^{2/3}}\frac1{u'\alpha}\ll x^{5/6}(\log x)^2,
+\]
+and the second term is at most the number of triples $(q,u',\alpha)$ with $qu'\alpha\le x^{2/3}$, which is $O(x^{2/3}(\log x)^2)$. With the weight $1/p\le1/x$ both are $o(1)$.\footnote{The two ranges of $q$ are needed because the Brun--Titchmarsh inequality loses its strength when the modulus $m$ approaches $x$: for $q\le x^{1/6}$ the modulus is at most $x^{5/6}$ and the inequality saves the factor $\log x$, while for larger $q$ the square $q^2$ in the denominator is already small enough. The bound $x^{2/3}$ for $u\alpha$ holds on the strips, where $u\alpha\le x^{1/2+1/42}$, and on the deep strips, where the sizes satisfy $2s_1+s_2<1$ and $s_1+2s_2<1$.}
 
 \subsection{The density of the pairs that fail}\label{app:density}
 
@@ -1066,6 +1300,52 @@ because each factor is the $\lambda_1$-density at $s_i$ of the profiles with a n
 where $(u',v')$ runs over the pairs for which $(du',ev')$ passes and has its sizes in $R$. For fixed $d,e$ and $x^\xi$ larger than every prime factor of $de$, the profiles of $du'$ and $ev'$ are those of $u'$ and $v'$ with $t$ increased by $\log d/\log x$ and $\log e/\log x$, which tend to $0$; since the limit set has null boundary, the inner sum is $(\log x)^2\iint_R(1-U)+o((\log x)^2)$. It is also at most $\sum_{u',v'\le x^K}1/(u'v')\ll(\log x)^2$, so dominated convergence over $(d,e)$ with $\sum|h(d,e)|/(de)<\infty$ gives the lemma.
 
 \emph{Proof of the limit in Lemma~\ref{lem:limit}.} Fix $\eta_0>0$. For $\vartheta\in[\eta_0,\frac1{42}-\eta_0]$ the number $\xi(\vartheta)=\min(\theta(\vartheta)-2\vartheta,2\vartheta)$ is at least $\xi_0=\min(\frac2{105},2\eta_0)$, and the same holds for the windows $(\theta_i^-,\theta_i^+)$ with $\vartheta_i\in[\eta_0,\frac1{42}-\eta_0]$ once $\delta$ is small. The $\xi$-profile of a number is a function of its $\xi_0$-profile, so all these failure sets live in the space of $\xi_0$-profiles with the measure $\lambda_1\otimes\lambda_1$ at level $\xi_0$, and $\sum_i\iint_{R_i}U_i$, restricted to these depths, is the measure of the set of profile pairs with $\vartheta=s_1+s_2-\frac12$ in the range and $(s_1,s_2)$ in $\bigcup_iR_i$ that fail the rule for the window of their piece. As $\delta\to0$ these windows converge to $(2\vartheta,\theta(\vartheta))$, and outside a null set of profiles the indicator of failure converges to that for the limiting window. The sets lie in a fixed bounded region of finite measure, so by dominated convergence the measure tends to $\int_{\eta_0}^{1/42-\eta_0}\ell(\vartheta)\,d\vartheta$. The depths outside $[\eta_0,\frac1{42}-\eta_0]$ contribute $O(\eta_0)$ to both sides, because $0\le U\le1$, and $\eta_0$ is arbitrary.
+
+\subsection{Splitting the moduli by boxes}\label{app:boxes}
+
+For a multiset $B$ of boxes let $\mathcal S_B$ be the set of squarefree integers $r$ whose prime factors lie above $x^{\eps_0}$ and whose multiset of boxes is $B$, and let $m_k$ be the multiplicity of the box $k$ in $B$. The nominal size of $B$ is $\sigma_B=\sum_{k\in B}kh$.
+
+\begin{lemma}\label{lem:boxes}
+Let $B$ be a multiset of boxes and $G\in(0,\frac1{10})$, and suppose that the nominal profile
+\[
+\Bigl(2\eps_1+\sum_{\substack{k\in B\\kh<G}}kh,\ \{kh:k\in B,\ kh\ge G\}\Bigr),
+\]
+of size $s'=\sigma_B+2\eps_1$, is factorable with margin $\mu$ for $G$, where $2\eps_1<G$. Let $\varpi$ be a function supported on the $x^{\eps_0}$-smooth integers below $x^{2\eps_1+o(1)}$ with $|\varpi|\le\tau_3$, and put
+\[
+\lambda_q=\sum_{q=4Dr}\varpi(D)\,\one_{\mathcal S_B}(r).
+\]
+Then for every $n\in[\frac23-s'-\mu,\frac13+\mu]$ there are an integer $C\ge1$ and sequences $\gamma_1,\gamma_2,\gamma_3$ bounded by $\tau^2$ and supported on $[1,x^{s_i+o(1)}]$, with $(s_1,s_2,s_3)$ admissible for $n$ with margin $\mu$, such that $\lambda-C^{-1}\gamma_1*\gamma_2*\gamma_3$ is bounded by $\tau^6$ and supported on the integers divisible by the square of a prime above $x^{\eps_0}$.
+\end{lemma}
+
+\begin{proof}
+Let $(Z_1,Z_2,Z_3,L,F,(x_i))$ be an assignment that serves $n$ with margin $\mu$. The elements of $Z$ are the numbers $kh\ge G$ with $k\in B$, so the assignment places these boxes into three groups. The remaining items are the dust, of nominal size $2\eps_1$, followed by the boxes $k\in B$ with $kh<G$ in increasing order; all of them have nominal size below $G$. Go through the groups $i\in F$ in increasing order of $i$ and add items, in their order, to the group $i$ until its nominal size reaches $x_i$; it then lies in $[x_i,x_i+G)$. Before the last group of $F$ is filled, the items used have total nominal size less than $\sum_{i\in F}(x_i-b_i)+(|F|-1)G-(x_{i_1}-b_{i_1})$, where $i_1$ is that group, so by \eqref{eq:budget} enough items remain to fill it. The items left over go to the group $L$. This gives a partition $B=B_1\sqcup B_2\sqcup B_3$ and a group $i_0$ that holds the dust, and the nominal sizes $s_i$ of the groups (with $2\eps_1$ added for $i_0$) satisfy $s_i\in[x_i,x_i+G)$ for $i\in F$, $s_i=b_i$ for $i\notin F\cup\{L\}$ and $s_L=s'-\sum_{i\ne L}s_i$. So $(s_1,s_2,s_3)$ is one of the triples of Definition~\ref{def:factorable} and is admissible for $n$ with margin $\mu$.
+
+Put $\gamma_i=\one_{\mathcal S_{B_i}}$ for $i\ne i_0$ and $\gamma_{i_0}(m)=\sum_{m=4Dr}\varpi(D)\one_{\mathcal S_{B_{i_0}}}(r)$. A prime with box $k$ is at most $x^{kh}$, so $\gamma_i$ is supported on $[1,x^{s_i+o(1)}]$, and $|\gamma_{i_0}|\le\tau_3\le\tau^2$. Since the prime factors of $D$ lie below $x^{\eps_0}$ and those of $r$ above it, an integer $q=4Dr$ determines $D$ and $r$. If $r\in\mathcal S_B$, the number of factorisations $r=r_1r_2r_3$ with $r_i\in\mathcal S_{B_i}$ is
+\[
+C=\prod_k\frac{m_k!}{m_{k,1}!\,m_{k,2}!\,m_{k,3}!},
+\]
+where $m_{k,i}$ is the multiplicity of $k$ in $B_i$, so $\gamma_1*\gamma_2*\gamma_3(q)=C\lambda_q$. If $\gamma_1*\gamma_2*\gamma_3(q)\ne0$ and $r\notin\mathcal S_B$, then $r=r_1r_2r_3$ with $r_i\in\mathcal S_{B_i}$ is not squarefree, so the square of a prime above $x^{\eps_0}$ divides $q$. Finally $\gamma_1*\gamma_2*\gamma_3\le\tau_3\cdot\tau^2\le\tau^4$ and $|\lambda|\le\tau^2$.
+\end{proof}
+
+The weight $\lambda^\beta$ of Proposition~\ref{prop:deep} has this form with $B=\beta_1\sqcup\beta_2$, multiplied by $c_\beta=\prod_k\binom{m_k}{m_{k,1}}$, where $m_{k,1}$ is the multiplicity of $k$ in $\beta_1$: an integer $r\in\mathcal S_B$ splits in $c_\beta$ ways as $r(u)r(a)$ with $\beta(u)=\beta_1$ and $\beta(a)=\beta_2$, and $\varpi(D)$ is the number of ways to write $D=D(u)D(a)$ with the conditions of the piece.
+
+\begin{lemma}\label{lem:stable}
+Let $\mathcal G$, $\mu$ and $\eps_1$ be as in Definition~\ref{def:deep}, with $\eps_1\le\mu/48$ and $\eps_1^3\le\min\mathcal G$. Let $(u,v)$ be a pair whose dust is at most $x^{\eps_1}$, and $G\in\mathcal G$. If the combined $G$-profile of $(u,v)$ is factorable with margin $2\mu$ and no prime factor of $uv$ has size in $[G-h,G)$, then the nominal profile of $(\beta(u),\beta(v))$ for $G$ is factorable with margin $\mu$.
+\end{lemma}
+
+\begin{proof}
+Let $(t,Z)$ be the combined profile, of size $s$, and $(t',Z')$ the nominal one, of size $s'$. A prime of size $z\ge G$ has nominal size in $[z,z+h)$, and a prime of size below $G-h$ has nominal size below $G$, so the primes counted in $Z'$ are those counted in $Z$; their sizes are at least $G+2\mu$, so no element of $Z'$ lies within $\mu$ of $G$. The number $t'$ is $2\eps_1$ plus the nominal sizes of the primes above $x^{\eps_0}$ in $t$, so $t'\ge t$. There are at most $1/\eps_0$ prime factors above $x^{\eps_0}$ and at most $1/G$ above $x^G$, so $0\le s'-s\le2\eps_1+h/\eps_0+h/G\le4\eps_1$.
+
+Let $n\in[\frac23-s'-\mu,\frac13+\mu]$; then $n\in[\frac23-s-2\mu,\frac13+2\mu]$, and some assignment $(Z_i,L,F,(x_i))$ serves $n$ for $(t,Z)$ with margin $2\mu$. Take the same partition of the primes, the same $L$ and $F$, and the targets $x'_i=x_i+b'_i-b_i$, where $b'_i\ge b_i$ are the nominal and actual sums of the groups; $b'_i-b_i\le h/G\le\eps_1$. The left side of \eqref{eq:budget} is unchanged and $t'-\mu\ge t-2\mu$, so the budget holds with margin $\mu$. A triple $d'$ for the new assignment has $d'_i\in[x'_i,x'_i+G]$ for $i\in F$, $d'_i=b'_i$ for $i\notin F\cup\{L\}$ and $d'_L=s'-\sum_{i\ne L}d'_i$. Put $d_i=d'_i-(b'_i-b_i)$ for $i\ne L$ and $d_L=s-\sum_{i\ne L}d_i$; this is a triple for the old assignment, so it is admissible for $n$ with margin $2\mu$, and $|d'_i-d_i|\le\eps_1$ for $i\ne L$, $|d'_L-d_L|\le|s'-s|+2\eps_1\le6\eps_1$. In each of the four conditions \eqref{eq:adm} the coefficients of $d_1,d_2,d_3$ have absolute values adding up to at most $8$, so each left side changes by at most $48\eps_1\le\mu$.
+\end{proof}
+
+\begin{lemma}\label{lem:densityF}
+Lemma~\ref{lem:density} holds with the passing pairs replaced by the pairs $(u,v)$ whose pair of $\xi$-profiles lies in a bounded set $F$ with $\lambda_1\otimes\lambda_1$-null boundary, and with $\iint_R(1-U)$ replaced by $\lambda_1\otimes\lambda_1(F)$.
+\end{lemma}
+
+\begin{proof}
+The proof of Lemma~\ref{lem:density} in Appendix~\ref{app:density} uses the set of passing profiles only through its boundedness and the nullity of its boundary.
+\end{proof}
 
 \subsection{A certified bound for \texorpdfstring{$\Jc$}{J}}\label{app:cert}
 
@@ -1151,6 +1431,28 @@ Total & $625$ & $334.13$ & $305.73$\\
 \end{tabular}
 \end{table}
 
+\subsection{A certified bound for \texorpdfstring{$\mathcal K$}{K}}\label{app:cert2}
+
+This appendix proves Proposition~\ref{prop:cert2}. In the coordinates $(s_1,\vartheta)$,
+\[
+\mathcal K=\int_{1/42}^{1/6}k(\vartheta)\,d\vartheta,
+\]
+where $k(\vartheta)$ is the $\lambda_1\otimes\lambda_1$-density, at the size $s=\frac12+\vartheta$ of the product, of the factorable pairs with $2\vartheta<s_1<\frac12-\vartheta$. Fix a cell $[a,b]$ of depths and a number $G$. We bound $k(\vartheta)$ from below on the whole cell by the density of the pairs whose combined $G$-profile is factorable.
+
+\emph{Configurations.} The combined $G$-profile of a pair is $(R,Z)$, where $R=t_1+t_2$ is the total size of the prime factors below $x^G$ and $Z$ the multiset of the sizes of the others. Let $z_1$ be the largest element of $Z$ and $Z^\flat$ the others. A configuration is a list of intervals $J$ with multiplicities $m_J$ for the elements of $Z^\flat$, together with an interval for $R$; given $s$, the largest element is $z_1=s-\sum Z^\flat-R$, and the configuration is valid if $z_1$ exceeds $G$ and the right end of every interval. By Appendix~\ref{app:density}, the density at $s$ of the pairs whose combined profile lies in a valid configuration is
+\[
+\prod_J\frac1{m_J!}\Bigl(\int_J\frac{dz}z\Bigr)^{m_J}\ \sum_{\text{labels}}\int\frac{\Psi_c(R)}{z_1}\,dR,
+\]
+where a label assigns each element of $Z$ to $u$ or to $v$, and $\Psi_c(R)=\int\rho(t/G)\rho((R-t)/G)\,dt$ over the $t=t_1$ for which the label meets the conditions $s_1,s_2>2\vartheta$. The program bounds this from below on the cell: it uses $2b$ in place of $2\vartheta$ in the conditions on $s_1,s_2$, the band tables of Dickman's function of Appendix~\ref{app:cert} for $\Psi_c$, and Jensen's inequality for $1/z_1$, with every operation rounded in the direction of the bound.
+
+\emph{The test.} A configuration passes if for every profile in it and every $n\in[\frac16-b,\frac13]\supset[\frac23-s,\frac13]$ some assignment serves $n$ with margin $0$; by Lemma~\ref{lem:margin} its profiles are then factorable, except for the null set with an element equal to $G$. The program places the intervals of the configuration into the three groups in all ways, chooses $L$, the set $F$ and targets $x_i$, and finds by linear programming an interval $[n_-,n_+]$ of $n$ with targets at its two ends. The conditions \eqref{eq:adm} and \eqref{eq:budget}, for fixed elements of $Z$, fixed $R$ and fixed positions of the filled sizes in $[x_i,x_i+G]$, are affine in $(x_i,n)$, so the set of $(x_i,n)$ for which they hold is convex, and it is enough to check the two ends. At each end the program checks them for every configuration in the box with rounding in the direction of failure, by taking each variable at the end of its interval that is worse for the inequality. The configuration passes if these intervals of $n$ cover $[\frac16-b,\frac13]$.
+
+\emph{The tree.} For each number $k\le k_{\max}$ of prime factors above $x^G$ the program starts from the configuration with $k-1$ elements in $[G,T]$, $T\ge\frac23$, and $R\in[0,16G]$, and splits a configuration that is not valid, or valid but neither passing nor failing at the smallest width, by halving the interval for $R$ or an interval of $Z^\flat$, with its multiplicity shared out between the two halves. Configurations whose measure is below a threshold are dropped. The bound for the cell is the sum of the lower bounds over the passing configurations; the configurations are disjoint, and those with more than $k_{\max}$ elements, with $R>16G$, dropped, failing or undecided add nothing.
+
+\emph{Parameters.} The cells are $[\frac k{1024},\frac{k+1}{1024}]$ with $24\le k\le70$, with $G=0.04$ for $k\le45$ and $G=0.03$ for $k\ge46$, and $k_{\max}=7$ on every cell. The interval for $R$ is cut into bands of width $G/128$. A configuration that is not decided is halved until its intervals of $Z^\flat$ have width $0.00625$ and its interval for $R$ four bands; a configuration that is not valid, or that passes with a lower bound more than $5\%$ below the estimate of its measure, is halved down to one band and the same width. The threshold for dropping is $10^{-8}$. The cells took $5$ hours in all.
+
+\emph{Validation.} For a cell at $\vartheta\approx0.03$ the program also draws $1.39\cdot10^9$ random profiles from the passing configurations, together with random fill sizes, and checks the four conditions directly; there was no violation.
+
 \subsection{Partial summation in a block}\label{app:block}
 
 Let $f(p)\ge0$ and $F(y)=\sum_{2^j<p\le y}f(p)$ for $y\in I_j$. Suppose $F(y)=(\pi(y)-\pi(2^j))S+E(y)$ with $|E(y)|\le E$ for all $y\in I_j$. Then
@@ -1203,7 +1505,7 @@ The sum over $n$ is $O(\log^2(2^{j/2})-\log^2(2^{j(1/2-\delta)}))+O(j)=O(\delta 
 
 \section*{Data availability}
 \begingroup\raggedright
-The \LaTeX{} source of this paper, the Lean~4 formalisation and the C, C\texttt{++}, Python, Julia and shell programs described in Section~\ref{sec:verification}, the records of the two engine runs and the scripts that reproduce them are available at \url{\repoURL} and in the archive \cite{Zen}. The corners, the treatment of the centre and the rule of Definition~\ref{def:rule} were selected with the engine Anaxia of the BLLM project \cite{Ana,BLLM}, version 3.0.5, in the two runs described in Section~\ref{sec:verification}; version 3.1.0 \cite{Ana31} records their outcome. Deep Bhattacharjee carried out the computations and the Lean, C, C\texttt{++}, Python, Julia and shell verifications, and the proofs and the text were drafted, with AI assistance (Claude, Anthropic); both authors approved the final version.\par
+The \LaTeX{} source of this paper, the Lean~4 formalisation and the C, C\texttt{++}, Python, Julia and shell programs described in Section~\ref{sec:verification}, the records of the three engine runs and the scripts that reproduce them are available at \url{\repoURL} and in the archive \cite{Zen}. The corners, the treatment of the centre and the rule of Definition~\ref{def:rule} were selected with the engine Anaxia of the BLLM project \cite{Ana,BLLM}, version 3.0.5, in the first two runs described in Section~\ref{sec:verification}, and the splitting of the moduli in the deep strips with version 3.1.0 \cite{Ana31} in the third. Deep Bhattacharjee carried out the computations and the Lean, C, C\texttt{++}, Python, Julia and shell verifications, and the proofs and the text were drafted, with AI assistance (Claude, Anthropic); both authors approved the final version.\par
 \endgroup
 
 \section*{Funding}
@@ -1266,6 +1568,9 @@ The mathlib Community, \emph{The Lean mathematical library}, in: Proceedings of 
 \bibitem{May}
 J.~Maynard, \emph{Primes in arithmetic progressions to large moduli I: Fixed residue classes}, Mem. Amer. Math. Soc. \textbf{306} (2025), no.~1542, doi:\href{https://doi.org/10.1090/memo/1542}{10.1090/memo/1542}.
 
+\bibitem{May2}
+J.~Maynard, \emph{Primes in arithmetic progressions to large moduli II: Well-factorable estimates}, Mem. Amer. Math. Soc. \textbf{306} (2025), no.~1543, doi:\href{https://doi.org/10.1090/memo/1543}{10.1090/memo/1543}; results are numbered as in arXiv:\href{https://arxiv.org/abs/2006.07088}{2006.07088}.
+
 \bibitem{MD}
 A.~Mihnea and M.~Dumitru, \emph{Verification of the Erd\H{o}s--Straus conjecture up to $10^{18}$}, arXiv:\href{https://arxiv.org/abs/2509.00128}{2509.00128}, 2025.
 
@@ -1277,6 +1582,9 @@ H.~L.~Montgomery and R.~C.~Vaughan, \emph{The large sieve}, Mathematika \textbf{
 
 \bibitem{Mor}
 L.~J.~Mordell, \emph{Diophantine Equations}, Pure and Applied Mathematics 30, Academic Press, London, 1969.
+
+\bibitem{New}
+T.~Newton, \emph{Divisor-ratio arithmetic and cross-shift constraints in the Erd\H{o}s--Straus problem}, preprint, Zenodo, 2026, doi:\href{https://doi.org/10.5281/zenodo.23760689}{10.5281/zenodo.23760689}.
 
 \bibitem{PW}
 C.~Pomerance and A.~Weingartner, \emph{Exceptions to the Erd\H{o}s--Straus--Schinzel conjecture}, Ramanujan J. \textbf{69} (2026), Paper No.~31, doi:\href{https://doi.org/10.1007/s11139-025-01312-2}{10.1007/s11139-025-01312-2}.

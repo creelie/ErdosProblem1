@@ -12,3 +12,4 @@ exceptional/paper/*.out
 exceptional/paper/*.toc
 exceptional/paper/main.pdf
 exceptional/paper/mainNotes.bib
+engine/deep_mc
