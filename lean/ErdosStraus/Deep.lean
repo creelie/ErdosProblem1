@@ -5,7 +5,7 @@ import Mathlib
 
 The linear arithmetic behind the deep strips: the conditions of Maynard's second theorem leave no
 admissible triple of sum `1/2 + δ` once `δ ≥ 1/10`, and the areas and shares of the parts of the centre
-that this allows.
+that this allows, and the final inequality of the certified bound with the deep strips.
 -/
 
 namespace ErdosStraus
@@ -47,5 +47,22 @@ theorem deep_area_tenth : ∫ δ in (1 / 42 : ℝ)..(1 / 10), (1 / 2 - 3 * δ) =
 /-- With every pair of the strips and of the deep strips below the depth `1/10` counted, the share
 of the triangle would be `40/49 + 6 · 88/3675 = 24/25`. -/
 theorem deep_share_tenth : (40 / 49 : ℝ) + 6 * (88 / 3675) = 24 / 25 := by norm_num
+
+/-- The certified constant with the deep strips: if `𝒥 ≤ 0.000335` and `𝒦 ≥ 0.00859` then
+`c₁ > 0.6931`, where `c₁³ = (27/8) (9/(8π²)) (40/49 - 6𝒥 + 6𝒦)`; it uses `π < 3.141593`. -/
+theorem deep_cert_constant (J K : ℝ) (hJ : J ≤ 0.000335) (hK : 0.00859 ≤ K) :
+    (0.6931 : ℝ) ^ 3 < 27 / 8 * (9 / (8 * Real.pi ^ 2)) * (40 / 49 - 6 * J + 6 * K) := by
+  have hpi0 : 0 < Real.pi := Real.pi_pos
+  have hpi : Real.pi < 3.141593 := Real.pi_lt_d6
+  have hsq : Real.pi ^ 2 < 3.141593 ^ 2 := by nlinarith
+  have hfrac : 9 / (8 * (3.141593 : ℝ) ^ 2) < 9 / (8 * Real.pi ^ 2) := by
+    apply div_lt_div_of_pos_left (by norm_num) (by positivity) (by nlinarith)
+  have hJK : (40 / 49 - 6 * 0.000335 + 6 * 0.00859 : ℝ) ≤ 40 / 49 - 6 * J + 6 * K := by linarith
+  have hpos : (0 : ℝ) < 40 / 49 - 6 * 0.000335 + 6 * 0.00859 := by norm_num
+  calc (0.6931 : ℝ) ^ 3
+        < 27 / 8 * (9 / (8 * (3.141593 : ℝ) ^ 2)) * (40 / 49 - 6 * 0.000335 + 6 * 0.00859) := by
+        norm_num
+    _ ≤ 27 / 8 * (9 / (8 * Real.pi ^ 2)) * (40 / 49 - 6 * J + 6 * K) := by
+        apply mul_le_mul (by linarith) hJK hpos.le (by positivity)
 
 end ErdosStraus

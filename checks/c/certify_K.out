@@ -37,3 +37,16 @@ cell 57/1024 rc=0 th=[0.05566,0.05664] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0
 cell 58/1024 rc=0 th=[0.05664,0.05762] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.146743 Vfail=0.140128 strip=0.327148 U=0.4486 nodes=16029951 verr=0 tables=0.5s time=499.0s
 cell 59/1024 rc=0 th=[0.05762,0.05859] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.141563 Vfail=0.142359 strip=0.324219 U=0.4366 nodes=16256942 verr=0 tables=0.5s time=529.3s
 cell 60/1024 rc=0 th=[0.05859,0.05957] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.136617 Vfail=0.144333 strip=0.321289 U=0.4252 nodes=16575509 verr=0 tables=0.5s time=579.0s
+cell 61/1024 rc=0 th=[0.05957,0.06055] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.130809 Vfail=0.147255 strip=0.318359 U=0.4109 nodes=16807700 verr=0 tables=0.5s time=644.3s
+cell 62/1024 rc=0 th=[0.06055,0.06152] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.124968 Vfail=0.150140 strip=0.315430 U=0.3962 nodes=17166037 verr=0 tables=0.5s time=702.5s
+cell 63/1024 rc=0 th=[0.06152,0.06250] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.117761 Vfail=0.154392 strip=0.312500 U=0.3768 nodes=17579105 verr=0 tables=0.5s time=785.0s
+cell 64/1024 rc=0 th=[0.06250,0.06348] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.111640 Vfail=0.157543 strip=0.309570 U=0.3606 nodes=17833472 verr=0 tables=0.5s time=875.8s
+cell 65/1024 rc=0 th=[0.06348,0.06445] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.104490 Vfail=0.161836 strip=0.306641 U=0.3408 nodes=18158211 verr=0 tables=0.5s time=978.2s
+cell 66/1024 rc=0 th=[0.06445,0.06543] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.096297 Vfail=0.166982 strip=0.303711 U=0.3171 nodes=18548481 verr=0 tables=0.5s time=1128.5s
+cell 67/1024 rc=0 th=[0.06543,0.06641] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.088167 Vfail=0.172178 strip=0.300781 U=0.2931 nodes=18966796 verr=0 tables=0.5s time=1299.8s
+cell 68/1024 rc=0 th=[0.06641,0.06738] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.079645 Vfail=0.177877 strip=0.297852 U=0.2674 nodes=19234361 verr=0 tables=0.5s time=1481.2s
+cell 69/1024 rc=0 th=[0.06738,0.06836] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.068951 Vfail=0.185558 strip=0.294922 U=0.2338 nodes=19776336 verr=0 tables=0.5s time=1803.9s
+cell 70/1024 rc=0 th=[0.06836,0.06934] G=0.0300 H0=0.0063 RMINB=4 KMAX=7 Vpass=0.056740 Vfail=0.194867 strip=0.291992 U=0.1943 nodes=20194566 verr=0 tables=0.5s time=2311.4s
+cell 71/1024 rc=124 
+cell 72/1024 rc=124 
+cell 82/1024 rc=124 

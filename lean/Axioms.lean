@@ -52,3 +52,10 @@ import ErdosStraus
 #print axioms ErdosStraus.cert_xi_lower
 #print axioms ErdosStraus.cert_dickman_tail
 #print axioms ErdosStraus.cert_constant
+#print axioms ErdosStraus.deep_sum_bound
+#print axioms ErdosStraus.deep_tenth
+#print axioms ErdosStraus.deep_adm_mono
+#print axioms ErdosStraus.deep_area
+#print axioms ErdosStraus.deep_area_tenth
+#print axioms ErdosStraus.deep_share_tenth
+#print axioms ErdosStraus.deep_cert_constant

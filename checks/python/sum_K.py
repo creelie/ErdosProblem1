@@ -24,7 +24,7 @@ PATH = os.path.join(ROOT, "checks", "c", "certify_K.out")
 LO, HI = F(1, 42), F(1, 10)
 J_UP = F(335, 10 ** 6)
 PI_UP = F(3141593, 10 ** 6)
-RANGES = [(24, 36), (36, 46), (46, 62), (62, 82), (82, 103)]
+RANGES = [(24, 36), (36, 46), (46, 58), (58, 71)]
 
 
 def cells():

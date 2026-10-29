@@ -181,7 +181,7 @@ def deep_constants():
 def ladder_figure(J, Kcert, Kmc):
     I = 1 / 84 - 3 / 3528
     labels = ["one\ncorner", "two\ncorners", "three\ncorners", "strips\nR1", "strips\nR1-R2",
-              "strips\nR1-R3", "full\nstrips", "deep strips\ncertified", "deep strips\nMonte Carlo",
+              "strips\nR1-R3", "full\nstrips", "deep strips,\ncertified", "deep strips,\nMonte Carlo",
               "to depth\n1/10", "whole\ntriangle"]
     base = 0.75 + 6 * (I - J["chain"])
     shares = [1 / 4, 1 / 2, 3 / 4, 0.75 + 6 * (I - J["var"]), 0.75 + 6 * (I - J["prime"]),
@@ -190,21 +190,23 @@ def ladder_figure(J, Kcert, Kmc):
     cols = [COL["A"], COL["B"], COL["C"], "#f2d27a", "#ecbe3c", COL["S"], COL["S"], COL["D"], COL["D"],
             COL["D"], COL["O"]]
     alphas = [0.95] * 6 + [0.45, 0.95, 0.6, 0.45, 0.45]
-    fig = plt.figure(figsize=(9.6, 4.2))
+    fig = plt.figure(figsize=(10.0, 4.3))
     ax = fig.add_subplot(projection="3d")
     for i, (c, col) in enumerate(zip(cs, cols)):
         ax.bar3d(1.5 * i, 0, 0, 0.6, 0.15, c, color=col, alpha=alphas[i], shade=True, edgecolor="k")
-        ax.text(1.5 * i - 0.25, 0.07, c + 0.03 + 0.08 * (i % 2), f"{c:.4f}", fontsize=7, zorder=30,
+        ax.text(1.5 * i + 0.3, 0.07, 0.75 + 0.13 * (i % 2), f"{c:.4f}", fontsize=7, zorder=30, ha="center",
                 bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="0.6"))
     ax.set_xticks([1.5 * i + 0.3 for i in range(len(cs))])
-    ax.set_xticklabels(labels, fontsize=7)
+    ax.set_xticklabels([])
+    for i, lab in enumerate(labels):  # two staggered rows, so that neighbouring labels do not meet
+        ax.text(1.5 * i + 0.3, 0, -0.06 - 0.24 * (i % 2), lab, fontsize=7.5, ha="center", va="top")
     ax.tick_params(axis="z", labelsize=8)
     ax.set_yticks([])
     ax.set_ylim(0, 1.2)
     ax.set_zlabel("$c$ in $N\\exp(-c(\\log N)^{2/3})$")
-    ax.set_zlim(0, 0.9)
+    ax.set_zlim(0, 0.95)
     ax.view_init(elev=12, azim=-82)
-    ax.set_box_aspect((2.8, 0.5, 1))
+    ax.set_box_aspect((3.6, 0.45, 1))
     fig.tight_layout()
     save(fig, "fig_ladder.png")
     return dict(zip([l.replace("\n", " ") for l in labels], [round(c, 6) for c in cs]))
@@ -371,7 +373,8 @@ def engine_figure():
         ax.bar3d(0, 0, 0, 0, 0, 0, color=c, label={"accepted": "accepted", "conditional": "conditional (EH)",
                  "window": "window empty past $1/42$", "fill": "fill misses the targets"}[v])
     ax.set_xticks([i + 0.25 for i in range(len(xs3))])
-    ax.set_xticklabels(["left\nout", "window", "EH", "two\ngroups", "one\ngroup", "no\nreserve"], fontsize=6.5)
+    ax.set_xticklabels(["left\nout", "win-\ndow", "EH", "two\ngroups", "one\ngroup", "no\nreserve"], fontsize=6)
+    ax.set_box_aspect((1.5, 1, 0.9))
     ax.set_yticks([i + 0.25 for i in range(len(gl))])
     ax.set_yticklabels([f"$G={g[0]:g}$" if len(g) == 1 else "best $G$" for g in gl], fontsize=6.5)
     ax.set_zlabel("constructions", fontsize=8)
